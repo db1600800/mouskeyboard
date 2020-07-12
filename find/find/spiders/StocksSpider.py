@@ -146,6 +146,7 @@ class StocksSpider(scrapy.Spider):
             ii += 1
 
 
+
     def parse_area(self, response,pcity):
         quyu_name_hrefs = response.css('#quyu_name a::attr(href)').extract()
         quyu_names = response.css('#quyu_name a::text').extract()
