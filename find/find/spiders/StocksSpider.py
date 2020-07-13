@@ -15,7 +15,7 @@ class StocksSpider(scrapy.Spider):
             'https://gz.newhouse.fang.com/house/s/'
         ]
         for url in urls:
-           yield scrapy.Request(url=url, callback=self.parse_city11)
+           yield scrapy.Request(url=url, callback=self.parse_city12)
            #yield scrapy.Request(url=url,callback=lambda response, pcity="广州": self.parse_area(response, pcity))
            """
            yield scrapy.Request(url=url, callback=lambda response, areaurl=url, pcity="广州",
@@ -91,6 +91,7 @@ class StocksSpider(scrapy.Spider):
 
     def parse_xiaoqu_detail(self, response,xcity,xquyu,xquyuchirld,xxiaoqukey):
         dongs = response.css('#dong_1期 span::text').extract()
+        fengqi = response.css('.chldper li::text').extract()
 
         dongstr = ""
         for dong in dongs:
@@ -98,8 +99,16 @@ class StocksSpider(scrapy.Spider):
 
         if xquyuchirld != "":
             allxiaoqu[xcity][xquyu][xquyuchirld][xxiaoqukey]["dong"] = dongstr
+            if fengqi == []:
+                allxiaoqu[xcity][xquyu][xquyuchirld][xxiaoqukey]["fengqi"] = "false"
+            else:
+                allxiaoqu[xcity][xquyu][xquyuchirld][xxiaoqukey]["fengqi"] = "true"
         else:
             allxiaoqu[xcity][xquyu][xxiaoqukey]["dong"] = dongstr
+            if fengqi == []:
+              allxiaoqu[xcity][xquyu][xxiaoqukey]["fengqi"] = "false"
+            else:
+              allxiaoqu[xcity][xquyu][xxiaoqukey]["fengqi"] = "true"
 
 
 
