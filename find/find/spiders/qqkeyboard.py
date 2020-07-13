@@ -9,8 +9,7 @@ from pynput.mouse import Button, Controller as MouseController
 
 global ismouselisten
 ismouselisten=True
-global iskeylisten
-iskeylisten=True
+
 
 # 键盘动作模板
 def keyboard_action_template():
@@ -81,7 +80,7 @@ class KeyboardActionListener(threading.Thread):
                 finally:
                     file.writelines(json.dumps(template) + "\n")
                     file.flush()
-                return iskeylisten
+
 
             # 键盘抬起监听
             def on_release(key):
@@ -92,9 +91,7 @@ class KeyboardActionListener(threading.Thread):
                     keyboardListener.stop()
                     global ismouselisten
                     ismouselisten =False
-                    global iskeylisten
-                    iskeylisten=False
-                    return iskeylisten
+                    return False
                 template = keyboard_action_template()
                 template['event'] = 'release'
                 try:
@@ -104,7 +101,7 @@ class KeyboardActionListener(threading.Thread):
                 finally:
                     file.writelines(json.dumps(template) + "\n")
                     file.flush()
-                return iskeylisten
+
 
             # 键盘监听
             with keyboard.Listener(on_press=on_press, on_release=on_release) as keyboardListener:
@@ -168,10 +165,8 @@ class MouseActionListener(threading.Thread):
                 template['action'] = pressed
                 template['location']['x'] = x
                 template['location']['y'] = y
-
-                if ismouselisten==True:
-                 file.writelines(json.dumps(template) + "\n")
-                 file.flush()
+                file.writelines(json.dumps(template) + "\n")
+                file.flush()
                 return ismouselisten
 
             # 鼠标滚动事件
@@ -180,10 +175,8 @@ class MouseActionListener(threading.Thread):
                 template['event'] = 'scroll'
                 template['location']['x'] = x_axis
                 template['location']['y'] = y_axis
-
-                if ismouselisten == True:
-                 file.writelines(json.dumps(template) + "\n")
-                 file.flush()
+                file.writelines(json.dumps(template) + "\n")
+                file.flush()
                 return ismouselisten
 
             with mouse.Listener(on_move=on_move, on_click=on_click, on_scroll=on_scroll) as mouseListener:
@@ -244,13 +237,10 @@ def command_adapter(action):
                 }
             ]
             ismouselisten=True
-            iskeylisten=True
             UIUpdateCutDownExecute(startTime.get(), custom_thread_list).start()
 
     elif action == 'execute':
         if startExecuteBtn['text'] == '开始回放':
-            iskeylisten=False
-            ismouselisten=False
             custom_thread_list = [
                 {
                     'obj_thread': KeyboardActionExecute(execute_count=playCount.get()),
@@ -301,11 +291,11 @@ if __name__ == '__main__':
     executeTipLabel = tkinter.Label(root, text='秒')
     executeTipLabel.place(x=160, y=85, width=20, height=20)
 
+    playCountLabel = tkinter.Label(root, text='回放次数')
+    playCountLabel.place(x=10, y=115, width=80, height=20)
     playCount = tkinter.IntVar()
     playCountEdit = tkinter.Entry(root, textvariable=playCount)
     playCountEdit.place(x=100, y=115, width=60, height=20)
-    playCountLabel = tkinter.Label(root, text='回放次数')
-    playCountLabel.place(x=10, y=115, width=80, height=20)
     playCount.set(1)
 
     playCountTipLabel = tkinter.Label(root, text='次')
