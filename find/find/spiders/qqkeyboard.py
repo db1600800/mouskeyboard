@@ -67,7 +67,6 @@ class KeyboardActionListener(threading.Thread):
         self.file_name = file_name
 
     def run(self):
-
         with open(self.file_name, 'w', encoding='utf-8') as file:
             # 键盘按下监听
             def on_press(key):
@@ -236,7 +235,8 @@ def command_adapter(action):
                     'final_text': None
                 }
             ]
-            ismouselisten=True
+            global ismouselisten
+            ismouselisten = True
             UIUpdateCutDownExecute(startTime.get(), custom_thread_list).start()
 
     elif action == 'execute':
