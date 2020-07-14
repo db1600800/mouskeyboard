@@ -16,7 +16,14 @@ def keyboard_action_template():
     return {
         "name": "keyboard",
         "event": "default",
-        "vk": "default"
+        "target": "default",
+        "action": "default",
+        "location": {
+            "x": "0",
+            "y": "0"
+        },
+        "vk": "default",
+        "time":0
     }
 
 
@@ -30,7 +37,9 @@ def mouse_action_template():
         "location": {
             "x": "0",
             "y": "0"
-        }
+        },
+        "vk": "default",
+        "time":0
     }
 
 
@@ -72,6 +81,7 @@ class KeyboardActionListener(threading.Thread):
             def on_press(key):
                 template = keyboard_action_template()
                 template['event'] = 'press'
+                template['time'] = time.time()
                 try:
                     template['vk'] = key.vk
                 except AttributeError:
@@ -90,9 +100,11 @@ class KeyboardActionListener(threading.Thread):
                     keyboardListener.stop()
                     global ismouselisten
                     ismouselisten =False
+                    conbin()
                     return False
                 template = keyboard_action_template()
                 template['event'] = 'release'
+                template['time'] = time.time()
                 try:
                     template['vk'] = key.vk
                 except AttributeError:
@@ -108,6 +120,7 @@ class KeyboardActionListener(threading.Thread):
 
 
 # 键盘动作执行
+"""
 class KeyboardActionExecute(threading.Thread):
 
     def __init__(self, file_name='keyboard.action', execute_count=0):
@@ -134,7 +147,7 @@ class KeyboardActionExecute(threading.Thread):
                 startExecuteBtn['text'] = '开始回放'
                 startExecuteBtn['state'] = 'normal'
             self.execute_count = self.execute_count - 1
-
+"""
 
 # 鼠标动作监听
 class MouseActionListener(threading.Thread):
@@ -147,13 +160,13 @@ class MouseActionListener(threading.Thread):
         with open(self.file_name, 'w', encoding='utf-8') as file:
             # 鼠标移动事件
             def on_move(x, y):
-                #template = mouse_action_template()
-                #template['event'] = 'move'
-                #template['location']['x'] = x
-                #template['location']['y'] = y
-                #file.writelines(json.dumps(template) + "\n")
-                #file.flush()
-                v=0
+                template = mouse_action_template()
+                template['event'] = 'move'
+                template['location']['x'] = x
+                template['location']['y'] = y
+                template['time'] = time.time()
+                file.writelines(json.dumps(template) + "\n")
+                file.flush()
                 return ismouselisten
 
             # 鼠标点击事件
@@ -164,6 +177,7 @@ class MouseActionListener(threading.Thread):
                 template['action'] = pressed
                 template['location']['x'] = x
                 template['location']['y'] = y
+                template['time'] = time.time()
                 file.writelines(json.dumps(template) + "\n")
                 file.flush()
                 return ismouselisten
@@ -174,6 +188,7 @@ class MouseActionListener(threading.Thread):
                 template['event'] = 'scroll'
                 template['location']['x'] = x_axis
                 template['location']['y'] = y_axis
+                template['time'] = time.time()
                 file.writelines(json.dumps(template) + "\n")
                 file.flush()
                 return ismouselisten
@@ -185,7 +200,7 @@ class MouseActionListener(threading.Thread):
 # 鼠标动作执行
 class MouseActionExecute(threading.Thread):
 
-    def __init__(self, file_name='mouse.action', execute_count=0):
+    def __init__(self, file_name='mousekeyboard.action', execute_count=0):
         super().__init__()
         self.file_name = file_name
         self.execute_count = execute_count
@@ -194,10 +209,18 @@ class MouseActionExecute(threading.Thread):
         while self.execute_count > 0:
             with open(self.file_name, 'r', encoding='utf-8') as file:
                 mouse_exec = MouseController()
+                keyboard_exec = KeyBoardController()
                 line = file.readline()
                 while line:
                     obj = json.loads(line)
-                    if obj['name'] == 'mouse':
+                    if obj['name'] == 'keyboard':
+                        if obj['event'] == 'press':
+                            keyboard_exec.press(KeyCode.from_vk(obj['vk']))
+                            time.sleep(0.01)
+                        elif obj['event'] == 'release':
+                            keyboard_exec.release(KeyCode.from_vk(obj['vk']))
+                            time.sleep(0.01)
+                    elif obj['name'] == 'mouse':
                         if obj['event'] == 'move':
                             mouse_exec.position = (obj['location']['x'], obj['location']['y'])
                             time.sleep(0.01)
@@ -217,6 +240,8 @@ class MouseActionExecute(threading.Thread):
                             mouse_exec.scroll(obj['location']['x'], obj['location']['y'])
                             time.sleep(0.01)
                     line = file.readline()
+                startExecuteBtn['text'] = '开始回放'
+                startExecuteBtn['state'] = 'normal'
             self.execute_count = self.execute_count - 1
 
 
@@ -243,14 +268,9 @@ def command_adapter(action):
         if startExecuteBtn['text'] == '开始回放':
             custom_thread_list = [
                 {
-                    'obj_thread': KeyboardActionExecute(execute_count=playCount.get()),
+                    'obj_thread': MouseActionExecute(execute_count=playCount.get()),
                     'obj_ui': startExecuteBtn,
                     'final_text': '回放中...关闭程序停止回放'
-                },
-                {
-                    'obj_thread': MouseActionExecute(execute_count=playCount.get()),
-                    'obj_ui': None,
-                    'final_text': None
                 }
             ]
             UIUpdateCutDownExecute(endTime.get(), custom_thread_list).start()
@@ -261,6 +281,33 @@ def isNumber(content):
         return True
     else:
         return False
+
+
+global mousekeyboardlist
+def conbin():
+
+    mousekeyboardlist = []
+
+    mousefile=open("mouse.action", 'r', encoding='utf-8')
+    for mousefileline in mousefile.readlines():
+         obj = json.loads(mousefileline)
+         mousekeyboardlist.append(obj)
+    mousefile.close()
+
+    keyboardfile=open("keyboard.action", 'r', encoding='utf-8')
+    for  keyboardfileline in keyboardfile.readlines():
+            obj = json.loads(keyboardfileline)
+            mousekeyboardlist.append(obj)
+    keyboardfile.close()
+
+    mousekeyboardlist.sort(key=lambda k: (k.get('time', 0)))
+
+    mousekeyboradfile=open("mousekeyboard.action", 'w', encoding='utf-8')
+    for item in mousekeyboardlist:
+            mousekeyboradfile.writelines(json.dumps(item) + "\n")
+            mousekeyboradfile.flush()
+    mousekeyboradfile.close()
+
 
 
 if __name__ == '__main__':
