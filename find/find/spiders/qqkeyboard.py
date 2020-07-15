@@ -283,11 +283,10 @@ def isNumber(content):
         return False
 
 
+
 global mousekeyboardlist
 def conbin():
-
     mousekeyboardlist = []
-
     mousefile=open("mouse.action", 'r', encoding='utf-8')
     for mousefileline in mousefile.readlines():
          obj = json.loads(mousefileline)
@@ -309,6 +308,10 @@ def conbin():
     mousekeyboradfile.close()
 
 
+def qqAddGroup():
+      area1_xiaoqufile=open("area_page1.json", 'r', encoding='utf-8')
+      obj = json.loads(area1_xiaoqufile)
+      v=0
 
 if __name__ == '__main__':
     root = tkinter.Tk()
