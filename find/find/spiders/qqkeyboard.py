@@ -10,6 +10,8 @@ from pynput.mouse import Button, Controller as MouseController
 global ismouselisten
 ismouselisten=True
 
+global execWhichStep
+execWhichStep=""
 
 # 键盘动作模板
 def keyboard_action_template():
@@ -202,7 +204,11 @@ class MouseActionExecute(threading.Thread):
 
     def __init__(self, file_name='mousekeyboard.action', execute_count=0):
         super().__init__()
-        self.file_name = file_name
+
+        if execWhichStep=="" :
+            self.file_name = file_name
+        else:
+            self.file_name=execWhichStep
         self.execute_count = execute_count
 
     def run(self):
@@ -265,15 +271,8 @@ def command_adapter(action):
             UIUpdateCutDownExecute(startTime.get(), custom_thread_list).start()
 
     elif action == 'execute':
-        if startExecuteBtn['text'] == '开始回放':
-            custom_thread_list = [
-                {
-                    'obj_thread': MouseActionExecute(execute_count=playCount.get()),
-                    'obj_ui': startExecuteBtn,
-                    'final_text': '回放中...关闭程序停止回放'
-                }
-            ]
-            UIUpdateCutDownExecute(endTime.get(), custom_thread_list).start()
+        qqAddGroup()
+
 
 
 def isNumber(content):
@@ -309,9 +308,34 @@ def conbin():
 
 
 def qqAddGroup():
-      area1_xiaoqufile=open("area_page1.json", 'r', encoding='utf-8')
-      obj = json.loads(area1_xiaoqufile)
-      v=0
+     global  execWhichStep
+     area1_xiaoqufile = open("area_page1.json", 'r', encoding='utf-8')
+     filecontent = area1_xiaoqufile.read()
+     partOneObjs = json.loads(filecontent)
+     citys = partOneObjs.keys()
+        # citys=['惠州', '北京', '防城港', '呼和浩特', '衡水', '合肥', '杭州', '海南', '哈尔滨', '桂林', '贵阳', '佛山', '福州', '东莞', '大连', '重庆', '长沙','长春', '成都', '常州', '包头', '保定']
+     if startExecuteBtn['text'] == '开始回放':
+            execWhichStep=""
+            custom_thread_list = [{'obj_thread': MouseActionExecute(execute_count=playCount.get()),'obj_ui': startExecuteBtn,'final_text': '回放中...关闭程序停止回放'}]
+            UIUpdateCutDownExecute(6, custom_thread_list).start()
+
+     """
+     for city in citys:
+         countys=partOneObjs[city].keys()
+         for county in countys:
+            areas=partOneObjs[city][county].keys()
+            for area in areas:
+               xiaoqus=partOneObjs[city][county][area].keys()
+               for xiaoqu in xiaoqus:
+                   xiaoqudict=partOneObjs[city][county][area][xiaoqu]
+                   xiaoquname=xiaoqudict["xiaoquname"]
+                   href = xiaoqudict["href"]
+                   address = xiaoqudict["address"]
+                   dong = xiaoqudict["dong"]
+                   fengqi = xiaoqudict["fengqi"]
+     """
+
+
 
 if __name__ == '__main__':
     root = tkinter.Tk()
