@@ -4,7 +4,7 @@ import time
 import tkinter
 import random
 import re
-
+import os
 import pyperclip
 
 from pynput import keyboard, mouse
@@ -326,20 +326,23 @@ def qqAddGroup():
 
      searchStr=""
      requestAddStr=""
-     xiaoquDateAddCount=10
+     xiaoquDateAddCount=20
+     count = 0
+     countquery = 0
+
      for city in citys:
           countys=partOneObjs[city].keys()
           for county in countys:
              areas=partOneObjs[city][county].keys()
              for area in areas:
                 xiaoqus=partOneObjs[city][county][area].keys()
-                count=0
-                countquery=0
                 for xiaoqu in xiaoqus:
+
                     if count>xiaoquDateAddCount :
                         break
                     if countquery > 20:
                         time.sleep(300)
+                        countquery=0
 
                     xiaoqudict=partOneObjs[city][county][area][xiaoqu]
                     if xiaoqudict.get("isRequestQQGroup")==None or xiaoqudict["isRequestQQGroup"]==False:
@@ -410,6 +413,7 @@ def qqAddGroup():
                             t31.start()
                             t31.join()
                             cell1Str = getClipboardText()
+                            print(cell1Str)
 
                             time.sleep(1)
                             execWhichStep = "加群脚本/3.2搜索结果单元2信息拷贝.txt"
@@ -419,6 +423,7 @@ def qqAddGroup():
                             t32.start()
                             t32.join()
                             cell2Str = getClipboardText()
+                            print(cell2Str)
 
                             time.sleep(1)
                             execWhichStep = "加群脚本/3.3搜索结果单元3信息拷贝.txt"
@@ -428,6 +433,7 @@ def qqAddGroup():
                             t33.start()
                             t33.join()
                             cell3Str = getClipboardText()
+                            print(cell3Str)
 
                             time.sleep(1)
                             execWhichStep = "加群脚本/3.4搜索结果单元4信息拷贝.txt"
@@ -437,6 +443,7 @@ def qqAddGroup():
                             t34.start()
                             t34.join()
                             cell4Str = getClipboardText()
+                            print(cell4Str)
 
                             time.sleep(1)
                             execWhichStep = "加群脚本/3.5搜索结果单元5信息拷贝.txt"
@@ -446,6 +453,7 @@ def qqAddGroup():
                             t35.start()
                             t35.join()
                             cell5Str = getClipboardText()
+                            print(cell5Str)
 
                             time.sleep(1)
                             execWhichStep = "加群脚本/3.6搜索结果单元6信息拷贝.txt"
@@ -455,9 +463,11 @@ def qqAddGroup():
                             t36.start()
                             t36.join()
                             cell6Str = getClipboardText()
+                            print(cell6Str)
 
 
                             if checkCellWhichOk(cell1Str,xiaoquname)==True:
+                                print("query  find 4.1" + str(countquery))
                                 execWhichStep = "加群脚本/4.1点单元1加群按钮.txt"
                                 startExecuteBtn['text'] = execWhichStep
                                 #UIUpdateCutDownExecute(1, custom_thread_list).start()
@@ -465,6 +475,7 @@ def qqAddGroup():
                                 t41.start()
                                 t41.join()
                             elif checkCellWhichOk(cell2Str,xiaoquname) == True:
+                                print("query  find 4.2" + str(countquery))
                                 execWhichStep = "加群脚本/4.2点单元2加群按钮.txt"
                                 startExecuteBtn['text'] = execWhichStep
                                 #UIUpdateCutDownExecute(1, custom_thread_list).start()
@@ -472,6 +483,7 @@ def qqAddGroup():
                                 t42.start()
                                 t42.join()
                             elif checkCellWhichOk(cell3Str,xiaoquname) == True:
+                                print("query  find 4.3" + str(countquery))
                                 execWhichStep = "加群脚本/4.3点单元3加群按钮.txt"
                                 startExecuteBtn['text'] = execWhichStep
                                 #UIUpdateCutDownExecute(1, custom_thread_list).start()
@@ -479,6 +491,7 @@ def qqAddGroup():
                                 t43.start()
                                 t43.join()
                             elif checkCellWhichOk(cell4Str,xiaoquname) == True:
+                                print("query  find 4.4" + str(countquery))
                                 execWhichStep = "加群脚本/4.4点单元4加群按钮.txt"
                                 startExecuteBtn['text'] = execWhichStep
                                 #UIUpdateCutDownExecute(1, custom_thread_list).start()
@@ -486,6 +499,7 @@ def qqAddGroup():
                                 t44.start()
                                 t44.join()
                             elif checkCellWhichOk(cell5Str,xiaoquname) == True:
+                                print("query  find 4.5" + str(countquery))
                                 execWhichStep = "加群脚本/4.5点单元5加群按钮.txt"
                                 startExecuteBtn['text'] = execWhichStep
                                 #UIUpdateCutDownExecute(1, custom_thread_list).start()
@@ -493,6 +507,7 @@ def qqAddGroup():
                                 t45.start()
                                 t45.join()
                             elif checkCellWhichOk(cell6Str,xiaoquname) == True:
+                                print("query  find 4.6" + str(countquery))
                                 execWhichStep = "加群脚本/4.6点单元6加群按钮.txt"
                                 startExecuteBtn['text'] = execWhichStep
                                 #UIUpdateCutDownExecute(1, custom_thread_list).start()
@@ -501,17 +516,20 @@ def qqAddGroup():
                                 t46.join()
                             else:
                                 countquery += 1
-                                xiaoqudict["isRequestQQGroup"] = False
-                                area1_xiaoqufile.write(json.dumps(partOneObjs) + "\n")
-                                area1_xiaoqufile.flush()
-                                area1_xiaoqufile.close()
                                 print("query no find "+str(countquery))
+                                xiaoqudict["isRequestQQGroup"] = False
+                                area1_xiaoqufile_up = open("area_page1_1.json", 'w+', encoding='utf-8')
+                                area1_xiaoqufile_up.write(json.dumps(partOneObjs) + "\n")
+                                area1_xiaoqufile_up.flush()
+                                area1_xiaoqufile_up.close()
                                 time.sleep(120)
                                 continue
 
+
+
                             time.sleep(6)
-                            root.clipboard_clear()
-                            root.clipboard_append(requestAddStr)
+
+                            setClipboardText(requestAddStr)
                             execWhichStep = "加群脚本/5.粘贴加群信息并下一步.txt"
                             startExecuteBtn['text'] = execWhichStep
                             #UIUpdateCutDownExecute(1, custom_thread_list).start()
@@ -527,13 +545,15 @@ def qqAddGroup():
                             t6.start()
                             t6.join()
                             xiaoqudict["isRequestQQGroup"] = True
-                            startExecuteBtn['state'] = 'enabled'
+                            area1_xiaoqufile_up = open("area_page1_1.json", 'w+', encoding='utf-8')
+                            area1_xiaoqufile_up.write(json.dumps(partOneObjs) + "\n")
+                            area1_xiaoqufile_up.flush()
+                            area1_xiaoqufile_up.close()
+                            startExecuteBtn['state'] = 'normal'
                             time.sleep(300)
                     count+=1
                     print("add group ok " + str(count))
 
-     area1_xiaoqufile.write(json.dumps(partOneObjs) + "\n")
-     area1_xiaoqufile.flush()
      area1_xiaoqufile.close()
 
 def checkCellWhichOk(cellStr,xiaoquname):
@@ -553,7 +573,7 @@ def checkCellWhichOk(cellStr,xiaoquname):
     haveyezhu=False
     if cellStr.find("业主") != -1:
         haveyezhu=True
-    if xiaoqunamematch==True and usercount>99 and haveyezhu==True:
+    if xiaoqunamematch==True and int(usercount)>99 and haveyezhu==True:
         return  True
     else:
         return False
