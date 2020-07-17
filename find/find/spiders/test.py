@@ -320,7 +320,8 @@ def qqAddGroup():
     checkCellWhichOk("惠州佳兆业可园14/200  |  管理在线业主","佳兆业汤泉驿")
 
 def checkCellWhichOk(cellStr,xiaoquname):
-
+    usercount="14:"
+    isnum = usercount.isdigit()
     cellStrleft = cellStr.split("/")[0]
     usercount = re.sub("\D", "", cellStrleft)
 

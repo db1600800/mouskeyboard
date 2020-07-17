@@ -558,8 +558,11 @@ def qqAddGroup():
 
 def checkCellWhichOk(cellStr,xiaoquname):
 
-    cellStrleft = cellStr.split("/")[0]
-    usercount = re.sub("\D", "", cellStrleft)
+    cellStrleft = cellStr.split("/")
+    if cellStrleft==None or cellStrleft==[]:
+        return False
+    usercount = re.sub("\D", "", cellStrleft[0])
+    isnum=usercount.isdigit()
 
     xiaoqunamematch = False
     xiaoqunameleftright = xiaoquname.split("·")
@@ -573,7 +576,7 @@ def checkCellWhichOk(cellStr,xiaoquname):
     haveyezhu=False
     if cellStr.find("业主") != -1:
         haveyezhu=True
-    if xiaoqunamematch==True and int(usercount)>99 and haveyezhu==True:
+    if xiaoqunamematch==True and isnum==True and int(usercount)>50 and haveyezhu==True:
         return  True
     else:
         return False
