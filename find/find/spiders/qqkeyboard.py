@@ -373,6 +373,7 @@ def qqAddGroup():
                             requestAddStr=xiaoquname+dongStr
                             searchStr=city+" "+xiaoquname
 
+
                             execWhichStep="加群脚本/1.qq加群窗口定位.txt"
                             startExecuteBtn['text'] = execWhichStep
                             startExecuteBtn['state'] = 'disabled'
