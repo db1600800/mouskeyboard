@@ -384,6 +384,7 @@ def qqAddGroup():
                             t1.join()
 
 
+
                             execWhichStep = "加群脚本/2.按下输入框清除按钮.txt"
                             startExecuteBtn['text'] = execWhichStep
                             #UIUpdateCutDownExecute(6, custom_thread_list).start()
