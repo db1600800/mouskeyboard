@@ -573,6 +573,7 @@ def checkCellWhichOk(cellStr,xiaoquname):
         if cellStr.find(xiaoquname) != -1:
             xiaoqunamematch = True
 
+
     haveyezhu=False
     if cellStr.find("业主") != -1:
         haveyezhu=True
