@@ -373,15 +373,15 @@ def qqAddGroup():
                             requestAddStr=xiaoquname+dongStr
                             searchStr=city+" "+xiaoquname
 
-
-                            execWhichStep="加群脚本/1.qq加群窗口定位.txt"
-                            startExecuteBtn['text'] = execWhichStep
-                            startExecuteBtn['state'] = 'disabled'
-                            custom_thread_list = [{'obj_thread': MouseActionExecute(execute_count=playCount.get()),'obj_ui': startExecuteBtn,'final_text': '回放中...关闭程序停止回放'}]
-                            #UIUpdateCutDownExecute(1, custom_thread_list).start()
-                            t1=MouseActionExecute(execute_count=playCount.get())
-                            t1.start()
-                            t1.join()
+                            if countquery==0 and count==0:
+                                execWhichStep="加群脚本/1.qq加群窗口定位.txt"
+                                startExecuteBtn['text'] = execWhichStep
+                                startExecuteBtn['state'] = 'disabled'
+                                custom_thread_list = [{'obj_thread': MouseActionExecute(execute_count=playCount.get()),'obj_ui': startExecuteBtn,'final_text': '回放中...关闭程序停止回放'}]
+                                #UIUpdateCutDownExecute(1, custom_thread_list).start()
+                                t1=MouseActionExecute(execute_count=playCount.get())
+                                t1.start()
+                                t1.join()
 
 
 
@@ -501,6 +501,10 @@ def qqAddGroup():
                                 t46.join()
                             else:
                                 countquery += 1
+                                xiaoqudict["isRequestQQGroup"] = False
+                                area1_xiaoqufile.write(json.dumps(partOneObjs) + "\n")
+                                area1_xiaoqufile.flush()
+                                area1_xiaoqufile.close()
                                 print("query no find "+str(countquery))
                                 time.sleep(120)
                                 continue
