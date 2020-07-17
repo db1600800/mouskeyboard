@@ -1,1 +1,7 @@
-{"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 27, "time": 1594889647.36517}
+{"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 162, "time": 1594977566.803913}
+{"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 67, "time": 1594977567.2679398}
+{"name": "keyboard", "event": "release", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 67, "time": 1594977567.3879468}
+{"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 67, "time": 1594977567.5079536}
+{"name": "keyboard", "event": "release", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 67, "time": 1594977567.5879583}
+{"name": "keyboard", "event": "release", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 162, "time": 1594977567.6839635}
+{"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 27, "time": 1594977568.964037}

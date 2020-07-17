@@ -1,3 +1,5 @@
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 1048, "y": 330}, "vk": "default", "time": 1594976461.2576797}
+{"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 27, "time": 1594976462.8597715}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 911, "y": 338}, "vk": "default", "time": 1594886419.6055524}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 913, "y": 338}, "vk": "default", "time": 1594886419.6135528}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 916, "y": 338}, "vk": "default", "time": 1594886419.6215534}
