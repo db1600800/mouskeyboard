@@ -329,7 +329,7 @@ def qqAddGroup():
      xiaoquDateAddCount=30
      count = 0
      countquery = 0
-
+     qqfobiden=0
      for city in citys:
           countys=partOneObjs[city].keys()
           for county in countys:
@@ -338,9 +338,11 @@ def qqAddGroup():
                 xiaoqus=partOneObjs[city][county][area].keys()
                 for xiaoqu in xiaoqus:
 
-                    if count>xiaoquDateAddCount :
+                    if count+countquery>xiaoquDateAddCount :
+                        print("30out   ok: " + str(count) +"error:"+str(countquery)+ " total:" + str(count + countquery))
                         break
-                    if countquery > 30:
+                    if qqfobiden==4:
+                        print("qqfobiden....")
                         break
 
                     xiaoqudict=partOneObjs[city][county][area][xiaoqu]
@@ -413,6 +415,8 @@ def qqAddGroup():
                             t31.join()
                             cell1Str = getClipboardText()
                             print(cell1Str)
+                            if cell1Str==None or cell1Str=="":
+                                 qqfobiden+=1
 
                             time.sleep(1)
                             execWhichStep = "加群脚本/3.2搜索结果单元2信息拷贝.txt"
@@ -515,7 +519,7 @@ def qqAddGroup():
                                 t46.join()
                             else:
                                 countquery += 1
-                                print("query no find "+str(countquery))
+                                print("query no find "+str(countquery)+" sucess:"+str(count))
                                 xiaoqudict["isRequestQQGroup"] = False
                                 area1_xiaoqufile_up = open("area_page1_1.json", 'w+', encoding='utf-8')
                                 area1_xiaoqufile_up.write(json.dumps(partOneObjs) + "\n")
@@ -552,8 +556,8 @@ def qqAddGroup():
                             startExecuteBtn['state'] = 'normal'
                             print("query  find 6.点完成")
                             time.sleep(120)
-                    count+=1
-                    print("add group ok " + str(count))
+                            count+=1
+                            print("add group sucess: " +str(count)+" total:"+ str(count+countquery))
 
      area1_xiaoqufile.close()
 
@@ -562,6 +566,8 @@ def checkCellWhichOk(cellStr,xiaoquname):
     cellStrleft = cellStr.split("/")
     if cellStrleft==None or cellStrleft==[]:
         return False
+    if cellStr.find("品牌.产品")!=-1:
+        return  False
     usercount = re.sub("\D", "", cellStrleft[0])
     isnum=usercount.isdigit()
 

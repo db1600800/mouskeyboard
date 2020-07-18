@@ -113,7 +113,8 @@
 					"href": "https://163830.fang.com/",
 					"address": "河源大道与创业大道交汇处",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			}
 		},
@@ -124,7 +125,8 @@
 					"href": "https://yuegongguanbl.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t新平大道",
 					"dong": "9#,5#,2#,1#,4#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"巽寮管委会": {
@@ -133,49 +135,56 @@
 					"href": "https://huidongshiliyintan.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t亚婆角海滨旅游度假区(广惠高速海湾大桥...",
 					"dong": "梵高的海...,3期51#,3期50#,海云天,3期31#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": true
 				},
 				"星河山海半岛": {
 					"xiaoquname": "星河山海半岛",
 					"href": "https://shanhaibandaoxh.fang.com/1/",
 					"address": "[惠东]\t\t\t\t\t\t体育路1号(海湾大桥巽寮湾高速出口左转...",
 					"dong": "C2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"九铭屿海": {
 					"xiaoquname": "九铭屿海",
 					"href": "https://zhaonghangyuanyuhaihuidong.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t巽寮滨海国际旅游度假区",
 					"dong": "B9#,B8#,B7#,B6#,B5#,B4#,B3#,B2#,B1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"金融街巽寮湾": {
 					"xiaoquname": "金融街巽寮湾",
 					"href": "https://huidongxunliaowan.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t巽寮管委会巽寮村海滨公路下侧海世界花...",
 					"dong": "海世界5#,海世界3#,海世界2#,海世界1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"融创海湾半岛": {
 					"xiaoquname": "融创海湾半岛",
 					"href": "https://haiwanbandaorc.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t亚婆角旅游度假区",
 					"dong": "13#,3#4#5#,2#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": true
 				},
 				"山湖海·海泊湾花园": {
 					"xiaoquname": "山湖海·海泊湾花园",
 					"href": "https://haibowanhuayuanshh.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t巽寮湾国际旅游度假区",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"泰禾惠州湾": {
 					"xiaoquname": "泰禾惠州湾",
 					"href": "https://163736.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t巽寮高速出口右转3公里",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				}
 			},
 			"铁涌": {},
@@ -185,28 +194,32 @@
 					"href": "https://shanhaiwanjzy.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t亚婆角旅游度假区",
 					"dong": "5#,2#,1#,102#,103#,104#,105#,101#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"惠州富力湾": {
 					"xiaoquname": "惠州富力湾",
 					"href": "https://hzflw.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t巽寮湾滨海旅游度假区(海湾大桥巽寮湾高...",
 					"dong": "4期D6#,4期D5#,4期D2#,4期D7#,4期D3#,4期D1#,3区A6#,3区A5#,3区A4#,3区A3#,3区A2#,3区A1#,M48#,M47#,M45#,M44#,M43#,M42#,M41#,M40#,M39#,M38#,M37#,M36#,M35#,M33#,M32#,M31#,M30# ,M29#,M28#,M27#,M26#,M25# ,M24#,M23#,M22#,M21#,M20#,M19#,M17#,M16#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": true
 				},
 				"虹海金岸": {
 					"xiaoquname": "虹海金岸",
 					"href": "https://honghaijinan.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t稔山半岛港口镇双月湾旅游度假区",
 					"dong": "5#,4#,2#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"合生海角1号": {
 					"xiaoquname": "合生海角1号",
 					"href": "https://haijiao1haohs.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t惠州市惠东县巽寮湾21省道海湾大桥旁",
 					"dong": "6#,5#,4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"平山": {
@@ -215,56 +228,64 @@
 					"href": "https://huafuhzhd.fang.com/?from=xflist_xfgg",
 					"address": "[惠东]\t\t\t\t\t\t寨场山公园旁",
 					"dong": "1#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"恒大雅苑": {
 					"xiaoquname": "恒大雅苑",
 					"href": "https://hengdayayuan0752.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平多路(沙公凹段)",
 					"dong": "7#,3#,8#,6#,5#,4#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"海伦堡·弘诚厚园": {
 					"xiaoquname": "海伦堡·弘诚厚园",
 					"href": "https://huidonghongchenghouyuan.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平山街道百丘田",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"碧桂园珑川府": {
 					"xiaoquname": "碧桂园珑川府",
 					"href": "https://longchuanfubgy0752.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t碧桂园珑川府",
 					"dong": "5#,2#,1#,6#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"中航·维拉庄园": {
 					"xiaoquname": "中航·维拉庄园",
 					"href": "https://zhonghangweilazhuangyuan.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平山街道陈塘(环城路旁)",
 					"dong": "50#,49#,61#,62#,63#,43#,42#,41#,40#,39#,38#,37#,51#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": true
 				},
 				"华洪·明珠花园": {
 					"xiaoquname": "华洪·明珠花园",
 					"href": "https://mingzhuhuayuanhh.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平山环城南路(欧洲城生活广场旁)",
 					"dong": "3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"嘉旺城": {
 					"xiaoquname": "嘉旺城",
 					"href": "https://huidongjiawangcheng.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平山街道新平大道629号会展中心北",
 					"dong": "35#,37#,36#,11#,12#,13#,10#,9#,8#,7#,6#,5#,15#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": true
 				},
 				"世茂望锦": {
 					"xiaoquname": "世茂望锦",
 					"href": "https://shimaowangjin.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平山镇国际展览中心往西200米",
 					"dong": "6#,7#,10#,9#,8#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				}
 			},
 			"平海": {
@@ -273,21 +294,24 @@
 					"href": "https://huidongwankeshuangyuewan.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平海镇双月湾旅游度假区",
 					"dong": "C21#,C2#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"云顶海岸": {
 					"xiaoquname": "云顶海岸",
 					"href": "https://yundinghaianhuayuan.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平海镇双月湾度假区",
 					"dong": "B-4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"卓越御山海": {
 					"xiaoquname": "卓越御山海",
 					"href": "https://yushanhaizy.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t平海镇南门海",
 					"dong": "17#,7#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"梁化": {},
@@ -297,7 +321,8 @@
 					"href": "https://shangyuejufl0752.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t吉隆环城北路(深汕合作区旁)",
 					"dong": "一期A6#,一期A7#,一期A9#,一期A8#,一期A5#,一期A4#,一期A10#,一期A3#,一期A2#,一期A1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"黄埠": {},
@@ -308,7 +333,8 @@
 					"href": "https://dongshanhaiandujiayuan.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t港口东山海地段",
 					"dong": "3号楼,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				}
 			},
 			"多祝": {},
@@ -318,7 +344,8 @@
 					"href": "https://jiangyuewanbgy.fang.com/",
 					"address": "[惠东]\t\t\t\t\t\t大岭街道大洲村委大埔地段",
 					"dong": "2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				}
 			},
 			"宝口": {},
@@ -333,14 +360,16 @@
 					"href": "https://hengdayufuhz.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t汇金广场旁",
 					"dong": "5#,12#,11#,10#,9#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"新城悦隽": {
 					"xiaoquname": "新城悦隽",
 					"href": "https://xinchengyuejun0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t龙溪龙桥大道曼亨顿酒店旁",
 					"dong": "10#,7#,5#,9#,13#,12#,11#,8#,6#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				}
 			},
 			"园洲": {
@@ -349,14 +378,16 @@
 					"href": "https://jinseyuntingzh.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t园洲镇汇园国际西侧",
 					"dong": "2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"名巨新城": {
 					"xiaoquname": "名巨新城",
 					"href": "https://mingjuxincheng.fang.com/",
 					"address": "",
 					"dong": "9#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				}
 			},
 			"杨侨": {
@@ -365,14 +396,16 @@
 					"href": "https://xingfulibgy0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t杨侨镇杨侨新城侨香路",
 					"dong": "6#,5#,4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"祥兴江畔花园": {
 					"xiaoquname": "祥兴江畔花园",
 					"href": "https://jiangpanhuayuanxx.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t杨村镇广梅公路杨村一桥西侧",
 					"dong": "12#,11#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"泰美": {},
@@ -382,14 +415,16 @@
 					"href": "https://xuhuitiandimd.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t兴业大道与贤德西路交汇处",
 					"dong": "2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"中骏聚龙汇景湾": {
 					"xiaoquname": "中骏聚龙汇景湾",
 					"href": "https://julonghuijingwanzj.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t石湾镇政府旁",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"麻陂": {},
@@ -399,245 +434,280 @@
 					"href": "https://xinchengjzy.fang.com/?from=xflist_xfgg",
 					"address": "[博罗]\t\t\t\t\t\t罗阳区东江南岸(博罗大桥约300米处)",
 					"dong": "",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"中洲半岛城邦": {
 					"xiaoquname": "中洲半岛城邦",
 					"href": "https://huajijiangshan.fang.com/3/",
 					"address": "[博罗]\t\t\t\t\t\t惠博沿江景观大道南侧东江边(新博罗中学...",
 					"dong": "四期10#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"佳兆业东江熙园": {
 					"xiaoquname": "佳兆业东江熙园",
 					"href": "https://dongjiangxiyuanjzy.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t东江南岸(江南大道中段)",
 					"dong": "1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"新城·香悦澜山": {
 					"xiaoquname": "新城·香悦澜山",
 					"href": "https://xiangyuelanshanxc0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博大道宝瑞路518号",
 					"dong": "4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"碧桂园太东天熹": {
 					"xiaoquname": "碧桂园太东天熹",
 					"href": "https://taidongtianxibgy.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t体育中心旁(北环一路)",
 					"dong": "10#,9#,8#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"方圆·东江月岛": {
 					"xiaoquname": "方圆·东江月岛",
 					"href": "https://dongjiangyuedaofy.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博大道(宝瑞路北)",
 					"dong": "28#,18#,27#,32#,29#,15#,17#,9#,8#,31#,30#,7#,6#,5#,3#,2#,1#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"龙光天禧": {
 					"xiaoquname": "龙光天禧",
 					"href": "https://longguangtianxi0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠州高铁北站汤泉高尔夫旁",
 					"dong": "24#,20#,17#,16#,15#,7#,3#,2#,41#,4#,34#,26#,33#,31#,30#,29#,10#,12#,6#,23#,43#,42#,40#,1#,19#,18#,28#,27#,14#,13#,11#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"新城·金樾江南": {
 					"xiaoquname": "新城·金樾江南",
 					"href": "https://jinyuejiangnanxc.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t罗阳镇江南大道中段",
 					"dong": "3#,2#,5#,1#,6#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园滨江府": {
 					"xiaoquname": "碧桂园滨江府",
 					"href": "https://binjiangfubgy0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t滨江畔·行政服务中心对面",
 					"dong": "2#,1#,9#,7#,5#,11#,12#,14#,13#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"云峰·天赋": {
 					"xiaoquname": "云峰·天赋",
 					"href": "https://yunfengtianfu.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t罗阳镇城北罗阳二路200米处(华侨中学旁...",
 					"dong": "10#,2#,11#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"王府·钓鱼台": {
 					"xiaoquname": "王府·钓鱼台",
 					"href": "https://diaoyutai0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博沿江景观大道与曙光路交汇处东北面...",
 					"dong": "14#,4#,2#,1#,5#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"奥林清华花园": {
 					"xiaoquname": "奥林清华花园",
 					"href": "https://aolinqinghuahuayuan.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t建设北路288号(国税局旁)",
 					"dong": "4#,1#,3#,2#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"罗浮山·十里方圆": {
 					"xiaoquname": "罗浮山·十里方圆",
 					"href": "https://shiqilify.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t罗浮山高铁站对面约500米",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"星岸城": {
 					"xiaoquname": "星岸城",
 					"href": "https://xingancheng.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博沿江路999号(东江沿岸)",
 					"dong": "27#,26#,32#,31#,33#,30#,29#,28#,25#,24#,23#,12#,13#,11#,10#,9#,8#,7#,6#,5#,4#,3#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"富力现代广场": {
 					"xiaoquname": "富力现代广场",
 					"href": "https://xiandaiguangchangfl.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博沿江大道与惠州大道交界(博罗体育中...",
 					"dong": "A2#,A1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"深惠颐景园": {
 					"xiaoquname": "深惠颐景园",
 					"href": "https://shenhuiyijingyuan.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博大道595号",
 					"dong": "27#,23#,24#,19#,25#,22#,20#,21#,B2#,B1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"保利山水城": {
 					"xiaoquname": "保利山水城",
 					"href": "https://shanshuichengbl.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博沿江路东江水利枢纽北侧",
 					"dong": "D14#,14#,12#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"水岸丽都": {
 					"xiaoquname": "水岸丽都",
 					"href": "https://shuianlidu0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t罗阳街道办事处城东区惠博大道628号",
 					"dong": "1#,7#,8#,5#,3#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"禧临门": {
 					"xiaoquname": "禧临门",
 					"href": "https://xilinmen0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t体育中心东侧",
 					"dong": "7#,6#,10#,9#,8#,5#,4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"恒福·山语海": {
 					"xiaoquname": "恒福·山语海",
 					"href": "https://shanyuhaihf.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t滨江路中段(东山森林公园旁)",
 					"dong": "二期10#,二期11#,二期9#,1#,12#,2#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"星悦花园": {
 					"xiaoquname": "星悦花园",
 					"href": "https://xingyuehuayuan0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t博罗大道东656号(体育馆东行1.8千米)",
 					"dong": "8#,7#,6#,5#,4#,3#,2#,1#,10#,9#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"博景湾": {
 					"xiaoquname": "博景湾",
 					"href": "https://bojingwan0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博大道169号",
 					"dong": "4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"名巨伴山": {
 					"xiaoquname": "名巨伴山",
 					"href": "https://mingjubanshan.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博新城cbd·东山公园里",
 					"dong": "4#,2#,5#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"依云小镇": {
 					"xiaoquname": "依云小镇",
 					"href": "https://yiyunxiaozhen0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠博沿江大道东江岸(半山1号旁)",
 					"dong": "8#,7#,6#,5#,4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"锦绣一品": {
 					"xiaoquname": "锦绣一品",
 					"href": "https://jinxiuyipin.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t(博罗新城)惠州一中博罗启正学校旁",
 					"dong": "8#,7#,5#,9#,6#,4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"奥园誉博府": {
 					"xiaoquname": "奥园誉博府",
 					"href": "https://yubofuay.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t·博罗新城(惠州一中博罗启正学校对面)",
 					"dong": "4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"福鑫公馆": {
 					"xiaoquname": "福鑫公馆",
 					"href": "https://fuxingongguan.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t罗阳镇博罗大道东320号",
 					"dong": "3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"浩创·果岭上院": {
 					"xiaoquname": "浩创·果岭上院",
 					"href": "https://guolingshangyuanhc.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t罗阳街道办事处博罗大道东623-1号(汤泉...",
 					"dong": "1#,6#,4#,5#,2#,3#,7#,8#,9#,10#,13#,12#,11#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"远望1号": {
 					"xiaoquname": "远望1号",
 					"href": "https://yuanwangyihao.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t飞龙大道888号数码路",
 					"dong": "1#,7#,3#,4#,6#,5#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"榕城华庭·富康居": {
 					"xiaoquname": "榕城华庭·富康居",
 					"href": "https://rongchenghuatingfkj.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t博新路中段",
 					"dong": "11#,6#,5#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"名仕御园": {
 					"xiaoquname": "名仕御园",
 					"href": "https://yijingyuanls.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠州市惠州大道北侧(金龙羽集团对面)",
 					"dong": "9#,8#,6#,5#,3#,7#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"康顺金碧湾花园": {
 					"xiaoquname": "康顺金碧湾花园",
 					"href": "https://jinbiwanhuayuanks.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t罗阳街道办事处滨江东路163号",
 					"dong": "9#,8#,7#,6#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"东江豪门": {
 					"xiaoquname": "东江豪门",
 					"href": "https://huizhou.newhouse.fang.com/house/2817162714.htm",
 					"address": "[博罗]\t\t\t\t\t\t博罗县罗阳镇滨江路与曙光路交汇处(博罗...",
 					"dong": "7#,6#,4#,5#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"君悦华庭": {
 					"xiaoquname": "君悦华庭",
 					"href": "https://junyuehuating0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t博罗大道中(华侨中学斜对面)",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"东亚·俪景轩": {
 					"xiaoquname": "东亚·俪景轩",
 					"href": "https://lijingxuandy.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t蓄能路东亚俪景轩售楼部",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"惠博片区": {},
@@ -651,42 +721,48 @@
 					"href": "https://yushanhuayuanhs.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t长宁镇罗浮大道东69号",
 					"dong": "9#,10#,8#,2#,6#,5#,4#,3#,7#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"罗浮上善公馆": {
 					"xiaoquname": "罗浮上善公馆",
 					"href": "https://shangshangongguanlf.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t长宁镇黄龙大道173号",
 					"dong": "9#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"保利云山堂悦": {
 					"xiaoquname": "保利云山堂悦",
 					"href": "https://lugongguanbl.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t罗浮山下罗浮大道旁",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"罗浮嘉园": {
 					"xiaoquname": "罗浮嘉园",
 					"href": "https://luofujiayuan0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t长宁镇迎宾大道2号",
 					"dong": "4#,3#,5#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"罗浮印象": {
 					"xiaoquname": "罗浮印象",
 					"href": "https://luofuyinxiang.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t长宁镇广汕公路与罗浮东路交汇处",
 					"dong": "4#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"惠福家园": {
 					"xiaoquname": "惠福家园",
 					"href": "https://huifujiayuan0752.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t长罗路168号",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"柏塘": {
@@ -695,7 +771,8 @@
 					"href": "https://yulongfubgy.fang.com/",
 					"address": "[博罗]\t\t\t\t\t\t惠州市博罗县柏塘镇茜岭坳地段",
 					"dong": "5#,3#,2#,1#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			}
 		},
@@ -706,42 +783,48 @@
 					"href": "https://longyuegongguancb.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t中兴中路东侧",
 					"dong": "2#,3#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"方直彩虹里": {
 					"xiaoquname": "方直彩虹里",
 					"href": "https://caihonglifz.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t中兴中路与中兴北路交汇处西侧",
 					"dong": "2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园·太东天樾湾": {
 					"xiaoquname": "碧桂园·太东天樾湾",
 					"href": "https://tianyuewanbgytd.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t中兴南路与中兴六路交汇处",
 					"dong": "49#,48#,37#,32#,31#,30#,29#,36#,35#,34#,33#,10#,11#,9#,8#,7#,6#,5#,1#,2#,3#,4#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"惠州新华联广场": {
 					"xiaoquname": "惠州新华联广场",
 					"href": "https://xinhualianguangchanghz.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾石化大道中438号",
 					"dong": "20#,21#,19#,18#,17#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"美悦湾": {
 					"xiaoquname": "美悦湾",
 					"href": "https://meiyuewan0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t中兴五路168号",
 					"dong": "4#,5#,3#,6#,1#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"金沙世纪城": {
 					"xiaoquname": "金沙世纪城",
 					"href": "https://jinshashijihuayuan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t中兴三路6号(惠民广场西侧)",
 					"dong": "10#,8#2单元,8#1单元,7#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				}
 			},
 			"霞涌": {
@@ -750,21 +833,24 @@
 					"href": "https://xiaojingwanhr.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t小径湾(惠深沿海高速小径湾出口即达)",
 					"dong": "听海轩28...,听海轩8#,听海轩1#,听海轩29...,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"华润小径湾悦海": {
 					"xiaoquname": "华润小径湾悦海",
 					"href": "https://xiaojingwanyuehaihr.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t霞涌镇华润小径湾",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"海月半岛": {
 					"xiaoquname": "海月半岛",
 					"href": "https://haiyuebandao.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t霞光二路301号",
 					"dong": "1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"西区": {
@@ -773,322 +859,368 @@
 					"href": "https://zizaichengjdtr.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海二路与龙山五路交汇处",
 					"dong": "32#,31#,30#,33#,7#,8#,6#,5#,4#,3#,12#,11#,10#,9#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"龙光城": {
 					"xiaoquname": "龙光城",
 					"href": "https://dongbuxichenglg.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西南大道88号",
 					"dong": "北区243#,北区234#,北区233#,北区230#,北区227#,北区159#,北区158#,北区154#,北区221#,北区217#,北区216#,北区215#,北区214#,北区213#,北区212#,北区211#,北区149#,北区151#,北区210#,北区237#,北区69#,北区68#,北区67#,北区66#,北区65#,北区64#,北区63#,北区62#,北区61#,北区150#,北区199#,北区195#,北区175#,北区174#,北区177#,北区178#,北区203#,北区206#,北区209#,北区170#,北区168#,北区165#,北区164#,北区162#,北区190#,北区193#,北区196#,北区200#,北区205#,北区207#,北区180#,北区181#,北区183#,北区182#,北区152#,北区108#,北区109#,北区117#,北区131#,北区130#,北区129#,北区128#,北区127#,北区126#,北区125#,北区124#,北区123#,北区122#,北区121#,北区120#,100#,106#,94#,92#,91#,90#,89#,96#,95#,84#,86#,74#,73#,80#,78#,北区143#,北区142#,北区141#,北区140#,北区139#,北区138#,北区137#,北区136#,北区135#,北区134#,北区111#,北区112#,北区113#,北区114#,北区116#,北区115#,北区110#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"龙光·玖龙府": {
 					"xiaoquname": "龙光·玖龙府",
 					"href": "https://jiulongfulg20752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区中兴北路158号",
 					"dong": "1#,6#,5#,3#,2#,9#,10#,11#,12#,8#,7#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"海伦堡·响水河畔": {
 					"xiaoquname": "海伦堡·响水河畔",
 					"href": "https://xiangshuihepanhlb.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区响水北路5号",
 					"dong": "6#,5#,4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"灿邦珑廷": {
 					"xiaoquname": "灿邦珑廷",
 					"href": "https://canbanglongting.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海二路万达广场对面",
 					"dong": "8#,7#,6#,5#,4#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"海伦堡·海伦璟园": {
 					"xiaoquname": "海伦堡·海伦璟园",
 					"href": "https://hailunjingyuanhlb.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区龙海三路22号(板嶂岭森林公园南侧)",
 					"dong": "1#,3#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"海伦堡·创智家园": {
 					"xiaoquname": "海伦堡·创智家园",
 					"href": "https://chuangzhijiayuanhlb2.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾西区人民六路21号",
 					"dong": "2#,1#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"智祥名苑": {
 					"xiaoquname": "智祥名苑",
 					"href": "https://zhixiangmingyuan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海一路111号",
 					"dong": "1#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"奥园隆基绿洲花园": {
 					"xiaoquname": "奥园隆基绿洲花园",
 					"href": "https://lvzhouhuayuanaylj.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区龙山九路166号",
 					"dong": "13#,14#,12#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"大中华·幸福城": {
 					"xiaoquname": "大中华·幸福城",
 					"href": "https://xingfuchengdzh.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙山一路60号",
 					"dong": "13#,4#,7#,6#,3#,5#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"富康·锦绣壹号": {
 					"xiaoquname": "富康·锦绣壹号",
 					"href": "https://jinxiuyihao0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t石化大道西299号(爱琴海公交站对面)",
 					"dong": "10#,3#,2#,1#,6#,5#,4#,9#,8#,7#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"惠州恒大悦龙台": {
 					"xiaoquname": "惠州恒大悦龙台",
 					"href": "https://yuelongtaihdhz.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海二路47号",
 					"dong": "13#,11#,12#,6#,5#,7#,1#,3#,2#,10#,4#,9#,8#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园·星钻": {
 					"xiaoquname": "碧桂园·星钻",
 					"href": "https://xingzuanbgy0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾西区龙海三路",
 					"dong": "8#,7#,1#,3#,2#,5#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"卓越东部蔚蓝海岸": {
 					"xiaoquname": "卓越东部蔚蓝海岸",
 					"href": "https://weilanhaianzydb.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区西三大道北侧(秋谷康城对面)",
 					"dong": "北区58#,南区46#,南区51#,南区50#,南区47#,南区43#,南区48#,南区52#,南区49#,南区42#,南区41#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"翡翠山": {
 					"xiaoquname": "翡翠山",
 					"href": "https://feicuishanbgy0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾大道232号(翡翠山华美达酒店旁)",
 					"dong": "21#,18#,26#,6#,5#,2#,4#,3#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"荣佳国韵": {
 					"xiaoquname": "荣佳国韵",
 					"href": "https://rongjiaguoyun.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙山一路与西南大道交汇处",
 					"dong": "17#,16#,15#,18#,20#,9#,8#,7#,3#,2#,6#,5#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"碧桂园太东公园上城": {
 					"xiaoquname": "碧桂园太东公园上城",
 					"href": "https://biguiyuantaidonggongyuanshangcheng.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海二路与龙山十路交汇处",
 					"dong": "4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"泰丰枫林岸花园": {
 					"xiaoquname": "泰丰枫林岸花园",
 					"href": "https://fenglinantf.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区大亚湾大道与龙山十路交汇处",
 					"dong": "8#,9#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园星悦": {
 					"xiaoquname": "碧桂园星悦",
 					"href": "https://xingyuebgy.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区石化大道与龙山五路交汇处",
 					"dong": "6#,3#,7#,5#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"德洲城": {
 					"xiaoquname": "德洲城",
 					"href": "https://dezhoucheng0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西三大道和西四大道交汇处(樟浦石村五金...",
 					"dong": "",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"奥园华府": {
 					"xiaoquname": "奥园华府",
 					"href": "https://aoyuanhuafu0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙山五路16号",
 					"dong": "1#,2#,3#,4#2单元,4#1单元,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"泰丰牧马湖": {
 					"xiaoquname": "泰丰牧马湖",
 					"href": "https://mumahutf.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾大道与龙海二路交汇处",
 					"dong": "72#,66#,65#,71#,64#,63#,70#,50#,54#,53#,73#,68#,69#,67#,52#,51#,49#,56#,55#,62#,61#,60#,57#,43#,42#,47#,59#,58#,46#,45#,41#,40#,39#,38#,37#,36#,35#,21#,20#,16#,15#,5#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"锦地繁花": {
 					"xiaoquname": "锦地繁花",
 					"href": "https://jindifanhua.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙山一路62号",
 					"dong": "5#,4#,1#,2#,3#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"泓泰花园": {
 					"xiaoquname": "泓泰花园",
 					"href": "https://hongtaihuayuan0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾龙海二路289号",
 					"dong": "3#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"荣盛·御湖观邸": {
 					"xiaoquname": "荣盛·御湖观邸",
 					"href": "https://yuhuguandirs.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海三路(龙尾山水库)",
 					"dong": "6#,5#,11#,10#,9#,3#,2#,12#,7#,4#,13#,19#,18#,17#,16#,15#,14#,8#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"润金名苑": {
 					"xiaoquname": "润金名苑",
 					"href": "https://runjinmingyuan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙山一路与龙盛五路交汇处",
 					"dong": "3#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"三远怡和园": {
 					"xiaoquname": "三远怡和园",
 					"href": "https://daaichengsy.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区龙海二路东端(菩提园对面 )",
 					"dong": "26#,25#,10#,6#,5#,4#,22#,8#,7#,9#,3#,2#,1#,12#,11#,21#,20#,19#,18#,17#,16#,15#,14#,13#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"天润嘉园": {
 					"xiaoquname": "天润嘉园",
 					"href": "https://tianrunjiayuan0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区石化大道西48号",
 					"dong": "2#,6#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"仁和美地": {
 					"xiaoquname": "仁和美地",
 					"href": "https://163620.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾西区石化大道中516号",
 					"dong": "12#,13#,4#,3#,2#,1#,11#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"锦河湾": {
 					"xiaoquname": "锦河湾",
 					"href": "https://jinhewan0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙山三路68号",
 					"dong": "17#,18#,12#,11#,9#,2#,1#,6#,8#,7#,5#,3B#,3#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"家悦龙庭": {
 					"xiaoquname": "家悦龙庭",
 					"href": "https://jiayuelongting.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区龙海二路与龙山七路交汇处",
 					"dong": "15#,14#,13#,1#,12#,3#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"香树御园": {
 					"xiaoquname": "香树御园",
 					"href": "https://xiangshuyuyuan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区科技南路25号",
 					"dong": "4#,5#,3#,1#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"博林腾瑞": {
 					"xiaoquname": "博林腾瑞",
 					"href": "https://bolintengrui.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海三路广外附设外语学校旁",
 					"dong": "3#,8#,9#,1#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"晶地里程花园": {
 					"xiaoquname": "晶地里程花园",
 					"href": "https://lichenghuayuanjd.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海一路与龙山四路交汇处",
 					"dong": "4#,5#,6#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"九皋玖御府": {
 					"xiaoquname": "九皋玖御府",
 					"href": "https://jiuyufujg.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t中兴北路与科技路交叉口西北200米",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"灿邦新天地": {
 					"xiaoquname": "灿邦新天地",
 					"href": "https://canbangcheng.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海二路与龙山十路交汇处",
 					"dong": "12#3单元,12#2单元,12#1单元,11#2单元,11#1单元,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"庞源御蓝湾": {
 					"xiaoquname": "庞源御蓝湾",
 					"href": "https://yulanwanpy.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t石化大道西34号(与龙山六路交汇处)",
 					"dong": "7#,3#,8#,6#,10#,9#,5#,2#,1#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"上林苑": {
 					"xiaoquname": "上林苑",
 					"href": "https://shanglinyuan0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区大亚湾大道华泰路6号",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"惠州瀚柏·青柠时代": {
 					"xiaoquname": "惠州瀚柏·青柠时代",
 					"href": "https://qingningshidaihzhb.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾西区龙海二路(万达广场旁)",
 					"dong": "1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"卓洲夏日华府": {
 					"xiaoquname": "卓洲夏日华府",
 					"href": "https://xiarihuafu.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾西区",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"聚泰花园": {
 					"xiaoquname": "聚泰花园",
 					"href": "https://jutaihuayuan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区龙山一路63号",
 					"dong": "8#,7#,9#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"凯南莱弗城": {
 					"xiaoquname": "凯南莱弗城",
 					"href": "https://kainanguangchang.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海二路与龙山二路交汇处",
 					"dong": "16#,1#,5#,4#,3#,2#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"格美公馆": {
 					"xiaoquname": "格美公馆",
 					"href": "https://gemeigongguan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大亚湾区大亚湾大道17号",
 					"dong": "1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"金龟山·鑫鼎园": {
 					"xiaoquname": "金龟山·鑫鼎园",
 					"href": "https://yuxishan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t石化大道与龙山九路交汇处",
 					"dong": "10#,9#,8#,7#,6#,5#,4#,3#,2#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"荣盛华府": {
 					"xiaoquname": "荣盛华府",
 					"href": "https://rongshenghuafu0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t龙海三路(比亚迪南门对面)",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"豪利天汇": {
 					"xiaoquname": "豪利天汇",
 					"href": "https://haolitianhui.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t西区科技南路9号",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"澳头": {
@@ -1097,63 +1229,72 @@
 					"href": "https://binhaichenghs0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t澳头中心南区安惠大道(假日酒店西侧)",
 					"dong": "2期五六区...,2期五六区...,2期五六区...,2期4区9#,2期4区8#,2期4区7#,2期6#,2期5#,2期4#,2期3#,2期2#,2期1#,2期五六区...,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"海伦堡·爱ME城市": {
 					"xiaoquname": "海伦堡·爱ME城市",
 					"href": "https://aimechengshihlb.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t教育路旁(澳头第一小学旁)",
 					"dong": "28#,7#,25#,23#,22#,27#,26#,24#,小墅13#,13#,12#,14#,8#,6#,9#,10#,11#,5#,4#,15#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"恒大依山海湾": {
 					"xiaoquname": "恒大依山海湾",
 					"href": "https://yishanhaiwanhd.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t大涌路1号",
 					"dong": "8#,7#,9#,4#,3#,5#,6#,10#,11#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"海伦堡·海伦虹": {
 					"xiaoquname": "海伦堡·海伦虹",
 					"href": "https://hailunhonghlb.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t升平四路16号",
 					"dong": "1#,6#,5#,4#,3#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园城市之光": {
 					"xiaoquname": "碧桂园城市之光",
 					"href": "https://chengshizhiguangbgy0752.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t澳头新澳大道15号",
 					"dong": "3#,5#,6#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"伟业兰廷湾": {
 					"xiaoquname": "伟业兰廷湾",
 					"href": "https://lantingwanwy.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t澳头环湖东路16号(大亚湾绿道旁)",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"天禹公馆": {
 					"xiaoquname": "天禹公馆",
 					"href": "https://tianyugongguan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t中兴一路4号(二月天对面)",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"畔山悦海花园": {
 					"xiaoquname": "畔山悦海花园",
 					"href": "https://panshanyuehaihuayuan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t中兴二路18号(大亚湾第一中学旁)",
 					"dong": "5#,1#,4#,3#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"新力蓝湾": {
 					"xiaoquname": "新力蓝湾",
 					"href": "https://xinlilanwan.fang.com/",
 					"address": "[大亚湾]\t\t\t\t\t\t进港大道中",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			}
 		},
@@ -1164,35 +1305,40 @@
 					"href": "https://junyuewanhuayuanxl.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t联溪路段横四路二号(新力帝泊湾附近)",
 					"dong": "6#,3#,5#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"新力·帝泊湾": {
 					"xiaoquname": "新力·帝泊湾",
 					"href": "https://dibowanxl0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t联溪路段横四路2号",
 					"dong": "19#,20#,15#,14#,13#,17#,16#,11#,10#,7#,8#,5#,4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"天健书香名邸": {
 					"xiaoquname": "天健书香名邸",
 					"href": "https://shuxiangmingditj.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠风东二路(31路公交总站旁)",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"时代倾城": {
 					"xiaoquname": "时代倾城",
 					"href": "https://shidaiqingcheng0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t仲恺高新区和畅东七路旁(邻近惠州海关)",
 					"dong": "11#,10#,12#,7#,6#,9#,8#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"南国明珠五期": {
 					"xiaoquname": "南国明珠五期",
 					"href": "https://nanguomingzhu0752.fang.com/5/",
 					"address": "[惠阳]\t\t\t\t\t\t联溪村惠台路(原牛津河畔营销中心旁)",
 					"dong": "14#,13#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"永湖": {},
@@ -1202,63 +1348,72 @@
 					"href": "https://huguangshansebgy0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t人民路一号",
 					"dong": "二期29#,二期30#,二期35#,二期34#,二期36#,二期20#,二期9#,二期8#,二期4#,二期3#,二期2#,二期19#,二期15#,二期11#,二期10#,二期32#,二期33#,二期7#,二期6#,二期5#,一期一区...,一期二区...,一期二区...,一期二区...,一期二区...,一期一区...,一期一区...,一期一区...,一期一区...,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"隆腾盛世": {
 					"xiaoquname": "隆腾盛世",
 					"href": "https://longtengshengshi2.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t龙岗大道与东风路交汇处",
 					"dong": "一期6#,一期5#,一期3#,一期2#,一期1#,一期K3#,一期K5#,一期K7#,一期K8#,一期K9#,一期K2#,一期K1#,一期L5#,一期L8#,一期L9#,一期B11#,一期B9#,一期B8#,一期B7#,一期B6#,一期B5#,一期B3#,一期B10#,一期B2#,一期B1#,一期A3#,一期A2#,一期A1#,一期9#,一期8#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"新昌御园": {
 					"xiaoquname": "新昌御园",
 					"href": "https://xinchangyuyuan.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t新裕路8号(新圩汽车站前行200米)",
 					"dong": "7#,6#,5#,4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"水岸花山": {
 					"xiaoquname": "水岸花山",
 					"href": "https://shuianhuashan.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t深惠路花山湖旁(205国道旁)",
 					"dong": "7#,6#,5#,4#,1#,3#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"福泰·嘉和园": {
 					"xiaoquname": "福泰·嘉和园",
 					"href": "https://jiaheyuanft.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t新圩镇约场(博深高速约场出口)",
 					"dong": "2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"益守·壹山湖": {
 					"xiaoquname": "益守·壹山湖",
 					"href": "https://yishanhuys.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t新圩镇205国道旁新联村打禾岗",
 					"dong": "2#,1#,4#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"卓悦和府": {
 					"xiaoquname": "卓悦和府",
 					"href": "https://zhuoyuehefu.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t新圩镇长布村358省道旁",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园翠湖湾": {
 					"xiaoquname": "碧桂园翠湖湾",
 					"href": "https://bgycuihuwan.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t新墟高布龙地段",
 					"dong": "20#,19#,18#,17#,16#,15#,13#,2#,1#,6#,5#,4#,3#,7#,12#,11#,10#,9#,8#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"山水芳邻三期": {
 					"xiaoquname": "山水芳邻三期",
 					"href": "https://shanshuifanglin0752.fang.com/3/",
 					"address": "[惠阳]\t\t\t\t\t\t新圩镇元洞村高布龙地段",
 					"dong": "13#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"沙田": {
@@ -1267,7 +1422,8 @@
 					"href": "https://yuhujunhzhd.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t沙田镇政府旁",
 					"dong": "二期2#,4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"秋长": {
@@ -1276,35 +1432,40 @@
 					"href": "https://zonglvdaohyhd.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠州市惠阳区内环路紫荆学府营销中心",
 					"dong": "紫荆学府...,紫荆学府...,紫荆学府...,紫荆学府...,紫荆学府...,紫荆学府...,紫荆学府...,紫荆学府...,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"融创玖樟台": {
 					"xiaoquname": "融创玖樟台",
 					"href": "https://jiuzhangtairc0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t秋长街道岭湖村迎宾大道",
 					"dong": "9#,6#,5#,8#,13#,7#,12#,10#,11#,1#,4#,2#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"花样年家天下": {
 					"xiaoquname": "花样年家天下",
 					"href": "https://jiatianxiahyhyn.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t秋长街道顺居路茶园地段",
 					"dong": "7#,9#,8#,1#,38#,37#,36#,35#,34#,31#,30#,29#,28#,27#,26#,22#,21#,17#,10#,20#,32#,25#,24#,23#,19#,18#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"太东万科四季花城": {
 					"xiaoquname": "太东万科四季花城",
 					"href": "https://sijihuachengwktd.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t秋长白石南片区",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"金广运骅府": {
 					"xiaoquname": "金广运骅府",
 					"href": "https://huafujgy.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t白石村沿湖路99号",
 					"dong": "3#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"平潭": {},
@@ -1314,7 +1475,8 @@
 					"href": "https://baofenghuafudy.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t良井镇镇政府旁",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"惠阳经济开发区": {
@@ -1323,42 +1485,48 @@
 					"href": "https://longwanxl.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠阳经济开发区御和路",
 					"dong": "4#,2#,8#,7#,6#,5#,3#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"碧桂园山河城": {
 					"xiaoquname": "碧桂园山河城",
 					"href": "https://shanhechengbgy.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠大高速永和出口",
 					"dong": "起凤台33...,起凤台33...,凤鸣台八...,凤鸣台八...,学府壹号...,学府壹号...,学府壹号...,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"实地常春藤": {
 					"xiaoquname": "实地常春藤",
 					"href": "https://changchuntengsd0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t御和路与惠南大道交汇处",
 					"dong": "9#,C15#,C14#,C13#,C12#,C11#,C10#,C9#,C8#,C7#,C6#,C5#,C4#,C3#,C2#,C1#,D15#,D14#,D13#,D12#,D9#,D11#,D10#,D8#,D7#,B10#,B9#,B8#,B7#,B6#,B5#,B4#,B3#,B2#,B1#,A9#,A8#,A7#,A6#,A5#,A4#,A3#,A2#,A1#,D6#,D5#,D4#,D3#,D2#,D1#,40#,39#,38#,37#,36#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"龙光·玖龙山": {
 					"xiaoquname": "龙光·玖龙山",
 					"href": "https://jiulongshanlg2.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠南大道与三和街道交汇处",
 					"dong": "6#,1#二单元,2#二单元,7#2单元,7#1单元,8#,1#一单元,2#一单元,5#,9#二单元,9#一单元,4#二单元,4#一单元,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"惠阳振业城": {
 					"xiaoquname": "惠阳振业城",
 					"href": "https://zhenyechenghy0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠南大道北侧振业路",
 					"dong": "Q组团4#,Q组团3#,Q组团5#,Q组团2#,Q组团1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"三和国际花园城": {
 					"xiaoquname": "三和国际花园城",
 					"href": "https://guojihuayuanchengsh.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t二环路一号(御和路与莲塘北路交汇处)",
 					"dong": "2#,1#,10#,9#,8#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				}
 			},
 			"淡水": {
@@ -1367,238 +1535,272 @@
 					"href": "https://xinghedandihz0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水星河东路边地段",
 					"dong": "G4区14#,G4区10#,G4区11#,G4区6#,G4区9#,G4区16#,G4区15#,G4区8#,V区6栋,天赋5#,天赋3#,天睿南区...,天睿南区...,天睿南区...,天睿南区...,天睿南区...,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": true
 				},
 				"威华水悦华府": {
 					"xiaoquname": "威华水悦华府",
 					"href": "https://shuiyuehuafuwh.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水土湖兴湖路26号",
 					"dong": "7#,5#,4#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"惠阳雅居乐花园": {
 					"xiaoquname": "惠阳雅居乐花园",
 					"href": "https://yajulehuayuanhy0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水区南站新城",
 					"dong": "22#,23#,24#,13#,14#,15#,16#,17#,2#,3#,4#,5#,6#,7#,8#,9#,10#,11#,12#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": true
 				},
 				"惠州星河荣域": {
 					"xiaoquname": "惠州星河荣域",
 					"href": "https://xingherongyuhz.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠州南站旁300米",
 					"dong": "3#,5#,4#,8#,7#,6#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"星河盛世": {
 					"xiaoquname": "星河盛世",
 					"href": "https://xingheshengshi0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t白云新城内环路(棕榈岛高尔夫度假酒店对...",
 					"dong": "3#,13#,5#,8#,2#,9#,6#,7#,1#,10#,11#,12#2单元,12#1单元,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"保利·阳光城": {
 					"xiaoquname": "保利·阳光城",
 					"href": "https://yangguangchengbl.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t内环路",
 					"dong": "四期3#,四期4#,四期14#,三期7#,三期4#,三期3#,三期2#,三期1#,三期6#,三期5#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"新力睿园": {
 					"xiaoquname": "新力睿园",
 					"href": "https://xinliruiyuan0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t龙海一路北侧内环路西侧",
 					"dong": "3#,8#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"新力玺园": {
 					"xiaoquname": "新力玺园",
 					"href": "https://xinlixiyuan0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水街道白云坑内环路63号",
 					"dong": "2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"东方·铂悦府": {
 					"xiaoquname": "东方·铂悦府",
 					"href": "https://boyuefudf.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水街道人民三路205号",
 					"dong": "11#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"花样年花好园": {
 					"xiaoquname": "花样年花好园",
 					"href": "https://huahaoyuanhyn0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t东华大埔星河东路",
 					"dong": "4#2单元,3#2单元,1#3单元,1#2单元,2#3单元,2#2单元,4#1单元,3#1单元,2#1单元,1#1单元,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"海伦堡·中侨公馆": {
 					"xiaoquname": "海伦堡·中侨公馆",
 					"href": "https://zhongqiaogongguanhlb2.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水街道爱民中路136号",
 					"dong": "2#,1#,4#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"LOMO公馆": {
 					"xiaoquname": "LOMO公馆",
 					"href": "https://lomogongguan.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水街道办土湖村眉月路",
 					"dong": "1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园·南站新城": {
 					"xiaoquname": "碧桂园·南站新城",
 					"href": "https://nanzhanxinchengbgy.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水南站中路3号(白云六路惠阳一中实验...",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园·润杨溪谷": {
 					"xiaoquname": "碧桂园·润杨溪谷",
 					"href": "https://runyangxigubgy2.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t深汕高速淡水东出口左转2公里",
 					"dong": "瑶郡8#,瑶郡6#,山语2#,瀛洲2#,瀛洲4#,山语1#,瀛洲1#,瀛洲3#,泊林4#,瑶郡10#,瑶郡9#,映月2#,汤寓3#,汤寓2#,汤寓1#,映月3#,映月1#,御园12#,御园11#,御园10#,御园9#,御园8#,御园7#,云山8#,云山7#,云山6#,云山5#,云山4#,云山3#,云山2#,云山1#,瀛洲8#,泊林1#,泊林3#,云山10#,云山9#,瀛洲9#,瀛洲7#,云山12#,云山11#,瀛洲6#,瀛洲5#,泊林2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"半岛1号": {
 					"xiaoquname": "半岛1号",
 					"href": "https://bandao1hao0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t东华大道半岛1号(体育会展中心旁)",
 					"dong": "11期8#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"后浪悦府": {
 					"xiaoquname": "后浪悦府",
 					"href": "https://houlangyuefu.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t白云一路(新都汇大酒店路对面)",
 					"dong": "3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"长通·熙园": {
 					"xiaoquname": "长通·熙园",
 					"href": "https://xiyuanct.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t开城大道南148号",
 					"dong": "10#,7#,3#,4#,2#,6#2单元,6#1单元,5#,1#2单元,1#1单元,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"金辉优步花园": {
 					"xiaoquname": "金辉优步花园",
 					"href": "https://youbuhuayuanjh0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t秋长街道迎宾大道东",
 					"dong": "6#,5#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"天安珑城": {
 					"xiaoquname": "天安珑城",
 					"href": "https://tiananlongcheng.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水人民四路19号(距离淡水高速出口800...",
 					"dong": "",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"中洲公园城": {
 					"xiaoquname": "中洲公园城",
 					"href": "https://gongyuanchengzz.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水街道办事处古屋洋纳村委内环东路8号",
 					"dong": "7#,6#,5#,4#,8#,3#,2#,9#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"鸿江·尚城世家": {
 					"xiaoquname": "鸿江·尚城世家",
 					"href": "https://shangchengshijiahj.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t金惠大道区政府旁",
 					"dong": "",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"万城名座花园": {
 					"xiaoquname": "万城名座花园",
 					"href": "https://mingzuohuayuan.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t白云坑金惠大道与兴发路交汇处",
 					"dong": "9#,8#,7#,6#,5#,4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"时代英之皇·廊桥": {
 					"xiaoquname": "时代英之皇·廊桥",
 					"href": "https://yingzhihuanglangqiaosd.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t尧岗路与山子顶路交叉口西南150米",
 					"dong": "5#,4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"碧桂园·天誉": {
 					"xiaoquname": "碧桂园·天誉",
 					"href": "https://tianyubgy0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t龙海一路北碧桂园天誉",
 					"dong": "1#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"金辉优步学府": {
 					"xiaoquname": "金辉优步学府",
 					"href": "https://youbuxuefujh0752.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水白云一路",
 					"dong": "4#,5#,2#,1#,3#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"碧桂园骏鑫公馆": {
 					"xiaoquname": "碧桂园骏鑫公馆",
 					"href": "https://junxingongguanbgy.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t白云新城金惠大道区政府前约3公里",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"德威花园城": {
 					"xiaoquname": "德威花园城",
 					"href": "https://deweihuayuancheng.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t行政服务中心北侧300米(惠南大道与迎宾...",
 					"dong": "9#,11#,3#,4#,10#,2#,1#,12#,8#,6#,7#,5#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"龙林上观三期": {
 					"xiaoquname": "龙林上观三期",
 					"href": "https://longlinshangguan.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠南大道好益康一路(惠南大道与永兴路交...",
 					"dong": "西苑6#,西苑5#,5#,4#,3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"巨德竹葶梦苑": {
 					"xiaoquname": "巨德竹葶梦苑",
 					"href": "https://zhutingmengyuanjd.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水人民三路",
 					"dong": "5#,7#,3#,1#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"中梁v城市": {
 					"xiaoquname": "中梁v城市",
 					"href": "https://vchengshizl.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t惠阳区人民六路",
 					"dong": "V1#,2#,3C#,3B#,3A#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"君瑞华府": {
 					"xiaoquname": "君瑞华府",
 					"href": "https://junruihuafu.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水人民四路(深汕淡水高速出口旁)",
 					"dong": "君瑞华府...,君瑞华府...,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"保利·香槟颂": {
 					"xiaoquname": "保利·香槟颂",
 					"href": "https://xiangbinsongbl.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水第八小学旁",
 					"dong": "3#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"御城水都": {
 					"xiaoquname": "御城水都",
 					"href": "https://yuchengshuidu.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水街道云新大道9号　(区政府北面)",
 					"dong": "3#,2#,1#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"恒泰·悦峯": {
 					"xiaoquname": "恒泰·悦峯",
 					"href": "https://hengtaiyuefeng.fang.com/",
 					"address": "[惠阳]\t\t\t\t\t\t淡水人民三路旁",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			}
 		},
@@ -1609,21 +1811,24 @@
 					"href": "https://deruntianyue.fang.com/",
 					"address": "[仲恺]\t\t\t\t\t\t潼侨侨冠南路33号",
 					"dong": "6#,5#,4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": true
 				},
 				"保利锦城": {
 					"xiaoquname": "保利锦城",
 					"href": "https://youshanmeidihuayuan.fang.com/",
 					"address": "[仲恺]\t\t\t\t\t\t潼侨镇潼侨公园旁",
 					"dong": "37#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"承翰珀尔世家": {
 					"xiaoquname": "承翰珀尔世家",
 					"href": "https://poershijiach.fang.com/",
 					"address": "[仲恺]\t\t\t\t\t\t潼湖生态智慧区环侨路",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"沥林": {
