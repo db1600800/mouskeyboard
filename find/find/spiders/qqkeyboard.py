@@ -326,7 +326,7 @@ def qqAddGroup():
 
      searchStr=""
      requestAddStr=""
-     xiaoquDateAddCount=20
+     xiaoquDateAddCount=30
      count = 0
      countquery = 0
 
@@ -340,12 +340,11 @@ def qqAddGroup():
 
                     if count>xiaoquDateAddCount :
                         break
-                    if countquery > 20:
-                        time.sleep(300)
-                        countquery=0
+                    if countquery > 30:
+                        break
 
                     xiaoqudict=partOneObjs[city][county][area][xiaoqu]
-                    if xiaoqudict.get("isRequestQQGroup")==None or xiaoqudict["isRequestQQGroup"]==False:
+                    if xiaoqudict.get("isRequestQQGroup")==None :
                             xiaoquname=xiaoqudict["xiaoquname"]
                             href = xiaoqudict["href"]
                             address = xiaoqudict["address"]
@@ -531,6 +530,7 @@ def qqAddGroup():
 
                             setClipboardText(requestAddStr)
                             execWhichStep = "加群脚本/5.粘贴加群信息并下一步.txt"
+                            print("query  find 5.粘贴加群信息并下一步  "+requestAddStr)
                             startExecuteBtn['text'] = execWhichStep
                             #UIUpdateCutDownExecute(1, custom_thread_list).start()
                             t5 = MouseActionExecute(execute_count=playCount.get())
@@ -550,7 +550,8 @@ def qqAddGroup():
                             area1_xiaoqufile_up.flush()
                             area1_xiaoqufile_up.close()
                             startExecuteBtn['state'] = 'normal'
-                            time.sleep(300)
+                            print("query  find 6.点完成")
+                            time.sleep(120)
                     count+=1
                     print("add group ok " + str(count))
 

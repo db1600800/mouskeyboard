@@ -9,14 +9,16 @@
 					"href": "https://tangquanyijzy.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t龙田镇赖屋村永新公路旁",
 					"dong": "1#,92#,68#,67#,63#,61#,60#,59#,58#,57#,56#,54#,53#,52#,51#,50#,47#,46#,45#,44#,43#,30#,27#,26#,25#,24#,23#,22#,21#,20#,19#,18#,17#,16#,13#,14#,15#,10#,9#,8#,7#,6#,5#,2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"欧谷·山语泉": {
 					"xiaoquname": "欧谷·山语泉",
 					"href": "https://shanyuquanog.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t龙田镇欧谷山语泉",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"麻榨": {
@@ -25,7 +27,8 @@
 					"href": "https://shilishuiwanjh.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t麻榨镇增江双岛之上",
 					"dong": "2#,",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"永汉": {
@@ -34,28 +37,32 @@
 					"href": "https://fulilongquan.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t南昆山旅游度假区",
 					"dong": "J2区8#,J2区7#,J2区6#,J2区5#,J2区4#,J2区3#,J2区1#,J2区2#,L1区2#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"碧桂园竹溪山境": {
 					"xiaoquname": "碧桂园竹溪山境",
 					"href": "https://zhuxishanjingbgy0752.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t南昆山大观园旁",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"依云四季": {
 					"xiaoquname": "依云四季",
 					"href": "https://yiyunsiji0752.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t增龙路1号",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				},
 				"碧桂园明月溪谷": {
 					"xiaoquname": "碧桂园明月溪谷",
 					"href": "https://biguiyuanmingyuexigu.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t广东省惠州市龙门县",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				}
 			},
 			"平陵": {},
@@ -65,14 +72,16 @@
 					"href": "https://nankunshanwenquanbl.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t南昆山国家森林公园旅游度假区(广河高速...",
 					"dong": "7#,42#,41#,40#,39#,38#,37#,36#,35#,34#,33#,32#,31#,30#,6#,5#,4#,3#,2#,1#,",
-					"fengqi": "true"
+					"fengqi": "true",
+					"isRequestQQGroup": false
 				},
 				"碧桂园明月溪谷": {
 					"xiaoquname": "碧桂园明月溪谷",
 					"href": "https://mingyuexigubgy.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t南昆山大观园度假区旁",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				}
 			},
 			"龙城": {
@@ -81,14 +90,16 @@
 					"href": "https://longyuejinyunhuayuan.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t龙城街道迎宾大道(汇都酒店旁)",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": false
 				},
 				"合景·阅山郡": {
 					"xiaoquname": "合景·阅山郡",
 					"href": "https://yueshanjunhjdj.fang.com/",
 					"address": "[龙门]\t\t\t\t\t\t华师附龙门学校旁(县公安局旁直入)",
 					"dong": "",
-					"fengqi": "false"
+					"fengqi": "false",
+					"isRequestQQGroup": true
 				}
 			},
 			"龙潭": {},
