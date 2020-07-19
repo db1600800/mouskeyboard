@@ -339,11 +339,19 @@ def qqAddGroup():
                 for xiaoqu in xiaoqus:
 
                     if count+countquery>xiaoquDateAddCount :
-                        print("30out   ok: " + str(count) +"error:"+str(countquery)+ " total:" + str(count + countquery))
-                        break
-                    if qqfobiden==4:
+                        area1_xiaoqufile.close()
+                        file1 = open("area_page1_1.json", "r+")
+                        file2 = open("area_page1.json", "w+")
+                        s = file1.read()
+                        w = file2.write(s)
+                        file1.close()
+                        file2.close()
+                        print("30out   ok: " + str(count) + "error:" + str(countquery) + " total:" + str(
+                            count + countquery))
+                        time.sleep(300)
+                    if qqfobiden==6:
                         print("qqfobiden....")
-                        break
+                        return city,county,area,xiaoqu
 
                     xiaoqudict=partOneObjs[city][county][area][xiaoqu]
                     if xiaoqudict.get("isRequestQQGroup")==None :
@@ -373,9 +381,11 @@ def qqAddGroup():
                                 else:
                                   d = dongs[dongcount - 1]
                                 r=random.randrange(4,7,1)
+                                if d=="":
+                                    d="2"
                                 dongStr=d+"栋"+str(r)+"01"
                             requestAddStr=xiaoquname+dongStr
-                            searchStr=city+" "+xiaoquname
+                            searchStr=city+" "+xiaoquname+" 业"
 
                             if countquery==0 and count==0:
                                 execWhichStep="加群脚本/1.qq加群窗口定位.txt"
@@ -415,7 +425,7 @@ def qqAddGroup():
                             t31.join()
                             cell1Str = getClipboardText()
                             print(cell1Str)
-                            if cell1Str==None or cell1Str=="":
+                            if cell1Str==searchStr :
                                  qqfobiden+=1
 
                             time.sleep(1)
@@ -567,6 +577,8 @@ def checkCellWhichOk(cellStr,xiaoquname):
     if cellStrleft==None or cellStrleft==[]:
         return False
     if cellStr.find("品牌.产品")!=-1:
+        return  False
+    if cellStr.find("投资")!=-1:
         return  False
     usercount = re.sub("\D", "", cellStrleft[0])
     isnum=usercount.isdigit()
