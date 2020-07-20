@@ -323,7 +323,7 @@ def qqAddGroup():
      partOneObjs = json.loads(filecontent)
      citys = partOneObjs.keys()
         # citys=['惠州', '北京', '防城港', '呼和浩特', '衡水', '合肥', '杭州', '海南', '哈尔滨', '桂林', '贵阳', '佛山', '福州', '东莞', '大连', '重庆', '长沙','长春', '成都', '常州', '包头', '保定']
-
+     citys=['长沙']
      searchStr=""
      requestAddStr=""
      xiaoquDateAddCount=30
@@ -348,6 +348,7 @@ def qqAddGroup():
                         file2.close()
                         print("30out   ok: " + str(count) + "error:" + str(countquery) + " total:" + str(
                             count + countquery))
+                        return city, county, area, xiaoqu
                         time.sleep(300)
                     if qqfobiden==6:
                         print("qqfobiden....")
