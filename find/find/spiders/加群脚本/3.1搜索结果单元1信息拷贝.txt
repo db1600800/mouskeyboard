@@ -1,3 +1,15 @@
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 118, "y": 371}, "vk": "default", "time": 1595235669.026367}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 117, "y": 371}, "vk": "default", "time": 1595235669.0732422}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235669.1787107}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235669.584961}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235669.584961}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235669.709961}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235669.709961}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235670.6386719}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235670.6386719}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235670.7871094}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 116, "y": 371}, "vk": "default", "time": 1595235670.7871094}
+{"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 27, "time": 1595235672.8710938}
 {"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 250, "y": 229}, "vk": "default", "time": 1595234181.6231277}
 {"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 250, "y": 229}, "vk": "default", "time": 1595234181.7591453}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 250, "y": 229}, "vk": "default", "time": 1595234181.8871613}

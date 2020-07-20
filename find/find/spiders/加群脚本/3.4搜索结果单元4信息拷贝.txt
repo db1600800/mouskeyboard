@@ -1,3 +1,17 @@
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235803.5478516}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235803.8886716}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235803.8886716}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235804.0302732}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235804.0302732}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235805.1015627}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235805.1015627}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235805.2753906}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235805.2753906}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235805.5566406}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235805.5566406}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235805.6884763}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 131, "y": 541}, "vk": "default", "time": 1595235805.6884763}
+{"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 27, "time": 1595235806.2333982}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 138, "y": 441}, "vk": "default", "time": 1595234325.0618422}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 138, "y": 441}, "vk": "default", "time": 1595234325.2058606}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 138, "y": 441}, "vk": "default", "time": 1595234325.2138617}
