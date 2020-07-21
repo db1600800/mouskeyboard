@@ -36,8 +36,8 @@ def qqAddGroup(startExecuteBtn):
                         file2.close()
                         print("30out   ok: " + str(count) + "error:" + str(countquery) + " total:" + str(
                             count + countquery))
-                        return city, county, area, xiaoqu
-                        time.sleep(300)
+                        #return city, county, area, xiaoqu
+                        time.sleep(600)
                     if qqfobiden == 6:
                         print("qqfobiden....")
                         return city, county, area, xiaoqu
