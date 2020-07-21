@@ -15,7 +15,7 @@ class StocksSpider(scrapy.Spider):
             'https://gz.newhouse.fang.com/house/s/'
         ]
         for url in urls:
-           yield scrapy.Request(url=url, callback=self.parse_city12)
+           yield scrapy.Request(url=url, callback=self.parse_city13)
            #yield scrapy.Request(url=url,callback=lambda response, pcity="广州": self.parse_area(response, pcity))
            """
            yield scrapy.Request(url=url, callback=lambda response, areaurl=url, pcity="广州",

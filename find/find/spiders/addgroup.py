@@ -71,7 +71,9 @@ def qqAddGroup(startExecuteBtn):
                                 d = dongs[dongcount - 1]
                             r = random.randrange(4, 7, 1)
                             if d == "":
-                                d = "2"
+                                d = "1"
+                            if d=="...,":
+                                d="1"
                             dongStr = d + "栋" + str(r) + "01"
                         requestAddStr = xiaoquname + dongStr
                         searchStr = city + " " + xiaoquname + " 业"
