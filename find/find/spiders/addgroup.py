@@ -105,6 +105,15 @@ def qqAddGroup(startExecuteBtn):
                         t3.join()
 
                         time.sleep(6)
+
+                        execWhichStep = "加群脚本/2.1网络提示关闭.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(6, custom_thread_list).start()
+                        t21 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t21.start()
+                        t21.join()
+                        time.sleep(1)
+
                         execWhichStep = "加群脚本/3.1搜索结果单元1信息拷贝.txt"
                         startExecuteBtn['text'] = execWhichStep
                         # UIUpdateCutDownExecute(1, custom_thread_list).start()
@@ -282,7 +291,7 @@ def checkCellWhichOk(cellStr,xiaoquname):
     haveyezhu=False
     if cellStr.find("业主") != -1:
         haveyezhu=True
-    if xiaoqunamematch==True and isnum==True and int(usercount)>50 and haveyezhu==True:
+    if xiaoqunamematch==True and isnum==True and int(usercount)>30 and haveyezhu==True:
         return  True
     else:
         return False
