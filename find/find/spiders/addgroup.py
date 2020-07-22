@@ -37,6 +37,8 @@ def qqAddGroup(startExecuteBtn):
                         print("30out   ok: " + str(count) + "error:" + str(countquery) + " total:" + str(
                             count + countquery))
                         #return city, county, area, xiaoqu
+                        count=0
+                        countquery=0
                         print("sleep 10 min")
                         time.sleep(600)
                     if qqfobiden == 6:
