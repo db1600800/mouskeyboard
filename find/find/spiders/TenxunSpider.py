@@ -5,6 +5,7 @@ from selenium import webdriver
 from lxml import etree
 from os import getcwd,sep
 from bs4 import BeautifulSoup
+import json
 
 def getChapterUrl(url):
     headers = {
@@ -51,6 +52,9 @@ def getChapterFile(url,path1,path2):
 if __name__ == '__main__':
     #getChapterUrl('http://ac.qq.com/Comic/ComicInfo/id/505435')
     #getChapterUrl('https://new.qq.com/omn/author/13030024')
+    allmedia={}
+    n=0
+    m=0
     ii=0 #13030024
     while True:
         url='https://new.qq.com/omn/author/'+str(ii)
@@ -93,8 +97,25 @@ if __name__ == '__main__':
             #title = aObj.get_text().strip()
 
             title=summaryObjContent[i].text
+            obj = {}
+            obj["title"] = title
+            obj["url"] = url
+            allmedia[title] = obj
+
             print(title + '\n'  + '\n')
 
+        if m!=0 and m%50==0:
+            fo = open("tenxunmedia_" + str(n) + ".txt", "w+")  # 存入文件中。。。
+            fo.write(json.dumps(allmedia))
+            fo.write('\n')
+            fo.close()
 
+        if m % 2000 == 0:
+            n += m // 2000
+
+        if m % 2000 == 0:
+            if m != 0:
+                allmedia = {}
+        m+=1
         # 推出驱动并关闭所关联的所有窗口
         driver.quit()
