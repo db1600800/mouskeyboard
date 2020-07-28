@@ -1,8 +1,8 @@
-import scrapy
-import re
-import time
 import json
-import random
+import time
+
+import scrapy
+
 
 class ShouHuMediaSpider(scrapy.Spider):
     name = "shouhumediaspider"
@@ -22,17 +22,17 @@ class ShouHuMediaSpider(scrapy.Spider):
         allmedia = json.loads(filecontent)
 
     def start_requests(self):
-        self.inivalue()
+        #self.inivalue()
 
 
-        ii =20229465 #20125864 #1000 25783 100000 20122456  120229465
+        ii =20328170 #120328170 20125864 #1000 25783 100000 20122456  120229465
         global i
         global allmedia
         m = 0
         if allmedia!={}:
             m= len(allmedia)
 
-        n=5
+        n=7
 
         urls = [
             'https://m.sohu.com/media/1'
