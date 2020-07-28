@@ -1,18 +1,36 @@
-
+import os
+import time
+import requests
 from selenium import webdriver
 from os import getcwd,sep
 from bs4 import BeautifulSoup
 import json
 
 
+global allmedia
+allmedia={}
+global n
+global m
+
+def inivalue():
+    global allmedia
+    global n
+    media8 = open("tenxunmedia_" + str(n) + ".txt", 'r+', encoding='utf-8')
+    filecontent = media8.read()
+    allmedia = json.loads(filecontent)
 
 if __name__ == '__main__':
     #getChapterUrl('http://ac.qq.com/Comic/ComicInfo/id/505435')
     #getChapterUrl('https://new.qq.com/omn/author/13030024')
-    allmedia={}
+    global gllmedia
+    global n
     n=0
+    global m
     m=0
-    ii=0 #13030024
+
+    inivalue()
+
+    ii=13001294 #13030024 13001294
     while True:
         url='https://new.qq.com/omn/author/'+str(ii)
         # 当前进程的工作目录
@@ -20,19 +38,12 @@ if __name__ == '__main__':
         # 设置chrome驱动器
         driver = webdriver.Chrome(f'{cwd}{sep}chromedriver')
         # 设置超时时间
-        driver.set_page_load_timeout(13)
+        driver.set_page_load_timeout(123)
 
         # 访问
         driver.get(url)
-        # 等待几秒
-        #time.sleep(3)
+        print(url)
 
-        # 清空文本框的内容
-        #driver.find_element_by_name('word').clear()
-        # 输入文本内容
-        #driver.find_element_by_name('word').send_keys('百度')
-        # 点击按钮
-        #driver.find_element_by_id("s_btn_wr").click()
         ii += 1
         # 获得网页内容
         summaryPage = driver.page_source
@@ -40,7 +51,8 @@ if __name__ == '__main__':
         summaryObj = BeautifulSoup(summaryPage, 'html.parser')
         # 通过Class获取内容
         summaryObjContent = summaryObj.find_all(attrs={'class': 'author-name'})
-        if summaryObjContent==None or summaryObjContent=="":
+        if summaryObjContent==None or summaryObjContent=="" or summaryObjContent==[]:
+            print(url + '  404' + '\n')
             driver.quit()
             continue
 
@@ -59,16 +71,18 @@ if __name__ == '__main__':
             obj["url"] = url
             allmedia[title] = obj
 
-            print(title + '\n'  + '\n')
+            print(title + ' url '+url+ '\n')
 
         if m!=0 and m%50==0:
             fo = open("tenxunmedia_" + str(n) + ".txt", "w+")  # 存入文件中。。。
             fo.write(json.dumps(allmedia))
             fo.write('\n')
             fo.close()
+            print( ' 50 write file '  + '\n')
 
         if m % 2000 == 0:
             n += m // 2000
+            print(' 2000  n :' +str(n)+'\n')
 
         if m % 2000 == 0:
             if m != 0:
