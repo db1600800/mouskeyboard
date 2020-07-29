@@ -6,12 +6,14 @@ from qqkeyboard import *
 
 def qqAddGroup(startExecuteBtn):
     global execWhichStep
-    area1_xiaoqufile = open("area_page1.json", 'r+', encoding='utf-8')
+    area1_xiaoqufile = open("area_page3.json", 'r+', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
     partOneObjs = json.loads(filecontent)
     citys = partOneObjs.keys()
     # citys=['惠州', '北京', '防城港', '呼和浩特', '衡水', '合肥', '杭州', '海南', '哈尔滨', '桂林', '贵阳', '佛山', '福州', '东莞', '大连', '重庆', '长沙','长春', '成都', '常州', '包头', '保定']
-    citys = ['佛山']
+    #dict_keys(['扬州', '淄博', '珠海', '舟山', '威海', '中山', '郑州', '镇江', '漳州', '湛江', '岳阳', '银川', '徐州', '烟台', '厦门', '西宁', '西安', '武汉', '芜湖', '无锡', '温州', '潍坊'])
+    #中山 珠海 郑州 扬州 漳州 厦门 徐州
+    citys = ['武汉']
     searchStr = ""
     requestAddStr = ""
     xiaoquDateAddCount = 30
@@ -28,8 +30,8 @@ def qqAddGroup(startExecuteBtn):
 
                     if count + countquery > xiaoquDateAddCount:
                         area1_xiaoqufile.close()
-                        file1 = open("area_page1_1.json", "r+")
-                        file2 = open("area_page1.json", "w+")
+                        file1 = open("area_page3_1.json", "r+")
+                        file2 = open("area_page3.json", "w+")
                         s = file1.read()
                         w = file2.write(s)
                         file1.close()
@@ -40,7 +42,7 @@ def qqAddGroup(startExecuteBtn):
                         count=0
                         countquery=0
                         print("sleep 10 min")
-                        time.sleep(600)
+                        time.sleep(300)
                     if qqfobiden == 6:
                         print("qqfobiden....")
                         return city, county, area, xiaoqu
@@ -54,24 +56,24 @@ def qqAddGroup(startExecuteBtn):
                         fengqi = xiaoqudict["fengqi"]
 
                         dongs = dong.split('#,')
-                        if dongs == []:
+                        if dongs == [] or dongs[0]==dong:
                             dongs = dong.split('...,')
-                        if dongs == []:
+                        if dongs == [] or dongs[0]==dong:
                             dongs = dong.split('号楼,')
-                        if dongs == []:
+                        if dongs == [] or dongs[0]==dong:
                             dongs = dong.split('#楼,')
                         dongStr = ""
-                        if dongs == None or dongs == []:
+                        if dongs == None or dongs == [] or dongs[0]==dong:
                             dongStr = "业主"
                         else:
                             dongcount = len(dongs)
                             d = ""
                             if dongcount > 2:
-                                d = dongs[dongcount - 1]
+                                d = dongs[dongcount - 2]
                                 if d == "":
-                                    d = dongs[dongcount - 2]
+                                    d = dongs[dongcount - 3]
                             else:
-                                d = dongs[dongcount - 1]
+                                d = dongs[dongcount - 2]
                             r = random.randrange(4, 7, 1)
                             if d == "":
                                 d = "1"
@@ -228,9 +230,9 @@ def qqAddGroup(startExecuteBtn):
                             t46.join()
                         else:
                             countquery += 1
-                            print("query no find " + str(countquery) + " sucess:" + str(count))
+                            print(dong+" query no find " + str(countquery) + " sucess:" + str(count))
                             xiaoqudict["isRequestQQGroup"] = False
-                            area1_xiaoqufile_up = open("area_page1_1.json", 'w+', encoding='utf-8')
+                            area1_xiaoqufile_up = open("area_page3_1.json", 'w+', encoding='utf-8')
                             area1_xiaoqufile_up.write(json.dumps(partOneObjs) + "\n")
                             area1_xiaoqufile_up.flush()
                             area1_xiaoqufile_up.close()
@@ -256,19 +258,19 @@ def qqAddGroup(startExecuteBtn):
                         t6.start()
                         t6.join()
                         xiaoqudict["isRequestQQGroup"] = True
-                        area1_xiaoqufile_up = open("area_page1_1.json", 'w+', encoding='utf-8')
+                        area1_xiaoqufile_up = open("area_page3_1.json", 'w+', encoding='utf-8')
                         area1_xiaoqufile_up.write(json.dumps(partOneObjs) + "\n")
                         area1_xiaoqufile_up.flush()
                         area1_xiaoqufile_up.close()
                         startExecuteBtn['state'] = 'normal'
-                        print("query  find 6.点完成")
+                        print(dong+" query  find 6.点完成")
                         time.sleep(120)
                         count += 1
-                        print("add group sucess: " + str(count) + " total:" + str(count + countquery))
+                        print(" add group sucess: " + str(count) + " total:" + str(count + countquery))
     print("城市完成")
     area1_xiaoqufile.close()
-    file1 = open("area_page1_1.json", "r+")
-    file2 = open("area_page1.json", "w+")
+    file1 = open("area_page3_1.json", "r+")
+    file2 = open("area_page3.json", "w+")
     s = file1.read()
     w = file2.write(s)
     file1.close()
