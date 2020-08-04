@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     inivalue()
 
-    ii=13001294 #13030024 13001294
+    ii=13004463 #13030024 13001294
     while True:
         url='https://new.qq.com/omn/author/'+str(ii)
         # 当前进程的工作目录
@@ -38,7 +38,7 @@ if __name__ == '__main__':
         # 设置chrome驱动器
         driver = webdriver.Chrome(f'{cwd}{sep}chromedriver')
         # 设置超时时间
-        driver.set_page_load_timeout(123)
+        driver.set_page_load_timeout(223)
 
         # 访问
         driver.get(url)
