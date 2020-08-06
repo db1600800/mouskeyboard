@@ -27,9 +27,15 @@ def getMsgFromToutiao(startExecuteBtn):
                 continue
 
             areas = partOneObjs[city][county].keys()
+
             execWhichStep = "toutiao选城市取数据/1今日头条1定位到地方.txt"
             startExecuteBtn['text'] = execWhichStep
-            # UIUpdateCutDownExecute(6, custom_thread_list).start()
+            t3 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+            t3.start()
+            t3.join()
+            time.sleep(10)
+            execWhichStep = "toutiao选城市取数据/1今日头条1定位到地方.txt"
+            startExecuteBtn['text'] = execWhichStep
             t3 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
             t3.start()
             t3.join()
