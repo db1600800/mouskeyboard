@@ -1,5 +1,3 @@
-{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 483, "y": 18}, "vk": "default", "time": 1596633659.3680255}
-{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 483, "y": 18}, "vk": "default", "time": 1596633659.5760522}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 483, "y": 19}, "vk": "default", "time": 1596633660.315646}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 482, "y": 19}, "vk": "default", "time": 1596633660.323647}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 481, "y": 20}, "vk": "default", "time": 1596633660.3356485}
