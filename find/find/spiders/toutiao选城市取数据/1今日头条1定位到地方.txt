@@ -1,3 +1,6 @@
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 317, "y": 78}, "vk": "default", "time": 1596621929.5833762}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 317, "y": 78}, "vk": "default", "time": 1596792065.2723923}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 317, "y": 78}, "vk": "default", "time": 1596792065.4884195}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 440, "y": 119}, "vk": "default", "time": 1596621929.5833762}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 440, "y": 119}, "vk": "default", "time": 1596621929.5948775}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 441, "y": 119}, "vk": "default", "time": 1596621929.6028786}
