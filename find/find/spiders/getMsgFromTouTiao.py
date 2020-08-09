@@ -33,7 +33,7 @@ def getMsgFromToutiao(startExecuteBtn):
             t3 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
             t3.start()
             t3.join()
-            time.sleep(10)
+            time.sleep(5)
             execWhichStep = "toutiao选城市取数据/1今日头条1定位到地方.txt"
             startExecuteBtn['text'] = execWhichStep
             t3 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
@@ -47,7 +47,7 @@ def getMsgFromToutiao(startExecuteBtn):
             t21 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
             t21.start()
             t21.join()
-            time.sleep(10)
+            time.sleep(5)
 
 
 
@@ -58,6 +58,7 @@ def getMsgFromToutiao(startExecuteBtn):
             t21.join()
 
             time.sleep(20)
+            """
             execWhichStep = "toutiao选城市取数据/3.1选择进入抓包软件HttpCanary3.txt"
             startExecuteBtn['text'] = execWhichStep
             t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
@@ -173,6 +174,7 @@ def getMsgFromToutiao(startExecuteBtn):
 
             print(msgStr)
             print("getmsg 完成")
+            """
 
             for area in areas:
                 xiaoqus = partOneObjs[city][county][area].keys()
@@ -196,88 +198,15 @@ def getMsgFromToutiao(startExecuteBtn):
 
 def whichCity(city,startExecuteBtn):
     chose=False
+
     if city == "中山":
         chose = True
+    """
     if city == "珠海":
         chose = True
+    
     if city == "郑州":
         chose = True
+    """
     return chose
-
-def list_all_files(rootdir):
-    import os
-    _files = []
-
-    # 列出文件夹下所有的目录与文件
-    list_file = os.listdir(rootdir)
-
-    for i in range(0, len(list_file)):
-
-        # 构造路径
-        path = os.path.join(rootdir, list_file[i])
-
-        # 判断路径是否是一个文件目录或者文件
-        # 如果是文件目录，继续递归
-
-        if os.path.isdir(path):
-            _files.extend(list_all_files(path))
-        if os.path.isfile(path):
-            _files.append(path)
-    return _files
-
-
-
-
-
-def searchMsg(city,county,area,xiaoquname):
-
-    searchXiaoquName = ""
-    xiaoqunameleftright = xiaoquname.split("·")
-    if len(xiaoqunameleftright) > 1:
-        searchXiaoquName = xiaoqunameleftright[1]
-    else:
-        searchXiaoquName = xiaoquname
-
-    xiaoqumsg = {}
-    xiaoqumsg[xiaoquname]=[]
-
-    shouhumediasrc_dir = r'../../'  # 源文件目录地址
-    files = list_all_files(shouhumediasrc_dir)
-    for filepath in files:
-        filename = os.path.basename(filepath)
-        if filename.find("shouhumedia")!=-1 :
-            print(filename)
-            mediafile = open(filepath, 'r+', encoding='utf-8')
-            filecontent = mediafile.read()
-            mediaObjs= json.loads(filecontent)
-            titles = mediaObjs.keys()
-            for title in titles:
-                if title.find(county)!=-1:
-                    obj={}
-                    obj["title"]=title
-                    obj["url"]=mediaObjs[title]
-                    obj["xiaoquname"] = xiaoquname
-                    xiaoqumsg[xiaoquname].append(obj)
-                if title.find(area) != -1:
-                    obj = {}
-                    obj["title"] = title
-                    obj["url"] = mediaObjs[title]
-                    obj["xiaoquname"] = xiaoquname
-                    xiaoqumsg[xiaoquname].append(obj)
-                if title.find(city) != -1:
-                    obj = {}
-                    obj["title"] = title
-                    obj["url"] = mediaObjs[title]
-                    obj["xiaoquname"] = xiaoquname
-                    xiaoqumsg[xiaoquname].append(obj)
-                if title.find(xiaoquname) != -1:
-                    obj = {}
-                    obj["title"] = title
-                    obj["url"] = mediaObjs[title]
-                    obj["xiaoquname"]=xiaoquname
-                    xiaoqumsg[xiaoquname].append(obj)
-            mediafile.close()
-
-    return xiaoqumsg
-
 

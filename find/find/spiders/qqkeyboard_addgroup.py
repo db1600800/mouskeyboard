@@ -4,7 +4,7 @@ import time
 import tkinter
 
 import pyperclip
-from getMsgFromTouTiao  import *
+from addgroup import *
 
 from pynput import keyboard, mouse
 from pynput.keyboard import Controller as KeyBoardController, KeyCode
@@ -260,7 +260,6 @@ class MouseActionExecute(threading.Thread):
             self.execute_count = self.execute_count - 1
 
 
-
 def command_adapter(action):
     if action == 'listener':
         if startListenerBtn['text'] == '开始录制':
@@ -281,7 +280,7 @@ def command_adapter(action):
             UIUpdateCutDownExecute(startTime.get(), custom_thread_list).start()
 
     elif action == 'execute':
-        getMsgFromToutiao(startExecuteBtn)
+        qqAddGroup(startExecuteBtn)
 
 
 
@@ -321,7 +320,7 @@ def conbin():
 
 if __name__ == '__main__':
     root = tkinter.Tk()
-    root.title('按键精灵-今日头条取消息')
+    root.title('按键精灵-加群')
     root.geometry('200x200+400+100')
 
     listenerStartLabel = tkinter.Label(root, text='录制倒计时')

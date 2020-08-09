@@ -4,7 +4,7 @@ import time
 import tkinter
 
 import pyperclip
-from addgroup import *
+from getCityFromTouTiao  import *
 
 from pynput import keyboard, mouse
 from pynput.keyboard import Controller as KeyBoardController, KeyCode
@@ -134,34 +134,6 @@ class KeyboardActionListener(threading.Thread):
 
 
 # 键盘动作执行
-"""
-class KeyboardActionExecute(threading.Thread):
-
-    def __init__(self, file_name='keyboard.action', execute_count=0):
-        super().__init__()
-        self.file_name = file_name
-        self.execute_count = execute_count
-
-    def run(self):
-        while self.execute_count > 0:
-            with open(self.file_name, 'r', encoding='utf-8') as file:
-                keyboard_exec = KeyBoardController()
-                line = file.readline()
-                while line:
-                    obj = json.loads(line)
-                    if obj['name'] == 'keyboard':
-                        if obj['event'] == 'press':
-                            keyboard_exec.press(KeyCode.from_vk(obj['vk']))
-                            time.sleep(0.01)
-
-                        elif obj['event'] == 'release':
-                            keyboard_exec.release(KeyCode.from_vk(obj['vk']))
-                            time.sleep(0.01)
-                    line = file.readline()
-                startExecuteBtn['text'] = '开始回放'
-                startExecuteBtn['state'] = 'normal'
-            self.execute_count = self.execute_count - 1
-"""
 
 # 鼠标动作监听
 class MouseActionListener(threading.Thread):
@@ -209,6 +181,43 @@ class MouseActionListener(threading.Thread):
 
             with mouse.Listener(on_move=on_move, on_click=on_click, on_scroll=on_scroll) as mouseListener:
                 mouseListener.join()
+
+
+# 鼠标动作执行
+
+
+def MouseActionExecuterun(file_content):
+                mouse_exec = MouseController()
+                keyboard_exec = KeyBoardController()
+                line = file_content
+
+                obj = json.loads(line)
+                if obj['name'] == 'keyboard':
+                    if obj['event'] == 'press':
+                        keyboard_exec.press(KeyCode.from_vk(obj['vk']))
+                        time.sleep(0.01)
+                    elif obj['event'] == 'release':
+                        keyboard_exec.release(KeyCode.from_vk(obj['vk']))
+                        time.sleep(0.01)
+                elif obj['name'] == 'mouse':
+                    if obj['event'] == 'move':
+                        mouse_exec.position = (obj['location']['x'], obj['location']['y'])
+                        time.sleep(0.01)
+                    elif obj['event'] == 'click':
+                        if obj['action']:
+                            if obj['target'] == 'left':
+                                mouse_exec.press(Button.left)
+                            else:
+                                mouse_exec.press(Button.right)
+                        else:
+                            if obj['target'] == 'left':
+                                mouse_exec.release(Button.left)
+                            else:
+                                mouse_exec.release(Button.right)
+                        time.sleep(0.01)
+                    elif obj['event'] == 'scroll':
+                        mouse_exec.scroll(obj['location']['x'], obj['location']['y'])
+                        time.sleep(0.01)
 
 
 # 鼠标动作执行
@@ -260,6 +269,7 @@ class MouseActionExecute(threading.Thread):
             self.execute_count = self.execute_count - 1
 
 
+
 def command_adapter(action):
     if action == 'listener':
         if startListenerBtn['text'] == '开始录制':
@@ -280,7 +290,7 @@ def command_adapter(action):
             UIUpdateCutDownExecute(startTime.get(), custom_thread_list).start()
 
     elif action == 'execute':
-        qqAddGroup(startExecuteBtn)
+        getMsgFromToutiao(startExecuteBtn)
 
 
 
@@ -320,7 +330,7 @@ def conbin():
 
 if __name__ == '__main__':
     root = tkinter.Tk()
-    root.title('按键精灵-蓝士钦')
+    root.title('按键精灵-今日头条取消息')
     root.geometry('200x200+400+100')
 
     listenerStartLabel = tkinter.Label(root, text='录制倒计时')
