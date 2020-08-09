@@ -2,7 +2,7 @@ import json
 import random
 import os
 import re
-from qqkeyboard import *
+from qqkeyboard_addgroup import *
 
 def qqAddGroup(startExecuteBtn):
     global execWhichStep
@@ -12,7 +12,10 @@ def qqAddGroup(startExecuteBtn):
     citys = partOneObjs.keys()
     # citys=['惠州', '北京', '防城港', '呼和浩特', '衡水', '合肥', '杭州', '海南', '哈尔滨', '桂林', '贵阳', '佛山', '福州', '东莞', '大连', '重庆', '长沙','长春', '成都', '常州', '包头', '保定']
     #dict_keys(['扬州', '淄博', '珠海', '舟山', '威海', '中山', '郑州', '镇江', '漳州', '湛江', '岳阳', '银川', '徐州', '烟台', '厦门', '西宁', '西安', '武汉', '芜湖', '无锡', '温州', '潍坊'])
-    #中山 珠海 郑州 扬州 漳州 厦门 徐州
+    #page3 中山 珠海 郑州 扬州 漳州 厦门 徐州
+    #page1 惠州 佛山  长沙 合肥 重庆 福州 东莞      贵阳
+    #page2 天津 清远 台州 泉州 深圳 石家庄 宁波 三亚 南通 绍兴
+
     citys = ['武汉']
     searchStr = ""
     requestAddStr = ""
