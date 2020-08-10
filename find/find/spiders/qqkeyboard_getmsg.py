@@ -259,7 +259,58 @@ class MouseActionExecute(threading.Thread):
                 #startExecuteBtn['state'] = 'normal'
             self.execute_count = self.execute_count - 1
 
+class MouseActionExecute_part_selectcity(threading.Thread):
 
+    def __init__(self, file_name, execute_count):
+        super().__init__()
+        self.execute_count = execute_count
+        self.file_name = file_name
+
+    def run(self):
+
+        while self.execute_count > 0:
+            with open(self.file_name, 'r', encoding='utf-8') as file:
+                mouse_exec = MouseController()
+                keyboard_exec = KeyBoardController()
+                line = file.readline()
+                count=len(file.readlines())
+                i=1
+                while line:
+                    if i>count-3:
+                        i=1
+                        #time.sleep(3)
+                    i+=1
+                    obj = json.loads(line)
+                    if obj['name'] == 'keyboard':
+                        if obj['event'] == 'press':
+                            keyboard_exec.press(KeyCode.from_vk(obj['vk']))
+                            time.sleep(0.01)
+                        elif obj['event'] == 'release':
+                            keyboard_exec.release(KeyCode.from_vk(obj['vk']))
+                            time.sleep(0.01)
+                    elif obj['name'] == 'mouse':
+                        if obj['event'] == 'move':
+                            mouse_exec.position = (obj['location']['x'], obj['location']['y'])
+                            time.sleep(0.01)
+                        elif obj['event'] == 'click':
+                            if obj['action']:
+                                if obj['target'] == 'left':
+                                    mouse_exec.press(Button.left)
+                                else:
+                                    mouse_exec.press(Button.right)
+                            else:
+                                if obj['target'] == 'left':
+                                    mouse_exec.release(Button.left)
+                                else:
+                                    mouse_exec.release(Button.right)
+                            time.sleep(0.01)
+                        elif obj['event'] == 'scroll':
+                            mouse_exec.scroll(obj['location']['x'], obj['location']['y'])
+                            time.sleep(0.01)
+                    line = file.readline()
+                #startExecuteBtn['text'] = '开始回放'
+                #startExecuteBtn['state'] = 'normal'
+            self.execute_count = self.execute_count - 1
 
 def command_adapter(action):
     if action == 'listener':

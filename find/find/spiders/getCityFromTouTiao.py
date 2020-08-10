@@ -15,7 +15,7 @@ def getMsgFromToutiao(startExecuteBtn):
             MouseActionExecuterun(execWhichStep)
             time.sleep(1)
 
-            y = 608
+            y = 623
 
             time.sleep(1)
 
@@ -48,7 +48,6 @@ def getMsgFromToutiao(startExecuteBtn):
                 str1 += "\n" + execWhichStep
                 #点击最后一项
                 time.sleep(2)
-
                 execWhichStep = '{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 486, "y":652 }, "vk": "default", "time": 1596762486.3298154}'
                 MouseActionExecuterun(execWhichStep)
                 str1 += "\n" + execWhichStep
