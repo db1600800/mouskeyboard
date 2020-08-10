@@ -1,0 +1,13 @@
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 422, "y": 651}, "vk": "default", "time": 1597020060.8595233}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 422, "y": 651}, "vk": "default", "time": 1597020060.8755255}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 422, "y": 652}, "vk": "default", "time": 1597020060.8915274}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 421, "y": 652}, "vk": "default", "time": 1597020060.9075294}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 421, "y": 653}, "vk": "default", "time": 1597020060.9235315}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 421, "y": 653}, "vk": "default", "time": 1597020060.9315326}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 421, "y": 653}, "vk": "default", "time": 1597020060.9395335}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 420, "y": 654}, "vk": "default", "time": 1597020060.9555357}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 420, "y": 654}, "vk": "default", "time": 1597020060.9635365}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 420, "y": 654}, "vk": "default", "time": 1597020060.9715376}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 419, "y": 655}, "vk": "default", "time": 1597020061.0035415}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 419, "y": 655}, "vk": "default", "time": 1597020062.2997062}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 419, "y": 655}, "vk": "default", "time": 1597020062.4117205}
