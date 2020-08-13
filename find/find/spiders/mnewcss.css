@@ -1,0 +1,106 @@
+/* çŒœä½ å–œæ¬¢ */
+.instop-r {width:100%;margin-bottom:20px;overflow: hidden;}
+.instop-r ul {padding:10px;}
+.instop-r li{border-bottom: 1px solid #E4E4E4;width:100%;float:left;line-height:30px;}
+.instop-t {font-weight:bold;font-size:15px;float:left;width:219px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;padding-top: 5px;}
+.instop-t-new {font-weight:bold;font-size:15px;float:left;width:60%;padding-top: 5px;height: 65px;overflow: hidden;}
+.instop-img {float:left;width:102px;padding-top:12px;padding-right: 18px;padding-bottom:12px;}
+.instop-img img {height: 79px;width: 102px;border: 1px solid #E4E4E4;}
+.instop-d {width:219px;float:left;font-size: 12px;line-height: 30px;}
+.article-content p{line-height: 40px!important;}
+.ssi_ad_flow,.ssi_abcd_flow {padding-top:8px;}
+.ad_marticle_banner {padding-top:10px;}
+.adlist {border-bottom: 1px solid #E4E4E4;margin-bottom: 10px;}
+
+
+/* pimg */
+
+.mobile-gallery{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; color: #fff; background-color: #000; z-index: 10000; touch-action: none; }
+.mobile-gallery-counter{ position: fixed; top: 24px; z-index: 10001; width: 100%; font-size: 16px; letter-spacing: 2px; text-shadow: 0 0 3px #333; text-align: center; }
+.mobile-gallery-group{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; color: #fff; background-color: #000; z-index: 10000; font-size:0; overflow-y: scroll; }
+.mobile-gallery-img{ height: 100%; overflow-y: scroll; float: left; text-align: center; display: -webkit-box; display: -ms-flexbox; display: -moz-flex; display: flex;  -webkit-box-pack: center;  -ms-flex-pack: center; -moz-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -moz-align-items: center; align-items: center; }
+.mobile-gallery-img img{ width: auto; height: auto; margin: auto; padding: 0; max-width: 100%; max-height: 100%; }
+
+/* ç”¨è½¦æ‰‹å†Œ */
+.ins-list {width:100%;overflow:hidden;text-align: center;margin-bottom: 30px;}
+.ins-list ul{overflow: hidden;}
+.ins-list li{float:left;width:33%;list-style:none;line-height:40px;white-space: nowrap;border-bottom: 1px solid #dddddd;}
+.ins-list a{font-size:14px;}
+.ins-list-zt li{width:50%!important;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: center;}
+.instop-t-time {width:219px;color: #999999;font-size:13px;}
+
+/* ç™¾ç§‘ */
+.article-content-bk p{margin: 6px 0;line-height: 35px!important;padding:0!important;text-indent: 2em;}
+.lookall {text-align: center;padding-bottom: 15px;font-size: 15px;font-weight: bold;display:block;}
+
+/* ç¼©ç•¥å†…å®¹ */
+#new-style { overflow: hidden; height: 380px; }
+#this-style-two { overflow: hidden; height: 200px; }
+#this-style-three { overflow: hidden; height: 200px; }
+div#unfold-field { text-align: center; position: relative; padding: 5px 0;background-color: #f9f5f5;margin-bottom: 0px; }
+.unflod-field__mask { position: absolute; top: -78px; height: 78px; width: 100%; background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,hsla(0,0%,100%,0)),to(#fff)); background-image: linear-gradient(-180deg,hsla(0,0%,100%,0),#fff); }
+a.unfold-field__text { display: inline-block; cursor: pointer; font-size: 16px; line-height: 22px; border-radius: 29px; color: #4e5563; text-align: center; }
+.unfold-field .unfold-field__text:after { content: ''; background-image: url(//www.icauto.com.cn/images/detailmessage.png); background-size: contain; background-repeat: no-repeat; width: 9px; height: 6px; display: inline-block; margin-left: 5px; }
+#new-style ul{border: 1px solid #e5e5e5;padding:10px;}
+#new-style ul li{line-height:35px;}
+#new-style p a {color: red;}
+.ssi_ad_pc_tlist_b,.ssi_abcd_pc_tlist_b {margin: 0 auto;text-align:center;}
+
+/* è¿ç«  */
+#wzcxIframe {width:100%;height: 491px;overflow-y: hidden;border: 0 none;}
+.article-content h2{padding: 20px;font-size: 18px;font-weight: bold;text-align: center;color: rgb(41, 121, 255);}
+.wzgj li{width:50%!important;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.wzbkxg li{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;line-height: 20px!important;}
+.wzbkxgwz li{overflow: hidden;text-overflow: ellipsis;white-space: nowrap; line-height: 35px!important;}
+iframe#violationIframe {height: 466px!important;}
+.content_topp img {margin: 0;text-align: center;}
+
+/* çº¿è·¯æŸ¥è¯¢ */
+.bordered {width: 95%;border: 1px solid #E4E4E4;padding: 10px;overflow: hidden;margin-bottom: 10px;}
+.bordered li{float:left;width: 150px;padding-left: 10px;}
+.route-gssy {width:95%;margin: 0 auto;border: 1px solid #E4E4E4;padding: 10px;}
+.route-gssy p a{color: rgb(41, 121, 255)!important;}
+.gssy-under {margin-bottom:10px;}
+.route-detail {width:95%;margin: 0 auto;border: 1px solid #E4E4E4;padding: 10px;margin-bottom: 20px;}
+.route-detail p {line-height: 25px!important;}
+.list {font-weight: bold;color: #2979ff;padding-right:10px;}
+#liTitle{font-weight:bold;}
+
+/* addmore */
+.jzmore {text-align:center;}
+.listjz {overflow:hidden;}
+
+/* è·¯å†µæŸ¥è¯¢ */
+.updatetime {color:#3b5998;float:left;font-weight:bold;width: 100%;}
+.updatetime em {display: inline-block;background: #e75843;color: #fff;margin-right: 5px;border-radius: 4px;font-size: 15px;width: 17px;height: 17px;line-height: 16px;text-align: center;box-sizing: border-box;}
+.content {color:#4e5563;float:left;width: 100%;}
+
+.lk-style{border-bottom: 1px solid #E1E7EE;color: #2B3750;font-size: 14px;line-height: 1.5;padding: 5px 10px;text-align: justify;word-break: break-all;word-wrap: break-word;}
+.lk-style p{border-bottom: 1px solid #E4E4E4;float:left;width: 100%;margin: 6px 0;line-height: 30px;padding-bottom: 5px;}
+.lk-style p a{color:#2B3750;}
+.lk-style ol{padding-left:20px;}
+.lk-style ol li{list-style-type:decimal;list-style-position:outside;line-height: 35px;padding-bottom: 20px;}
+
+/* è·¯å†µç¼©ç•¥ */
+#new-style-lk { overflow: hidden; height: 600px; }
+#new-style-lk p img {margin-left: -2em;}
+#new-style-lk ul{border: 1px solid #e5e5e5;padding:10px;}
+#new-style-lk ul li{line-height:35px;}
+
+/** å¼•å¯¼gp **/
+span.fCzzn {background-image: url('https://www.icauto.com.cn/images/zt2018071521.png'); display: block;line-height:14px;text-indent: 8.3em;background-repeat: no-repeat;font-size: 14px;color: red;font-weight: 900;width: 315px;margin: 0 auto;}
+span.content b {    color: red;}
+.ssi_new_footer_m {padding-top:10px;}
+
+.descInfo p {line-height: 36px;font-family: å¾®è½¯é›…é»‘;}
+.tableInfo p {line-height: 36px;font-family: å¾®è½¯é›…é»‘;}
+.listInfo li {line-height: 36px;font-family: å¾®è½¯é›…é»‘;}
+
+iframe#violationIframe,iframe#wzcxIframe{height:360px!important;}
+
+.article-content table {  width: 100%!important; }
+
+
+
+
+
