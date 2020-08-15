@@ -7,8 +7,9 @@ from qqkeyboard_createqqgroup import *
 def qqAddGroup(startExecuteBtn):
     global execWhichStep
     whichpage="area_page3"
-    area1_xiaoqufile = open(whichpage+".json", 'r+', encoding='utf-8')
+    area1_xiaoqufile = open(whichpage+"_creategroup.json", 'r+', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
+    area1_xiaoqufile.close()
     partOneObjs = json.loads(filecontent)
     citys = partOneObjs.keys()
     # citys=['惠州', '北京', '防城港', '呼和浩特', '衡水', '合肥', '杭州', '海南', '哈尔滨', '桂林', '贵阳', '佛山', '福州', '东莞', '大连', '重庆', '长沙','长春', '成都', '常州', '包头', '保定']
@@ -37,27 +38,11 @@ def qqAddGroup(startExecuteBtn):
                 xiaoqus = partOneObjs[city][county][area].keys()
                 for xiaoqu in xiaoqus:
 
-                    if count + countquery > xiaoquDateAddCount:
-                        area1_xiaoqufile.close()
-                        file1 = open(whichpage+"_1.json", "r+")
-                        file2 = open(whichpage+".json", "w+")
-                        s = file1.read()
-                        w = file2.write(s)
-                        file1.close()
-                        file2.close()
-                        print("10   ok: " + str(count) + "error:" + str(countquery) + " total:" + str(
-                            count + countquery))
-                        #return city, county, area, xiaoqu
-                        count=0
-                        countquery=0
-                        print("create 10")
-                        time.sleep(30)
-                        #return city, county, area, xiaoqu
                     if qqfobiden == 6:
                         print("qqfobiden....")
                         return city, county, area, xiaoqu
-                    if totalcount > 290:
-                        print("290....")
+                    if totalcount >= 8:
+                        print("8 out....")
                         return city, county, area, xiaoqu
                     xiaoqudict = partOneObjs[city][county][area][xiaoqu]
                     if xiaoqudict.get("isRequestQQGroup") == None or  xiaoqudict["isRequestQQGroup"] == False:
@@ -138,7 +123,7 @@ def qqAddGroup(startExecuteBtn):
                         t21 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t21.start()
                         t21.join()
-                        time.sleep(2)
+                        time.sleep(5)
 
                         execWhichStep = "建立群脚本/4恢复列表.txt"
                         startExecuteBtn['text'] = execWhichStep
@@ -180,7 +165,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(5)
 
                         keystr = xiaoquname
                         listkeystr = list(keystr)
@@ -197,7 +182,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(2)
+                        time.sleep(5)
 
 
                         keystr = getCountyxiaoquname(area,xiaoquname)
@@ -208,7 +193,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(5)
 
 
                         keystr = getCountyxiaoquname(county,xiaoquname)
@@ -230,7 +215,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(2)
+                        time.sleep(5)
 
                         detail=xiaoquname+"业主交流群，进群请修改群名片，楼栋+昵称，物业、楼盘、购房置业、生活日常，大家畅所欲言，携手共建和谐社区"
                         setClipboardText(detail)
@@ -248,7 +233,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(5)
 
                         execWhichStep = "建立群脚本/11恢复列表.txt"
                         startExecuteBtn['text'] = execWhichStep
@@ -260,7 +245,7 @@ def qqAddGroup(startExecuteBtn):
 
 
                         xiaoqudict["isRequestQQGroup"] = True
-                        area1_xiaoqufile_up = open(whichpage+"_1.json", 'w+', encoding='utf-8')
+                        area1_xiaoqufile_up = open(whichpage+"_creategroup.json", 'w+', encoding='utf-8')
                         area1_xiaoqufile_up.write(json.dumps(partOneObjs) + "\n")
                         area1_xiaoqufile_up.flush()
                         area1_xiaoqufile_up.close()
@@ -271,13 +256,7 @@ def qqAddGroup(startExecuteBtn):
                         print(" create group sucess: " + str(count) + " total:" + str(count + countquery))
                         time.sleep(120)
     print(city+"城市完成")
-    area1_xiaoqufile.close()
-    file1 = open(whichpage+"_1.json", "r+")
-    file2 = open(whichpage+".json", "w+")
-    s = file1.read()
-    w = file2.write(s)
-    file1.close()
-    file2.close()
+
 
 
 
