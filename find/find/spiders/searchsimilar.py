@@ -14,7 +14,7 @@ from qqkeyboard_addgroup import *
 def getsimilar():
     goods = []
     global execWhichStep
-    filename="宠物园艺"
+    filename="家居百货"
     counti=0
     area1_xiaoqufile = open("1688产品/1688"+filename+".txt", 'r', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
@@ -53,9 +53,14 @@ def getsimilar():
                           print(url)
                           time.sleep(5)
 
+                          execWhichStep = "淘宝search/searchv1.txt"
+                          t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                          t2.start()
+                          t2.join()
 
+                          time.sleep(5)
 
-                          execWhichStep = "淘宝search/search.txt"
+                          execWhichStep = "淘宝search/searchv2.txt"
                           t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                           t2.start()
                           t2.join()
