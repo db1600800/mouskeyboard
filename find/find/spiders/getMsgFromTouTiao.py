@@ -2,6 +2,10 @@ import json
 import random
 import os
 import re
+from selenium import webdriver
+from os import getcwd,sep
+from bs4 import BeautifulSoup
+
 from qqkeyboard_getmsg import *
 from qqkeyboard_getmsg import MouseActionExecute_part_selectcity
 
@@ -181,7 +185,7 @@ def getMsgFromToutiao(startExecuteBtn):
             t63.join()
 
             msgStr = getClipboardText()
-
+            citynewslist(msgStr,city)
             print(msgStr)
             print("getmsg 完成")
 
@@ -198,8 +202,6 @@ def getMsgFromToutiao(startExecuteBtn):
                         dong = xiaoqudict["dong"]
                         fengqi = xiaoqudict["fengqi"]
 
-
-
                         #time.sleep(120)
 
 
@@ -208,7 +210,6 @@ def getMsgFromToutiao(startExecuteBtn):
 
 def whichCity(city,startExecuteBtn):
     chose=False
-
     if city == "中山":
         chose = True
     """
@@ -220,3 +221,119 @@ def whichCity(city,startExecuteBtn):
     """
     return chose
 
+
+def citynewslist(newsstr,city):
+    citynewsObjs = json.loads(newsstr)
+    if citynewsObjs==None:
+        return
+    strcity=citynewsObjs["location"]["city_name"]
+    total_number=citynewsObjs["total_number"]
+    if strcity==city:
+        datas=citynewsObjs["data"]
+        for contentStr in datas:
+           contentobj= json.loads(contentStr["content"])
+           article_url=contentobj["article_url"]
+           if article_url!="":
+            nearby_read_info=contentobj["nearby_read_info"]
+            title=contentobj["title"]
+            abstract=contentobj["abstract"]
+            divhtml=parse_article(article_url)
+            htmlcreate(title,divhtml)
+
+
+def parse_article(aurl):
+    url =aurl
+    # 当前进程的工作目录
+    cwd = getcwd()
+    # 设置chrome驱动器
+    driver = webdriver.Chrome(f'{cwd}{sep}chromedriver')
+    # 设置超时时间
+    driver.set_page_load_timeout(223)
+
+    # 访问
+    driver.get(url)
+    print(url)
+    time.sleep(5)
+    # 获得网页内容
+    summaryPage = driver.page_source
+    # 解析HTML内容
+    summaryObj = BeautifulSoup(summaryPage, 'html.parser',from_encoding="utf-8")
+    prety = summaryObj.prettify()
+    # print prety
+    pointed_div = summaryObj.findAll(name="div",
+                               attrs={"class": re.compile("article-box")})
+    if pointed_div==[]:
+     pointed_div = summaryObj.findAll(name="video")
+    #driver.quit()
+    # 筛选标签为div且属性class为forFlow的源码
+    return  pointed_div
+
+
+def htmlcreate(title,divhtml):
+    str+='<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "//www.wapforum.org/DTD/xhtml-mobile10.dtd" > \n'
+    str+='<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" >\n'
+    str+='<head>\n'
+    str+='<meta name="applicable-device" content="mobile" >\n'
+    str+='<meta http-equiv="Content-Type" content="text/html; charset=utf-8" / >\n'
+    str+='<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" / >\n'
+    str+='<meta name="format-detection" content="telephone=no" / >\n'
+    str+='<meta name="apple-mobile-web-app-capable" content="yes" / >\n'
+    str+='<title> '+title+' </title>\n'
+
+    str+='<link href="mnewcss.css" rel="stylesheet" type="text/css" / >\n'
+    str+='<link href="toutiao.css" rel="stylesheet" type="text/css" / >\n'
+    str+='</head>\n'
+    str+='<body>\n'
+    str+='<div class="ssi_headB_jxwd_m" ></div>\n'
+
+    str+='<div class="main" >\n'
+
+    str+='<div id="new-style" class="bui-box article-content-container" >\n'
+
+    str+='<div class="bui-left index-middle" >\n'
+
+    str+=divhtml+'\n'
+
+    str+='</div>\n'
+    str+='</div>\n'
+
+    str+='<div class="unfold-field" id="unfold-field" onclick="javascript:showAll()" >\n'
+
+    str+='<div class="unflod-field__mask"> </div>\n'
+
+    str+='<a href="javascript:showAll()" class="unfold-field__text" > 展开全文 </a>\n'
+
+    str+='</div>\n'
+    str+='</div>\n'
+
+    str+='<script>\n'
+    str+='function showAll()\n'
+    str+='{\n'
+    str+='var obj=document.getElementById(\'new-style\');\n'
+    str+='var obja=document.getElementById(\'unfold-field\');\n'
+    str+='obja.style.display="none";\n'
+    str+='obj.style.height="inherit";\n'
+    str+='}\n'
+    str+='</script>\n'
+
+    str+='<div class="instop-r">\n'
+
+    str+='<div class="icautojz">\n'
+
+    str+='<div class="hiddenjz">\n'
+
+    str+='<ul>\n'
+    str+='<li>\n< a href="https://m.icauto.com.cn/zdm/66/664887.html">\n'
+    str+='<div class="instop-img" >\n'
+    str+='<img src="https://imgs.icauto.com.cn/allimg/randImg/allrand/3675.jpg" realSrc="https://imgs.icauto.com.cn/allimg/randImg/allrand/3675.jpg" / >\n'
+    str+='</div>\n'
+    str+='<div class="instop-t-new" > 减震器坏了有什么症状，汽车减震器坏了的表现 </div>\n'
+    str+='< div class="instop-t-time" > 2019-12-19 < / div >\n'
+    str+='</a>\n'
+    str+='</li>\n'
+    str+='</ul>\n'
+    str+='</div>\n'
+    str+='</div>\n'
+    str+='</div>\n'
+    str+='</body>\n'
+    str+='</html>\n'
