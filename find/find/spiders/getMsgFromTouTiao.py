@@ -348,7 +348,7 @@ def htmlcreate(article_url,city,title,divhtml):
     fo.write(str1)
     fo.close()
 
-    citypin = pypinyin.lazy_pinyin(city)
+    citypin = pypinyin.pinyin(city)
     citystr=""
     for p in citypin:
         citystr+=p[0]
