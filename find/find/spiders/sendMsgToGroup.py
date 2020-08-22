@@ -95,7 +95,7 @@ def sendMsgToG(startExecuteBtn):
 
 
                         time.sleep(1)
-                        """
+
                         execWhichStep = "向群发消息脚本/4发送.txt"
                         startExecuteBtn['text'] = execWhichStep
                         t32 = MouseActionExecute(execute_count=1,file_name=execWhichStep)
@@ -104,7 +104,7 @@ def sendMsgToG(startExecuteBtn):
                         cell1Str = getClipboardText()
                         print(cell1Str)
                         print("send 4发送完成")
-                        """
+
                         time.sleep(20)
 
 
