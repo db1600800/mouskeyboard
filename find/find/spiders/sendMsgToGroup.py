@@ -7,11 +7,11 @@ from qqkeyboard_sendmsg import *
 
 def sendMsgToG(startExecuteBtn):
     global execWhichStep
-    area1_xiaoqufile = open("area_page1.json", 'r+', encoding='utf-8')
+    area1_xiaoqufile = open("area_page2.json", 'r+', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
     partOneObjs = json.loads(filecontent)
-    #citys = partOneObjs.keys()
-    citys=['惠州']
+    citys = partOneObjs.keys()
+    #citys=['惠州']
     # page1 citys=['惠州', '北京', '防城港', '呼和浩特', '衡水', '合肥', '杭州', '海南', '哈尔滨', '桂林', '贵阳', '佛山', '福州', '东莞', '大连', '重庆', '长沙','长春', '成都', '常州', '包头', '保定']
     #citys = ['佛山']
     # page3 dict_keys(['扬州', '淄博', '珠海', '舟山', '威海', '中山', '郑州', '镇江', '漳州', '湛江', '岳阳', '银川', '徐州', '烟台', '厦门', '西宁', '西安', '武汉', '芜湖', '无锡', '温州', '潍坊'])
@@ -45,6 +45,8 @@ def sendMsgToG(startExecuteBtn):
                             searchXiaoquStr = xiaoquname
 
                         msg=getMsg(city,county,area,xiaoqu)
+                        if msg==None or msg=="":
+                            continue
                         title=msg.split(".html")
 
                         titlepin = pypinyin.pinyin(msg, style=pypinyin.FIRST_LETTER)
@@ -62,7 +64,8 @@ def sendMsgToG(startExecuteBtn):
                         citystr = ""
                         for p in citypin:
                             citystr += p[0]
-                        msgStr=title[0]+"http://39.103.151.127:8080/"+citystr+"/"+titlestr+".html"
+                        date = time.strftime("%Y%m%d", time.localtime())
+                        msgStr=title[0]+"http://39.103.151.127:8080/"+str(date)+"/"+citystr+"/"+titlestr+".html"
                         print(msgStr)
 
                         setClipboardText(searchXiaoquStr)
@@ -92,6 +95,7 @@ def sendMsgToG(startExecuteBtn):
 
 
                         time.sleep(1)
+                        """
                         execWhichStep = "向群发消息脚本/4发送.txt"
                         startExecuteBtn['text'] = execWhichStep
                         t32 = MouseActionExecute(execute_count=1,file_name=execWhichStep)
@@ -100,7 +104,9 @@ def sendMsgToG(startExecuteBtn):
                         cell1Str = getClipboardText()
                         print(cell1Str)
                         print("send 4发送完成")
-                        time.sleep(120)
+                        """
+                        time.sleep(20)
+
 
 
     area1_xiaoqufile.close()
@@ -113,6 +119,7 @@ def list_all_files(rootdir):
     _files = []
 
     # 列出文件夹下所有的目录与文件
+
     list_file = os.listdir(rootdir)
 
     for i in range(0, len(list_file)):
@@ -219,6 +226,8 @@ def getMsg(city,county,area,xiaoquname):
 
     date = time.strftime("%Y%m%d", time.localtime())
     shouhumediasrc_dir = r'../touxiaoHtml/'+date+'/'+city+''  # 源文件目录地址
+    if os.path.exists(shouhumediasrc_dir) == False:
+        return ""
     files = list_all_files(shouhumediasrc_dir)
 
     #分组
@@ -228,7 +237,6 @@ def getMsg(city,county,area,xiaoquname):
         if check_contain_chinese(filename)==True:
 
             if filename.find(xiaoquname)!=-1:
-                #http://localhost:63342/untitled/find/find/touxiaoHtml/20200817/%E4%B8%AD%E5%B1%B1/%E4%B8%AD%E5%B1%B1%E5%8F%91%E5%B8%83%E6%9C%80%E6%96%B0%E5%94%AE%E6%88%BF%E8%B4%AD%E6%88%BF%E9%80%9A%E7%9F%A5%EF%BC%8C%E4%B9%B0%E6%88%BF%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E8%BF%99%E4%BA%9B%EF%BC%81.html
                 xiaoqugroup.append(filename)
             elif filename.find(area)!=-1:
                 areagroup.append(filename)
