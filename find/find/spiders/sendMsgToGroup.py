@@ -60,7 +60,7 @@ def sendMsgToG(startExecuteBtn):
                             i += 1
 
 
-                        citypin = pypinyin.lazy_pinyin(city)
+                        citypin = pypinyin.pinyin(city)
                         citystr = ""
                         for p in citypin:
                             citystr += p[0]
