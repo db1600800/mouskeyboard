@@ -66,7 +66,7 @@ def sendMsgToG(startExecuteBtn):
                             citystr += p[0]
                         date = time.strftime("%Y%m%d", time.localtime())
                         msgStr=title[0]+"http://39.103.151.127:8080/"+str(date)+"/"+citystr+"/"+titlestr+".html"
-                        print(msgStr)
+                        #print(msgStr)
 
                         setClipboardText(searchXiaoquStr)
                         execWhichStep = "向群发消息脚本/1选中搜索框并粘贴搜索.txt"
@@ -87,6 +87,7 @@ def sendMsgToG(startExecuteBtn):
                         time.sleep(2)
 
                         setClipboardText(msgStr)
+
                         execWhichStep = "向群发消息脚本/3粘贴消息到群.txt"
                         startExecuteBtn['text'] = execWhichStep
                         t31 = MouseActionExecute(execute_count=1,file_name=execWhichStep)
@@ -96,12 +97,14 @@ def sendMsgToG(startExecuteBtn):
 
                         time.sleep(1)
 
-                        execWhichStep = "向群发消息脚本/4发送.txt"
+                        execWhichStep = "向群发消息脚本/4.1发送.txt"
                         startExecuteBtn['text'] = execWhichStep
                         t32 = MouseActionExecute(execute_count=1,file_name=execWhichStep)
                         t32.start()
                         t32.join()
                         cell1Str = getClipboardText()
+                        msgStr = ""
+                        setClipboardText("")
                         print(cell1Str)
                         print("send 4发送完成")
 
