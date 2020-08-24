@@ -13,7 +13,7 @@ from qqkeyboard_getmsg import MouseActionExecute_part_selectcity
 
 def getMsgFromToutiao(startExecuteBtn,area_page):
     global execWhichStep
-    area1_xiaoqufile = open("area_page1.json", 'r+', encoding='utf-8')
+    area1_xiaoqufile = open(area_page, 'r+', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
     partOneObjs = json.loads(filecontent)
     citys = partOneObjs.keys()
@@ -348,7 +348,7 @@ def htmlcreate(article_url,city,title,divhtml):
     fo.write(str1)
     fo.close()
 
-    citypin = pypinyin.pinyin(city)
+    citypin = pypinyin.pinyin(city,style=pypinyin.TONE2, heteronym=True)
     citystr=""
     for p in citypin:
         citystr+=p[0]
