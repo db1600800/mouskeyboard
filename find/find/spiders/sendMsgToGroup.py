@@ -66,7 +66,7 @@ def sendMsgToG(startExecuteBtn):
                             citystr += p[0]
                         date = time.strftime("%Y%m%d", time.localtime())
                         msgStr=title[0]+"http://39.103.151.127:8080/"+str(date)+"/"+citystr+"/"+titlestr+".html"
-                        #print(msgStr)
+                        print(xiaoquname+" "+msgStr)
 
                         setClipboardText(searchXiaoquStr)
                         execWhichStep = "向群发消息脚本/1选中搜索框并粘贴搜索.txt"
@@ -105,7 +105,7 @@ def sendMsgToG(startExecuteBtn):
                         cell1Str = getClipboardText()
                         msgStr = ""
                         setClipboardText("")
-                        print(cell1Str)
+                        #print(cell1Str)
                         print("send 4发送完成")
 
                         time.sleep(20)
@@ -167,9 +167,8 @@ def getMsg(city,county,area,xiaoquname):
     knowledgegroup=[]
     otherGroup=[]
 
-    if xiaoqugroup!=[]:
-        return  xiaoqugroup[random.randint(0, len(xiaoqugroup)-1)]
 
+    """
     # 1
     oldgroupkey = []
     oldgroupkey.append("旧影")
@@ -226,6 +225,7 @@ def getMsg(city,county,area,xiaoquname):
     knowledgekey.append("你知道")
     knowledgekey.append("为什么")
     knowledgekey.append("崛起")
+    """
 
     date = time.strftime("%Y%m%d", time.localtime())
     shouhumediasrc_dir = r'../touxiaoHtml/'+date+'/'+city+''  # 源文件目录地址
@@ -245,13 +245,13 @@ def getMsg(city,county,area,xiaoquname):
                 areagroup.append(filename)
             elif filename.find(county)!=-1:
                 countygroup.append(filename)
-            elif filename.find(city)!=-1:
-                citygroup.append(filename)
+            #elif filename.find(city)!=-1:
+             #   citygroup.append(filename)
             else:
                 otherGroup.append(filename)
 
 
-
+            """
             for oldkey in oldgroupkey:
                 if filename.find(oldkey)!=-1:
                      oldgroup.append(filename)
@@ -291,15 +291,26 @@ def getMsg(city,county,area,xiaoquname):
                 if filename.find(key)!=-1:
                      eatgroup.append(filename)
                      break
+    
+            """
+
 
     if xiaoqugroup!=[]:
-        return  xiaoqugroup[random.randint(0, len(xiaoqugroup)-1)]
+        xiaoquindex=random.randint(0, len(xiaoqugroup) - 1)
+        print(city+county+area+"xiaoquindex" + str(xiaoquindex)+" total"+str(len(xiaoqugroup)))
+        return  xiaoqugroup[xiaoquindex]
     elif areagroup!=[]:
-        return  areagroup[random.randint(0, len(areagroup)-1)]
+        areaindex=random.randint(0, len(areagroup)-1)
+        print(city+county+area+"areaindex" + str(areaindex)+" total"+str(len(areagroup)))
+        return  areagroup[areaindex]
     elif countygroup!=[]:
-        return  countygroup[random.randint(0, len(countygroup)-1)]
+        countyindex=random.randint(0, len(countygroup)-1)
+        print(city+county+area+"countyindex" + str(countyindex)+" total"+str(len(countygroup)))
+        return  countygroup[countyindex]
     elif otherGroup!=[]:
-        return  otherGroup[random.randint(0, len(otherGroup)-1)]
+        otherindex=random.randint(0, len(otherGroup) - 1)
+        print(city+county+area+"otherindex"+str(otherindex)+" total"+str(len(otherGroup)))
+        return  otherGroup[otherindex]
 
 
     return ""
