@@ -13,7 +13,7 @@ from qqkeyboard_getmsg import MouseActionExecute_part_selectcity
 
 def getMsgFromToutiao(startExecuteBtn,area_page):
     global execWhichStep
-    area1_xiaoqufile = open(area_page, 'r+', encoding='utf-8')
+    area1_xiaoqufile = open("area_page1.json", 'r+', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
     partOneObjs = json.loads(filecontent)
     citys = partOneObjs.keys()
@@ -209,9 +209,12 @@ def getMsgFromToutiao(startExecuteBtn,area_page):
 
 def citynewslist(newsstr,city):
     citynewsObjs = json.loads(newsstr)
-    if citynewsObjs==None:
+    if citynewsObjs==None or citynewsObjs.get("location")==None:
         return
-    strcity=citynewsObjs["location"]["city_name"]
+    try:
+     strcity=citynewsObjs["location"]["city_name"]
+    except TypeError:
+        return
     total_number=citynewsObjs["total_number"]
     if strcity==city:
         datas=citynewsObjs["data"]
@@ -234,7 +237,7 @@ def parse_article(aurl):
     # 设置chrome驱动器
     driver = webdriver.Chrome(f'{cwd}{sep}chromedriver')
     # 设置超时时间
-    driver.set_page_load_timeout(223)
+    driver.set_page_load_timeout(500)
 
     # 访问
     driver.get(url)
