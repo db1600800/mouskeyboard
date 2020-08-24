@@ -55,6 +55,8 @@ def qqAddGroup(startExecuteBtn):
                         xiaoquname = xiaoqudict["xiaoquname"]
                         href = xiaoqudict["href"]
                         address = xiaoqudict["address"]
+                        if xiaoqudict.get("dong")==None:
+                            continue
                         dong = xiaoqudict["dong"]
                         fengqi = xiaoqudict["fengqi"]
 
