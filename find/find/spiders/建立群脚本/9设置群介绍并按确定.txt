@@ -1,3 +1,8 @@
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 665, "y": 306}, "vk": "default", "time": 1598512838.3299396}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 665, "y": 306}, "vk": "default", "time": 1598512838.4579468}
+{"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 665, "y": 306}, "vk": "default", "time": 1598512838.4619472}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 665, "y": 306}, "vk": "default", "time": 1598512839.021979}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 665, "y": 306}, "vk": "default", "time": 1598512839.2299912}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 580, "y": 472}, "vk": "default", "time": 1598498501.9544506}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 580, "y": 471}, "vk": "default", "time": 1598498501.974452}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 580, "y": 471}, "vk": "default", "time": 1598498501.9864526}
@@ -68,6 +73,8 @@
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 623, "y": 482}, "vk": "default", "time": 1598498503.8705602}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 624, "y": 483}, "vk": "default", "time": 1598498503.8785608}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 626, "y": 484}, "vk": "default", "time": 1598498503.8905616}
+{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 626, "y": 484}, "vk": "default", "time": 1598498504.7226088}
+{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 626, "y": 484}, "vk": "default", "time": 1598498504.9266207}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 627, "y": 484}, "vk": "default", "time": 1598498503.9025621}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 628, "y": 484}, "vk": "default", "time": 1598498503.9065623}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 630, "y": 486}, "vk": "default", "time": 1598498503.9185631}
@@ -124,8 +131,6 @@
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 685, "y": 491}, "vk": "default", "time": 1598498504.4145916}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 686, "y": 491}, "vk": "default", "time": 1598498504.4185917}
 {"name": "mouse", "event": "move", "target": "default", "action": "default", "location": {"x": 687, "y": 491}, "vk": "default", "time": 1598498504.4305923}
-{"name": "mouse", "event": "click", "target": "left", "action": true, "location": {"x": 687, "y": 491}, "vk": "default", "time": 1598498504.7226088}
-{"name": "mouse", "event": "click", "target": "left", "action": false, "location": {"x": 687, "y": 491}, "vk": "default", "time": 1598498504.9266207}
 {"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 162, "time": 1598498506.0186832}
 {"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 162, "time": 1598498506.5187118}
 {"name": "keyboard", "event": "press", "target": "default", "action": "default", "location": {"x": "0", "y": "0"}, "vk": 162, "time": 1598498506.5587142}
