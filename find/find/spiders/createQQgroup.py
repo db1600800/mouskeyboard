@@ -24,8 +24,9 @@ def qqAddGroup(startExecuteBtn):
     #citys = ['扬州']
     searchStr = ""
     requestAddStr = ""
-    xiaoquDateAddCount = 298
+    xiaoquDateAddCount = 2
     count = 0
+    totalcount=0
     countquery = 0
     qqfobiden = 0
     for city in citys:
@@ -44,18 +45,20 @@ def qqAddGroup(startExecuteBtn):
                         w = file2.write(s)
                         file1.close()
                         file2.close()
-                        print("30out   ok: " + str(count) + "error:" + str(countquery) + " total:" + str(
+                        print("10   ok: " + str(count) + "error:" + str(countquery) + " total:" + str(
                             count + countquery))
                         #return city, county, area, xiaoqu
                         count=0
                         countquery=0
-                        print("create 180")
-                        #time.sleep(300)
-                        return city, county, area, xiaoqu
+                        print("create 10")
+                        time.sleep(30)
+                        #return city, county, area, xiaoqu
                     if qqfobiden == 6:
                         print("qqfobiden....")
                         return city, county, area, xiaoqu
-
+                    if totalcount > 290:
+                        print("290....")
+                        return city, county, area, xiaoqu
                     xiaoqudict = partOneObjs[city][county][area][xiaoqu]
                     if xiaoqudict.get("isRequestQQGroup") == None or  xiaoqudict["isRequestQQGroup"] == False:
                         xiaoquname = xiaoqudict["xiaoquname"]
@@ -194,7 +197,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(2)
 
 
                         keystr = getCountyxiaoquname(area,xiaoquname)
@@ -216,7 +219,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(2)
 
 
                         keystr = getCountyxiaoquname(city,xiaoquname)
@@ -227,7 +230,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(2)
 
                         detail=xiaoquname+"业主交流群，进群请修改群名片，楼栋+昵称，物业、楼盘、购房置业、生活日常，大家畅所欲言，携手共建和谐社区"
                         setClipboardText(detail)
@@ -237,7 +240,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(2)
 
                         execWhichStep = "建立群脚本/10关闭编辑.txt"
                         startExecuteBtn['text'] = execWhichStep
@@ -263,9 +266,10 @@ def qqAddGroup(startExecuteBtn):
                         area1_xiaoqufile_up.close()
                         startExecuteBtn['state'] = 'normal'
                         print(city+county+area+xiaoquname+"    ctreate group点完成")
-                        time.sleep(120)
                         count += 1
+                        totalcount+=1
                         print(" create group sucess: " + str(count) + " total:" + str(count + countquery))
+                        time.sleep(120)
     print(city+"城市完成")
     area1_xiaoqufile.close()
     file1 = open(whichpage+"_1.json", "r+")
