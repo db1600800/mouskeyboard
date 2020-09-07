@@ -280,7 +280,31 @@ def command_adapter(action):
             UIUpdateCutDownExecute(startTime.get(), custom_thread_list).start()
 
     elif action == 'execute':
-        qqAddGroup(startExecuteBtn)
+        qqcitypage1 = [{"qq": "1702478760", "city": ['衡水', '海南', '哈尔滨']}]
+                        #{"qq": "3389252161", "city": ['惠州', '合肥', '防城港']},
+        qqcitypage2 = [{"qq": "3232475351", "city": ['泰州', '清远', '天津']},
+                       {"qq": "1304789309", "city": ['临沂', '唐山', '太原']}]
+        qqcitypage3 = [{"qq": "1217275070", "city": ['扬州', '淄博', '珠海']},
+                       {"qq": "1659127292", "city": ['舟山', '威海', '中山']}]
+        """
+        for oneqq in qqcitypage1:
+            qqnum=oneqq["qq"]
+            citys=oneqq["city"]
+            city=citys[random.randint(0, len(citys)-1)]
+            qqAddGroup(startExecuteBtn,"area_page1",city,qqnum)
+        """
+        for oneqq in qqcitypage2:
+            qqnum=oneqq["qq"]
+            citys=oneqq["city"]
+            city=citys[random.randint(0, len(citys)-1)]
+            qqAddGroup(startExecuteBtn,"area_page2",city,qqnum)
+        for oneqq in qqcitypage3:
+            qqnum=oneqq["qq"]
+            citys=oneqq["city"]
+            city=citys[random.randint(0, len(citys)-1)]
+            qqAddGroup(startExecuteBtn,"area_page3",city,qqnum)
+
+
 
 
 def isNumber(content):
