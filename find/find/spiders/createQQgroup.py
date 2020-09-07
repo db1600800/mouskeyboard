@@ -4,9 +4,9 @@ import os
 import re
 from qqkeyboard_createqqgroup import *
 
-def qqAddGroup(startExecuteBtn):
+def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
     global execWhichStep
-    whichpage="area_page3"
+    whichpage=whichpagep
     area1_xiaoqufile = open(whichpage+"_creategroup.json", 'r+', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
     area1_xiaoqufile.close()
@@ -22,7 +22,48 @@ def qqAddGroup(startExecuteBtn):
     # page2-citys=(['泰州', '清远', '天津', '临沂', '唐山', '太原', '台州', '苏州', '石家庄', '沈阳', '深圳', '绍兴', '上海', '三亚', '泉州', '庆阳', '青岛', '宁波', '南通', '南宁', '南京', '南充', '南昌', '吉林', '洛阳', '泸州', '连云港', '廊坊', '乐山', '兰州', '昆山', '昆明', '九江', '江门', '金华', '嘉兴', '济南', '济宁'])
     # page3_keys(['扬州', '淄博', '珠海', '舟山', '威海', '中山', '郑州', '镇江', '漳州', '湛江', '岳阳', '银川', '徐州', '烟台', '厦门', '西宁', '西安', '武汉', '芜湖', '无锡', '温州', '潍坊'])
 
-    #citys = ['扬州']
+    citys = [citysp] #['泰州']
+
+    execWhichStep = "切换Q/0恢复列表.txt"
+    startExecuteBtn['text'] = execWhichStep
+    # UIUpdateCutDownExecute(6, custom_thread_list).start()
+    t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+    t2.start()
+    t2.join()
+    time.sleep(2)
+
+    execWhichStep = "切换Q/1切换帐号.txt"
+    startExecuteBtn['text'] = execWhichStep
+    # UIUpdateCutDownExecute(6, custom_thread_list).start()
+    t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+    t2.start()
+    t2.join()
+
+    time.sleep(20)
+    setClipboardText(qqnum)
+    execWhichStep = "切换Q/2粘贴号码.txt"
+    startExecuteBtn['text'] = execWhichStep
+    # UIUpdateCutDownExecute(6, custom_thread_list).start()
+    t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+    t2.start()
+    t2.join()
+
+    time.sleep(2)
+    execWhichStep = "切换Q/4登陆.txt"
+    startExecuteBtn['text'] = execWhichStep
+    # UIUpdateCutDownExecute(6, custom_thread_list).start()
+    t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+    t2.start()
+    t2.join()
+
+    time.sleep(15)
+    execWhichStep = "切换Q/5联系人群聊.txt"
+    startExecuteBtn['text'] = execWhichStep
+    # UIUpdateCutDownExecute(6, custom_thread_list).start()
+    t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+    t2.start()
+    t2.join()
+
     searchStr = ""
     requestAddStr = ""
     xiaoquDateAddCount = 2
@@ -41,7 +82,7 @@ def qqAddGroup(startExecuteBtn):
                     if qqfobiden == 6:
                         print("qqfobiden....")
                         return city, county, area, xiaoqu
-                    if totalcount >= 8:
+                    if totalcount >= 7:
                         print("8 out....")
                         return city, county, area, xiaoqu
                     xiaoqudict = partOneObjs[city][county][area][xiaoqu]
@@ -83,6 +124,9 @@ def qqAddGroup(startExecuteBtn):
 
                         searchStr= getCountyxiaoquname(county,xiaoquname)
 
+
+
+                        time.sleep(2)
                         execWhichStep = "建立群脚本/1点加号选加群.txt"
                         startExecuteBtn['text'] = execWhichStep
                         # UIUpdateCutDownExecute(6, custom_thread_list).start()
@@ -90,6 +134,7 @@ def qqAddGroup(startExecuteBtn):
                         t2.start()
                         t2.join()
 
+                        time.sleep(2)
                         execWhichStep = "建立群脚本/1.1隐藏列表.txt"
                         startExecuteBtn['text'] = execWhichStep
                         # UIUpdateCutDownExecute(6, custom_thread_list).start()
@@ -139,7 +184,7 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(2)
+                        time.sleep(5)
 
                         execWhichStep = "建立群脚本/6添加头像.txt"
                         startExecuteBtn['text'] = execWhichStep
@@ -241,10 +286,11 @@ def qqAddGroup(startExecuteBtn):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(2)
 
 
                         xiaoqudict["isRequestQQGroup"] = True
+                        xiaoqudict["qqnum"] = qqnum
                         area1_xiaoqufile_up = open(whichpage+"_creategroup.json", 'w+', encoding='utf-8')
                         area1_xiaoqufile_up.write(json.dumps(partOneObjs) + "\n")
                         area1_xiaoqufile_up.flush()
@@ -254,7 +300,7 @@ def qqAddGroup(startExecuteBtn):
                         count += 1
                         totalcount+=1
                         print(" create group sucess: " + str(count) + " total:" + str(count + countquery))
-                        time.sleep(120)
+                        time.sleep(60)
     print(city+"城市完成")
 
 
