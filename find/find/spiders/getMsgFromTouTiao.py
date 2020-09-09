@@ -13,7 +13,7 @@ from qqkeyboard_getmsg import MouseActionExecute_part_selectcity
 
 def getMsgFromToutiao(startExecuteBtn,area_page):
     global execWhichStep
-    area1_xiaoqufile = open("area_page1.json", 'r+', encoding='utf-8')
+    area1_xiaoqufile = open("area_page3.json", 'r+', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
     partOneObjs = json.loads(filecontent)
     citys = partOneObjs.keys()

@@ -6,6 +6,7 @@ import tkinter
 import pyperclip
 from getMsgFromTouTiao  import *
 
+
 from pynput import keyboard, mouse
 from pynput.keyboard import Controller as KeyBoardController, KeyCode
 from pynput.mouse import Button, Controller as MouseController
@@ -332,8 +333,8 @@ def command_adapter(action):
             UIUpdateCutDownExecute(startTime.get(), custom_thread_list).start()
 
     elif action == 'execute':
-        ##page123=["area_page1.json","area_page2.json","area_page3.json"]
-        ##for page in page123:
+        #page123=["area_page1.json","area_page2.json","area_page3.json"]
+        #for page in page123:
             getMsgFromToutiao(startExecuteBtn,"")
 
 

@@ -192,7 +192,16 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(1)
+                        time.sleep(2)
+
+                        execWhichStep = "建立群脚本/6.1复制群号码.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(1, custom_thread_list).start()
+                        t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t31.start()
+                        t31.join()
+                        time.sleep(2)
+                        groupnum=getClipboardText()
 
                         execWhichStep = "建立群脚本/7点编辑.txt"
                         startExecuteBtn['text'] = execWhichStep
@@ -291,6 +300,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
 
                         xiaoqudict["isRequestQQGroup"] = True
                         xiaoqudict["qqnum"] = qqnum
+                        xiaoqudict["groupnum"]=groupnum
                         area1_xiaoqufile_up = open(whichpage+"_creategroup.json", 'w+', encoding='utf-8')
                         area1_xiaoqufile_up.write(json.dumps(partOneObjs) + "\n")
                         area1_xiaoqufile_up.flush()

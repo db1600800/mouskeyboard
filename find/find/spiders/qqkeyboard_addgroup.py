@@ -4,7 +4,7 @@ import time
 import tkinter
 
 import pyperclip
-from addgroup import *
+from createQQgroup import *
 
 from pynput import keyboard, mouse
 from pynput.keyboard import Controller as KeyBoardController, KeyCode
