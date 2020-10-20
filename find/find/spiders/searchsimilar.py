@@ -10,93 +10,96 @@ import time
 import urllib.request
 from qqkeyboard_addgroup import *
 
+
 def getsimilar():
     goods = []
     global execWhichStep
-    filename="中山照明"
-    area1_xiaoqufile = open("1688"+filename+".txt", 'r', encoding='utf-8')
+    filename="灯饰照明"
+    counti=0
+    area1_xiaoqufile = open("1688产品/1688"+filename+".txt", 'r', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
-    partOneObjs = json.loads(filecontent)
-    for level1item in partOneObjs[0]:
-        for level2item in level1item.get('leve2'):
+    level1item = json.loads(filecontent)
+    for level2item in level1item.get('leve2'):
               for level2listitem in level2item[0].get('level2list'):
-                      item=level2listitem[0]
-                      title=item["title"]
-                      imgurl=item["imageurl"]
-                      money=item["money"]
-                      url=item["url"]
-                      print(title+imgurl)
-
-                      filepath='C:\\Users\\Administrator\\Pictures\\taobaosearch\\a.jpg'
-
                       try:
-                              urllib.request.urlretrieve(imgurl, filename=filepath)
+
+                          item=level2listitem[0]
+                          title1688=item["title"]
+                          imgurl1688=item["imageurl"]
+                          money1688=item["money"]
+                          url1688=item["url"]
+                          print(str(counti)+" "+title1688+imgurl1688)
+
+                          filepath='C:\\Users\\Administrator\\Pictures\\taobaosearch\\a.jpg'
+
+
+                          urllib.request.urlretrieve(imgurl1688, filename=filepath)
+
+
+                          url = "https://www.taobao.com/"
+                          # 当前进程的工作目录
+                          cwd = getcwd()
+                          # 设置chrome驱动器
+                          driver = webdriver.Chrome(f'{cwd}{sep}chromedriver')
+                          # 设置超时时间
+                          driver.set_page_load_timeout(2230)
+
+                          #cookies = driver.get_cookies()
+
+                          driver.delete_all_cookies()
+
+                          # 访问
+                          driver.get(url)
+                          print(url)
+                          time.sleep(5)
+
+
+
+                          execWhichStep = "淘宝search/search.txt"
+                          t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                          t2.start()
+                          t2.join()
+
+                          time.sleep(5)
+                          # 获得网页内容
+
+                          summaryPage = driver.page_source
+                          driver.quit()
+
+
+                          # 解析HTML内容
+                          bs = BeautifulSoup(summaryPage, 'html.parser')
+                          listhtml = bs.find_all(attrs={'class': 'items g-clearfix'})
+                          if listhtml==None or listhtml=='' or len(listhtml)!=1:
+                              continue
+                          items=listhtml[0].find_all(attrs={'class': 'item'})
+
+
+                          good={}
+                          count=0
+                          for item in items:
+                              if count>3:
+                                  break
+                              sellcount=item.find(attrs={'class': 'deal-cnt'}).get_text().replace('人付款','')
+                              pricehtml = item.find_all(attrs={'class': 'price g_price g_price-highlight'})
+                              price=pricehtml[0].find('strong').get_text()
+                              lirun=float(price)-float(money1688)
+                              a = item.find('a')
+                              urltaobao=a.get("href")
+
+                              good['profit'+str(count)]=lirun
+                              good['title']=title1688
+                              good['picurl']=imgurl1688
+                              good['sellcount']=sellcount
+                              good['url1688']=url1688
+                              good['urltaobao']=urltaobao
+                              count+=1
+
+                          goods.append(good)
+                          counti+=1
+                          comparehtml(goods, filename)
                       except Exception as e:
-                              print("Error occurred when downloading file, error message:")
-                              print(e)
-
-                      url = "https://www.taobao.com/"
-                      # 当前进程的工作目录
-                      cwd = getcwd()
-                      # 设置chrome驱动器
-                      driver = webdriver.Chrome(f'{cwd}{sep}chromedriver')
-                      # 设置超时时间
-                      driver.set_page_load_timeout(2230)
-
-                      cookies = driver.get_cookies()
-
-                      driver.delete_all_cookies()
-
-                      # 访问
-                      driver.get(url)
-                      print(url)
-                      time.sleep(5)
-
-
-
-                      execWhichStep = "淘宝search/search.txt"
-                      t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
-                      t2.start()
-                      t2.join()
-
-                      time.sleep(5)
-                      # 获得网页内容
-                      summaryPage = driver.page_source
-                      driver.quit()
-
-                      # 解析HTML内容
-                      bs = BeautifulSoup(summaryPage, 'html.parser')
-                      listhtml = bs.find_all(attrs={'class': 'items g-clearfix'})
-                      if listhtml==None or listhtml=='' or len(listhtml)!=1:
                           continue
-                      items=listhtml[0].find_all(attrs={'class': 'item'})
-
-
-                      good={}
-                      count=0
-                      for item in items:
-                          if count>3:
-                              break
-                          sellcount=item.find(attrs={'class': 'deal-cnt'}).get_text().replace('人付款','')
-                          pricehtml = item.find_all(attrs={'class': 'price g_price g_price-highlight'})
-                          price=pricehtml[0].find('strong').get_text()
-                          lirun=float(price)-float(money)
-                          a = item.find('a')
-                          url=a.get("href")
-
-                          good['profit'+str(count)]=lirun
-                          good['title']=title
-                          good['picurl']=imgurl
-                          good['sellcount']=sellcount
-                          count+=1
-
-                      goods.append(good)
-                      comparehtml(goods, filename)
-
-
-
-
-
     comparehtml(goods,filename)
 
 
@@ -139,12 +142,14 @@ def comparehtml(pgoods,pfilename):
      profit2 = "%.1f"%good.get("profit2")
      profit3 = "%.1f"%good.get("profit3")
      sellcount=good.get("sellcount")
-     html += '<tr><th><img src="'+imgurl+'"></img></th><th>'+title+'</th><th>'+profit0+'--'+str(sellcount)+'</th><th>'+profit1+'--'+str(sellcount)+'</th><th>'+profit2+'--'+str(sellcount)+'</th><th>'+profit3+'--'+str(sellcount)+'</th></tr>\n'
+     url1688 = good.get("url1688")
+     urltaobao = good.get("urltaobao")
+     html += '<tr><th><a href="'+urltaobao+'"><img src="'+imgurl+'"></img></a></th><th><a href="'+url1688+'">'+title+'</a></th><th>'+profit0+'--'+str(sellcount)+'</th><th>'+profit1+'--'+str(sellcount)+'</th><th>'+profit2+'--'+str(sellcount)+'</th><th>'+profit3+'--'+str(sellcount)+'</th></tr>\n'
 
     html += '</table>\n'
     html += '</html>\n'
 
-    file2 = open("1688"+pfilename+".html", "w+")
+    file2 = open("1688产品/1688"+pfilename+".html", "w+")
     w = file2.write(html)
     file2.close()
 
