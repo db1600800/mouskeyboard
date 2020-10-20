@@ -51,12 +51,23 @@ def level1():
         lis = summaryObjContent[i].find_all('li')
         count=0
         for liitem in lis:
-            if count<=5:
+            #00'女装男装内衣 广州潮流广州T恤'                   08'美容化妆个护家清 深圳许昌'
+            #01'配饰鞋靴箱包 义乌小商品广州真皮'                 09'数码家电电子元器件 深圳数码深圳个护'
+            #02'运动服饰运动装备 广东服饰河北渔具'               10'汽车用品电工电气 天台坐垫把套乐清电气'
+            #03'童装母婴玩具 织里潮流河北平乡'                  11'包装 苍南包装义乌包装'
+            #04'家居百货家纺家饰 永康锅煲叠石桥家纺'             12'机械设备 诸城食品机械衡水通用机械'
+            #05'家装建材灯饰照明 赣州家具中山照明'               13'安全防护五金工具 高密产地金华五金'
+            #06'办公文教宠物园艺 广州宿迁苗木'                  14'纺织皮革化工橡塑 中大面料东莞橡塑'
+            #07'食品酒水餐饮生鲜 安徽花草茶蒲江水果'
+            #
+            if count<=10:
                 count = count + 1
                 continue
+
             ass = liitem.find_all('a')
             leibie = []
             for a in ass:
+                #女装  男装  内衣 广州潮流   广州T恤'
                 url = a.get("href")
                 txt = a.get_text()
                 level1title=txt
@@ -64,21 +75,21 @@ def level1():
                 level2result=level2(url)
                 leibieitem["leve2"]=level2result
                 leibie.append(leibieitem)
+
+                fo = open("1688产品/1688" + level1title + ".txt", "w+")  # 存入文件中。。。
+                fo.write(json.dumps(leibieitem))
+                fo.write('\n')
+                fo.close()
+
+
+
             level1.append(leibie)
 
-            fo = open("1688" + level1title+".txt", "w+")  # 存入文件中。。。
-            fo.write(json.dumps(level1))
-            fo.write('\n')
-            fo.close()
-            count=count+1
 
     # 推出驱动并关闭所关联的所有窗口
 
 
-    fo = open("1688"  + ".txt", "w+")  # 存入文件中。。。
-    fo.write(json.dumps(level1))
-    fo.write('\n')
-    fo.close()
+
 
 
 
