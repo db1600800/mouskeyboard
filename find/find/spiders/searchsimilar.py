@@ -14,7 +14,7 @@ from qqkeyboard_addgroup import *
 def getsimilar():
     goods = []
     global execWhichStep
-    filename="灯饰照明"
+    filename="宠物园艺"
     counti=0
     area1_xiaoqufile = open("1688产品/1688"+filename+".txt", 'r', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
@@ -30,7 +30,7 @@ def getsimilar():
                           url1688=item["url"]
                           print(str(counti)+" "+title1688+imgurl1688)
 
-                          filepath='C:\\Users\\Administrator\\Pictures\\taobaosearch\\a.jpg'
+                          filepath='C:\\a.jpg'
 
 
                           urllib.request.urlretrieve(imgurl1688, filename=filepath)
