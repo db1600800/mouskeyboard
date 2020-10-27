@@ -58,7 +58,7 @@ def getsimilar():
                           t2.start()
                           t2.join()
 
-                          time.sleep(5)
+                          time.sleep(15)
 
                           execWhichStep = "淘宝search/searchv2.txt"
                           t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
@@ -95,12 +95,12 @@ def getsimilar():
                               good['profit'+str(count)]=lirun
                               good['title']=title1688
                               good['picurl']=imgurl1688
-                              good['sellcount']=sellcount
+                              good['sellcount'+str(count)]=sellcount
                               good['url1688']=url1688
                               good['urltaobao']=urltaobao
                               count+=1
-
                           goods.append(good)
+
                           counti+=1
                           comparehtml(goods, filename)
                       except Exception as e:
@@ -146,10 +146,13 @@ def comparehtml(pgoods,pfilename):
      profit1 = "%.1f"%good.get("profit1")
      profit2 = "%.1f"%good.get("profit2")
      profit3 = "%.1f"%good.get("profit3")
-     sellcount=good.get("sellcount")
+     sellcount0=good.get("sellcount0")
+     sellcount1 = good.get("sellcount1")
+     sellcount2 = good.get("sellcount2")
+     sellcount3 = good.get("sellcount3")
      url1688 = good.get("url1688")
      urltaobao = good.get("urltaobao")
-     html += '<tr><th><a href="'+urltaobao+'"><img src="'+imgurl+'"></img></a></th><th><a href="'+url1688+'">'+title+'</a></th><th>'+profit0+'--'+str(sellcount)+'</th><th>'+profit1+'--'+str(sellcount)+'</th><th>'+profit2+'--'+str(sellcount)+'</th><th>'+profit3+'--'+str(sellcount)+'</th></tr>\n'
+     html += '<tr><th><a href="'+urltaobao+'"><img src="'+imgurl+'"></img></a></th><th><a href="'+url1688+'">'+title+'</a></th><th>'+profit0+'--'+str(sellcount0)+'</th><th>'+profit1+'--'+str(sellcount1)+'</th><th>'+profit2+'--'+str(sellcount2)+'</th><th>'+profit3+'--'+str(sellcount3)+'</th></tr>\n'
 
     html += '</table>\n'
     html += '</html>\n'
