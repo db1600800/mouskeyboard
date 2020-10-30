@@ -134,6 +134,7 @@ def goods(aurl):
 
 
 
+
     # 访问 公司主页
     drivergood.get(url)
     time.sleep(2)
