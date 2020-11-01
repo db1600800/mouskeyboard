@@ -12,8 +12,6 @@ from qqkeyboard_addgroup import *
 
 
 def getsimilar():
-
-  try:
       url = "https://factory.1688.com/zgc/page/ngkwxobr.html?__pageId__=98362&cms_id=98362&keywords=%E6%99%BA%E8%83%BD%E9%94%81"
       # 当前进程的工作目录
       cwd = getcwd()
@@ -26,12 +24,19 @@ def getsimilar():
 
       driver.delete_all_cookies()
 
-      # 访问
       driver.get(url)
-      print(url)
-      time.sleep(1)
-      driver.get(url)
-      time.sleep(2)
+
+      js = 'window.open("https://www.baidu.com");'  # 通过执行js，开启一个新的窗口
+      driver.execute_script(js)
+
+      js = 'window.open("https://www.baidu.com");'  # 通过执行js，开启一个新的窗口
+      driver.execute_script(js)
+
+      handles = driver.window_handles  # 获取当前窗口句柄集合（列表类型）
+      driver.switch_to.window(handles[0])
+
+
+      time.sleep(5)
       summaryPage = driver.page_source
       bs = BeautifulSoup(summaryPage, 'html.parser')
       items = bs.find_all(attrs={'class': 'primary'})
@@ -44,7 +49,7 @@ def getsimilar():
          titlevalue=title.get_text()
          titleurl=title.get("href")
          company["companyname"]=titlevalue
-         company["goods"]=goods(titleurl)
+         company["goods"]=goods(titleurl,driver)
 
          group_3 = item.find(attrs={'class': 'group_3'})
          mixinfos = group_3.find＿all(attrs={'class': 'mix-info'})
@@ -86,7 +91,7 @@ def getsimilar():
               titlevalue = title.get_text()
               titleurl = title.get("href")
               company["companyname"] = titlevalue
-              company["goods"] = company["goods"]+goods(titleurl)
+              company["goods"] = company["goods"]+goods(titleurl,driver)
 
               group_3 = item.find(attrs={'class': 'group_3'})
               mixinfos = group_3.find＿all(attrs={'class': 'mix-info'})
@@ -116,23 +121,20 @@ def getsimilar():
 
 
 
-  except Exception as e:
-      y=0
 
 
-def goods(aurl):
+
+def goods(aurl,adrivergood):
 
     url =aurl
     # 当前进程的工作目录
-    cwd = getcwd()
-    # 设置chrome驱动器
-    drivergood = webdriver.Chrome(f'{cwd}{sep}chromedriver')
-    # 设置超时时间
-    drivergood.set_page_load_timeout(2230)
-    # cookies = driver.get_cookies()
-    drivergood.delete_all_cookies()
+
+    drivergood = adrivergood
 
 
+
+    handles = drivergood.window_handles  # 获取当前窗口句柄集合（列表类型）
+    drivergood.switch_to.window(handles[1])
 
 
     # 访问 公司主页
@@ -163,29 +165,65 @@ def goods(aurl):
         ahtmlurl=ahtml.get("href")
         ahtmltitle=ahtml.get_text()
         if ahtmltitle.find("指纹")!=-1:
-            iszhiwen=True
-            zhiwenurl=ahtmlurl
+            if ahtmltitle.find("室内") == -1:
+              iszhiwen=True
+              zhiwenurl=ahtmlurl
         if ahtmltitle.find("智能")!=-1:
-            iszhineng=True
-            zhinengurl=ahtmlurl
-    if iszhiwen==True or iszhineng==True:
-        #指纹
-        drivergood.get(zhiwenurl)
-        summaryPage = drivergood.page_source
+            if ahtmltitle.find("室内")==-1:
+                iszhineng=True
+                zhinengurl=ahtmlurl
+    if iszhiwen==True :
+        goods+=getgoodlist(drivergood,zhiwenurl)
+    if iszhineng == True:
+        goods+=getgoodlist(drivergood, zhinengurl)
+
+
+    return goods
+
+def getgoodlist(adrivergood,url):
+    goods = []
+    adrivergood.get(url)
+    summaryPage = adrivergood.page_source
+    bs = BeautifulSoup(summaryPage, 'html.parser')
+    listhtml = bs.find(attrs={'class': 'offer-list-row'})
+    itemshtml = listhtml.find_all(attrs={'class': 'offer-list-row-offer'})
+
+    for item in itemshtml:
+        good = {}
+        ahtml = item.find("a")
+        aurl = ahtml.get("href")
+        atitle = ahtml.get_text()
+        orderhtml = item.find(attrs={'class': 'offer-order-container'})
+        if orderhtml == None:
+            continue
+        ordervalue = orderhtml.get_text()
+        gooddetail = getlastpic(aurl, adrivergood)
+        lastpicurl = gooddetail["imgurl"]
+        goodprice = gooddetail["price"]
+        good["title"] = atitle
+        good["ordercount"] = ordervalue
+        good["lastpicurl"] = lastpicurl
+        good["price"] = goodprice
+        goods.append(good)
+
+    nextbtn = bs.find(attrs={'class': 'next'})
+    nextbtndisable = bs.find(attrs={'class': 'next-disabled'})
+
+    while nextbtn != None and nextbtndisable == None:
+        nextbtn.click()
+        time.sleep(5)
+        summaryPage = adrivergood.page_source
         bs = BeautifulSoup(summaryPage, 'html.parser')
+        nextbtndisable = bs.find(attrs={'class': 'next-disabled'})
         listhtml = bs.find(attrs={'class': 'offer-list-row'})
         itemshtml = listhtml.find_all(attrs={'class': 'offer-list-row-offer'})
-
         for item in itemshtml:
-            good = {}
-            ahtml=item.find("a")
-            aurl=ahtml.get("href")
-            atitle=ahtml.get_text()
-            orderhtml=item.find(attrs={'class': 'offer-order-container'})
-            if orderhtml==None:
-                continue
-            ordervalue=orderhtml.get_text()
-            gooddetail = getlastpic(aurl)
+            ahtml = item.find("a")
+            aurl = ahtml.get("href")
+            atitle = ahtml.get_text()
+            orderhtml = item.find(attrs={'class': 'offer-order-container'})
+            ordervalue = orderhtml.get_text()
+            gooddetail = getlastpic(aurl, adrivergood)
             lastpicurl = gooddetail["imgurl"]
             goodprice = gooddetail["price"]
             good["title"] = atitle
@@ -193,47 +231,17 @@ def goods(aurl):
             good["lastpicurl"] = lastpicurl
             good["price"] = goodprice
             goods.append(good)
-
-        nextbtn =bs.find(attrs={'class': 'next'})
-        nextbtndisable = bs.find(attrs={'class': 'next-disabled'})
-
-        while  nextbtn!=None and nextbtndisable==None:
-            nextbtn.click()
-            time.sleep(5)
-            summaryPage = drivergood.page_source
-            bs = BeautifulSoup(summaryPage, 'html.parser')
-            nextbtndisable = bs.find(attrs={'class': 'next-disabled'})
-            listhtml = bs.find(attrs={'class': 'offer-list-row'})
-            itemshtml = listhtml.find_all(attrs={'class': 'offer-list-row-offer'})
-            for item in itemshtml:
-                ahtml = item.find("a")
-                aurl = ahtml.get("href")
-                atitle = ahtml.get_text()
-                orderhtml = item.find(attrs={'class': 'offer-order-container'})
-                ordervalue = orderhtml.get_text()
-                gooddetail=getlastpic(aurl)
-                lastpicurl = gooddetail["imgurl"]
-                goodprice=gooddetail["price"]
-                good["title"] = atitle
-                good["ordercount"] = ordervalue
-                good["lastpicurl"] = lastpicurl
-                good["price"]=goodprice
-                goods.append(good)
-
-    drivergood.quit()
     return goods
 
-
-def getlastpic(aurl):
+def getlastpic(aurl,adriverpic):
     url = aurl
-    # 当前进程的工作目录
-    cwd = getcwd()
-    # 设置chrome驱动器
-    driverpic = webdriver.Chrome(f'{cwd}{sep}chromedriver')
-    # 设置超时时间
-    driverpic.set_page_load_timeout(2230)
-    # cookies = driver.get_cookies()
-    driverpic.delete_all_cookies()
+
+    driverpic = adriverpic
+
+
+
+    handles = driverpic.window_handles  # 获取当前窗口句柄集合（列表类型）
+    driverpic.switch_to.window(handles[2])
 
     # 访问 公司主页
     driverpic.get(url)
@@ -244,11 +252,14 @@ def getlastpic(aurl):
     imgurl=img.get('src')
     pricehtml=bs.find(attrs={'value price-length-6'})
     price=pricehtml.get_text()
-    driverpic.quit()
+    #driverpic.quit()
 
     gooddetail={}
     gooddetail["imgurl"]=imgurl
     gooddetail["price"]=price
+
+    handles = driverpic.window_handles  # 获取当前窗口句柄集合（列表类型）
+    driverpic.switch_to.window(handles[1])
     return gooddetail
 
 
