@@ -153,14 +153,18 @@ def goods(aurl,adrivergood):
     shopurla = bs.find(attrs={'class': 'mod-info-footer-btn-white'})
     url = shopurla.get("href") + "/page/offerlist.htm"
 
+
+
+    drivergood1 = drivergood
+
     #全部产品列表
-    drivergood.get(url)
+    drivergood1.get(url)
     try:
-     closelogin = drivergood.find_element_by_id('sufei-dialog-close')
+     closelogin = drivergood1.find_element_by_id('sufei-dialog-close')
      closelogin.click()
     except:
         print("no closelogin 2")
-    summaryPage = drivergood.page_source
+    summaryPage = drivergood1.page_source
     bs = BeautifulSoup(summaryPage, 'html.parser')
     #分类
     categoryul = bs.find(attrs={'class': 'wp-category-nav-list fd-clr'})
@@ -186,14 +190,17 @@ def goods(aurl,adrivergood):
                 iszhineng=True
                 zhinengurl=ahtmlurl
     if iszhiwen==True :
-        goods+=getgoodlist(drivergood,zhiwenurl)
+        goods+=getgoodlist(drivergood1,zhiwenurl)
     if iszhineng == True:
-        goods+=getgoodlist(drivergood, zhinengurl)
+        goods+=getgoodlist(drivergood1, zhinengurl)
 
 
     return goods
 
 def getgoodlist(adrivergood,url):
+
+    adrivergood = adrivergood
+
     goods = []
     adrivergood.get(url)
     try:
@@ -263,9 +270,18 @@ def getgoodlist(adrivergood,url):
     return goods
 
 def getlastpic(aurl,adriverpic):
+    cwd = getcwd()
+    # 设置chrome驱动器
+    driver = webdriver.Chrome(f'{cwd}{sep}chromedriver')
+    # 设置超时时间
+    driver.set_page_load_timeout(2230)
+
+    driver.delete_all_cookies()
+
+
     url = aurl
 
-    driverpic = adriverpic
+    driverpic = driver
 
 
 
