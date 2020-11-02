@@ -25,6 +25,8 @@ def getsimilar():
       driver.delete_all_cookies()
 
       driver.get(url)
+      driver.get(url)
+
 
       js = 'window.open("https://www.baidu.com");'  # 通过执行js，开启一个新的窗口
       driver.execute_script(js)
@@ -139,6 +141,12 @@ def goods(aurl,adrivergood):
 
     # 访问 公司主页
     drivergood.get(url)
+    try:
+     closelogin = drivergood.find_element_by_id('sufei-dialog-close')
+     closelogin.click()
+    except:
+        print("no closelogin 1")
+
     time.sleep(2)
     summaryPage = drivergood.page_source
     bs = BeautifulSoup(summaryPage, 'html.parser')
@@ -147,6 +155,11 @@ def goods(aurl,adrivergood):
 
     #全部产品列表
     drivergood.get(url)
+    try:
+     closelogin = drivergood.find_element_by_id('sufei-dialog-close')
+     closelogin.click()
+    except:
+        print("no closelogin 2")
     summaryPage = drivergood.page_source
     bs = BeautifulSoup(summaryPage, 'html.parser')
     #分类
@@ -183,6 +196,11 @@ def goods(aurl,adrivergood):
 def getgoodlist(adrivergood,url):
     goods = []
     adrivergood.get(url)
+    try:
+     closelogin = adrivergood.find_element_by_id('sufei-dialog-close')
+     closelogin.click()
+    except:
+        print("no closelogin 3")
     summaryPage = adrivergood.page_source
     bs = BeautifulSoup(summaryPage, 'html.parser')
     listhtml = bs.find(attrs={'class': 'offer-list-row'})
@@ -210,18 +228,29 @@ def getgoodlist(adrivergood,url):
     nextbtndisable = bs.find(attrs={'class': 'next-disabled'})
 
     while nextbtn != None and nextbtndisable == None:
-        nextbtn.click()
-        time.sleep(5)
+        try:
+            closelogin = adrivergood.find_element_by_id('sufei-dialog-close')
+            closelogin.click()
+            print("closelogin 5")
+        except:
+            print("no closelogin 5")
+
+        nexturl=nextbtn.get("href")
+        adrivergood.get(nexturl)
+        time.sleep(1)
         summaryPage = adrivergood.page_source
         bs = BeautifulSoup(summaryPage, 'html.parser')
         nextbtndisable = bs.find(attrs={'class': 'next-disabled'})
         listhtml = bs.find(attrs={'class': 'offer-list-row'})
         itemshtml = listhtml.find_all(attrs={'class': 'offer-list-row-offer'})
         for item in itemshtml:
+            good = {}
             ahtml = item.find("a")
             aurl = ahtml.get("href")
             atitle = ahtml.get_text()
             orderhtml = item.find(attrs={'class': 'offer-order-container'})
+            if orderhtml == None:
+                continue
             ordervalue = orderhtml.get_text()
             gooddetail = getlastpic(aurl, adrivergood)
             lastpicurl = gooddetail["imgurl"]
@@ -243,20 +272,57 @@ def getlastpic(aurl,adriverpic):
     handles = driverpic.window_handles  # 获取当前窗口句柄集合（列表类型）
     driverpic.switch_to.window(handles[2])
 
-    # 访问 公司主页
     driverpic.get(url)
-    time.sleep(2)
+    time.sleep(10)
+
+    try:
+     closelogin = driverpic.find_element_by_id('sufei-dialog-close')
+     closelogin.click()
+     print("closelogin 4")
+    except:
+        print("no closelogin 4")
+
     summaryPage = driverpic.page_source
     bs = BeautifulSoup(summaryPage, 'html.parser')
-    img = driverpic.find_element_by_xpath('//*[@id="dt-tab"]/div/ul/li[5]/div/a/img')
-    imgurl=img.get('src')
-    pricehtml=bs.find(attrs={'value price-length-6'})
-    price=pricehtml.get_text()
+    imgurl=''
+    try:
+     imghtml = driverpic.find_element_by_xpath('//*[@id="dt-tab"]/div/ul/li[5]/div/a/img')
+     imgurl=imghtml.get_attribute("src")
+    except:
+        imgurl=''
+        print('goodpic not catch')
+    '''
+    #是否有代发
+    daifa=False
+    daifahtml=bs.find(attrs={'class':'trade-type-menu-item active-type-for-consign active-type'})
+    if daifahtml!=None:
+        daifatext=daifahtml.get_text()
+        if daifatext.find("代发")!=-1:
+            ahtml = daifahtml.find('a')
+            ahtmlurl = ahtml.get("href")
+            daifa=True
+            driverpic.get(ahtmlurl)
+        else:
+            
+
+    if daifa==False:
+        pricehtml=bs.find(attrs={'class': 'value price-length-6'})
+
+        price='0'
+        if pricehtml!=None:
+            price=pricehtml.get_text()
+        else:
+            pricehtml = bs.find(attrs={'class': 'price - original - sku'})
+            if pricehtml != None:
+             price = pricehtml.get_text()
+    else:
+
+    '''
     #driverpic.quit()
 
     gooddetail={}
     gooddetail["imgurl"]=imgurl
-    gooddetail["price"]=price
+    gooddetail["price"]=''
 
     handles = driverpic.window_handles  # 获取当前窗口句柄集合（列表类型）
     driverpic.switch_to.window(handles[1])
