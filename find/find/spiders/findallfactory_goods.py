@@ -30,59 +30,77 @@ def goods():
 
     driver.delete_all_cookies()
 
+    js = 'window.open("https://www.baidu.com");'  # 通过执行js，开启一个新的窗口
+    driver.execute_script(js)
 
-
-
-
+    countcompany=0
     for company in companys:
+            time.sleep(4)
             handles = driver.window_handles  # 获取当前窗口句柄集合（列表类型）
             driver.switch_to.window(handles[0])
 
             companyname=company["companyname"]
             companyurl=company["goodsurl"]
+            print(companyname)
+            print(companyurl)
 
             url =companyurl
             drivergood1 = driver
 
             #全部产品列表
-            driver.get(url)
+            if url!=None and url.find("https://")!=-1:
+               driver.get(url)
+            else:
+                continue
             time.sleep(2)
+
+            try:
+             closelogin = driver.find_element_by_id('sufei-dialog-close')
+             closelogin.click()
+            except:
+                print(" closelogin")
 
             try:
              summaryPage = driver.page_source
              bs = BeautifulSoup(summaryPage, 'html.parser')
              # 分类
-             logintab = bs.find(attrs={'id': '_oid_ifr_'})
-             if logintab != None:
-                 time.sleep(1)
-
-                 setClipboardText("db1600800a640")
-                 setClipboardText("db1600800a640")
-                 execWhichStep3 = "1688产品/username_goodslist.action"
-                 t3 = MouseActionExecute(execute_count=1, file_name=execWhichStep3)
-                 t3.start()
-                 t3.join()
-                 time.sleep(1)
-                 setClipboardText("9803320668a640")
-                 execWhichStep = "1688产品/password_goodslist.action"
-                 t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
-                 t2.start()
-                 t2.join()
-                 time.sleep(1)
-                 execWhichStep = "1688产品/press_goodslist.action"
-                 t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
-                 t2.start()
-                 t2.join()
-                 time.sleep(1)
+             if countcompany == 0:
+                 countcompany+=1
+                 logintab = bs.find(attrs={'id': '_oid_ifr_'})
+                 if logintab != None:
+                     time.sleep(1)
+                     setClipboardText("db1600800a640")
+                     setClipboardText("db1600800a640")
+                     setClipboardText("db1600800a640")
+                     execWhichStep3 = "1688产品/username_goodslist.action"
+                     t3 = MouseActionExecute(execute_count=1, file_name=execWhichStep3)
+                     t3.start()
+                     t3.join()
+                     time.sleep(1)
+                     setClipboardText("9803320668a640")
+                     execWhichStep = "1688产品/password_goodslist.action"
+                     t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                     t2.start()
+                     t2.join()
+                     time.sleep(1)
+                     execWhichStep = "1688产品/press_goodslist.action"
+                     t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                     t2.start()
+                     t2.join()
+                     time.sleep(1)
             except:
                 print("no closelogin 2")
             time.sleep(10)
             summaryPage = drivergood1.page_source
             bs = BeautifulSoup(summaryPage, 'html.parser')
             #分类
-            categoryul = bs.find(attrs={'class': 'wp-category-nav-list fd-clr'})
-            categorylis = categoryul.find_all(attrs={'class': 'wp-category-list-item'})
-
+            categoryul=""
+            categorylis=""
+            try:
+             categoryul = bs.find(attrs={'class': 'wp-category-nav-list fd-clr'})
+             categorylis = categoryul.find_all(attrs={'class': 'wp-category-list-item'})
+            except:
+                continue
 
             goods=[]
 
@@ -103,8 +121,7 @@ def goods():
                         iszhineng=True
                         zhinengurl=ahtmlurl
 
-            js = 'window.open("https://www.baidu.com");'  # 通过执行js，开启一个新的窗口
-            driver.execute_script(js)
+
 
             if iszhiwen==True :
                 goods+=getgoodlist(drivergood1,zhiwenurl)
@@ -161,6 +178,7 @@ def getgoodlist(adrivergood,url):
         nextbtn = None
 
     while nextbtn != None :
+        time.sleep(3)
         handles = adrivergood.window_handles  # 获取当前窗口句柄集合（列表类型）
         adrivergood.switch_to.window(handles[0])
 
@@ -173,7 +191,7 @@ def getgoodlist(adrivergood,url):
 
 
 
-        time.sleep(2)
+        time.sleep(3)
         summaryPage = adrivergood.page_source
         bs = BeautifulSoup(summaryPage, 'html.parser')
         nextbtndisable = bs.find(attrs={'class': 'next-disabled'})
