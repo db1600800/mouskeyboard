@@ -260,6 +260,11 @@ class MouseActionExecute(threading.Thread):
             self.execute_count = self.execute_count - 1
 
 
+
+
+
+
+
 def command_adapter(action):
     if action == 'listener':
         if startListenerBtn['text'] == '开始录制':
@@ -280,29 +285,40 @@ def command_adapter(action):
             UIUpdateCutDownExecute(startTime.get(), custom_thread_list).start()
 
     elif action == 'execute':
-        qqcitypage1 = [{"qq": "1702478760", "city": ['衡水', '海南', '哈尔滨']},
-                        {"qq": "3389252161", "city": ['惠州', '合肥', '防城港']}]
-        qqcitypage2 = [{"qq": "3232475351", "city": ['泰州', '清远', '天津']},
-                       {"qq": "1304789309", "city": ['临沂', '唐山', '太原']}]
+        # page1-citys=['惠州', '北京', '防城港', '呼和浩特', '衡水', '合肥', '杭州', '海南', '哈尔滨', '桂林', '贵阳', '佛山', '福州', '东莞', '大连', '重庆', '长沙','长春', '成都', '常州', '包头', '保定']
+        # page2-citys=(['泰州', '清远', '天津', '临沂', '唐山', '太原', '台州', '苏州', '石家庄', '沈阳', '深圳', '绍兴', '上海', '三亚', '泉州', '庆阳', '青岛', '宁波', '南通', '南宁', '南京', '南充', '南昌', '吉林', '洛阳', '泸州', '连云港', '廊坊', '乐山', '兰州', '昆山', '昆明', '九江', '江门', '金华', '嘉兴', '济南', '济宁'])
+        # page3_keys(['扬州', '淄博', '珠海', '舟山', '威海', '中山', '郑州', '镇江', '漳州', '湛江', '岳阳', '银川', '徐州', '烟台', '厦门', '西宁', '西安', '武汉', '芜湖', '无锡', '温州', '潍坊'])
+
+        # qqcitypage1 = [{"qq": "1702478760", "city": ['衡水', '海南', '哈尔滨']},
+              #          {"qq": "3389252161", "city": ['惠州', '合肥', '防城港']}]
+        qqcitypage2 = [#{"qq": "3232475351", "city": ['泰州', '清远', '天津']},
+                       #{"qq": "1304789309", "city": ['临沂', '唐山', '太原']}
+                       {"qq": "2786546813", "city": ['台州', '苏州', '石家庄']}
+                       #{"qq": "2841262285", "city": ['深圳', '沈阳', '绍兴']}
+                       ]
+        """
         qqcitypage3 = [{"qq": "1217275070", "city": ['扬州', '淄博', '珠海']},
                        {"qq": "1659127292", "city": ['舟山', '威海', '中山']}]
 
+        
         for oneqq in qqcitypage1:
             qqnum=oneqq["qq"]
             citys=oneqq["city"]
             city=citys[random.randint(0, len(citys)-1)]
             qqAddGroup(startExecuteBtn,"area_page1",city,qqnum)
-
+        """
         for oneqq in qqcitypage2:
             qqnum=oneqq["qq"]
             citys=oneqq["city"]
             city=citys[random.randint(0, len(citys)-1)]
             qqAddGroup(startExecuteBtn,"area_page2",city,qqnum)
+        """
         for oneqq in qqcitypage3:
             qqnum=oneqq["qq"]
             citys=oneqq["city"]
             city=citys[random.randint(0, len(citys)-1)]
             qqAddGroup(startExecuteBtn,"area_page3",city,qqnum)
+        """
 
 
 
