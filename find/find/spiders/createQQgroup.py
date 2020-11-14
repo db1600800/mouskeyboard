@@ -53,12 +53,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                     if isTop20==False:
                         continue
 
-                    if qqfobiden == 6:
-                        print("qqfobiden....")
-                        return city, county, area, xiaoqu
-                    if totalcount >= 6:
-                        print("8 out....")
-                        return city, county, area, xiaoqu
+
                     xiaoqudict = partOneObjs[city][county][area][xiaoqu]
                     if xiaoqudict.get("isRequestQQGroup") == None or  xiaoqudict["isRequestQQGroup"] == False:
                         xiaoquname = xiaoqudict["xiaoquname"]
@@ -96,7 +91,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                             dongStr = d + "栋" + str(r) + "01"
 
 
-                        searchStr= getCountyxiaoquname(county,xiaoquname)
+                        groupname= getCountyxiaoquname(city+county,city,xiaoquname)
 
 
                         #login
@@ -132,7 +127,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         t2.start()
                         t2.join()
 
-                        time.sleep(15)
+                        time.sleep(10)
                         execWhichStep = "切换Q/5联系人群聊.txt"
                         startExecuteBtn['text'] = execWhichStep
                         # UIUpdateCutDownExecute(6, custom_thread_list).start()
@@ -170,7 +165,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
 
 
                         time.sleep(2)
-                        setClipboardText(searchStr)
+                        setClipboardText(groupname)
                         execWhichStep = "建立群脚本/3.1小区信息填写.txt"
                         startExecuteBtn['text'] = execWhichStep
                         # UIUpdateCutDownExecute(6, custom_thread_list).start()
@@ -179,7 +174,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         t3.join()
                         time.sleep(2)
 
-                        setClipboardText(searchStr)
+                        setClipboardText(groupname)
                         execWhichStep = "建立群脚本/3.2群信息填写并且下一步完成确定.txt"
                         startExecuteBtn['text'] = execWhichStep
                         # UIUpdateCutDownExecute(6, custom_thread_list).start()
@@ -259,7 +254,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         time.sleep(5)
 
 
-                        keystr = getCountyxiaoquname(area,xiaoquname)
+                        keystr = getCountyxiaoquname(area,city,xiaoquname)
                         setClipboardText(getEight(keystr))
                         execWhichStep = "建立群脚本/8设置关键词.txt"
                         startExecuteBtn['text'] = execWhichStep
@@ -270,7 +265,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         time.sleep(5)
 
 
-                        keystr = getCountyxiaoquname(county,xiaoquname)
+                        keystr = getCountyxiaoquname(county,city,xiaoquname)
                         setClipboardText(getEight(keystr))
                         execWhichStep = "建立群脚本/8设置关键词.txt"
                         startExecuteBtn['text'] = execWhichStep
@@ -281,7 +276,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         time.sleep(2)
 
 
-                        keystr = getCountyxiaoquname(city,xiaoquname)
+                        keystr = getCountyxiaoquname(city,city,xiaoquname)
                         setClipboardText(getEight(keystr))
                         execWhichStep = "建立群脚本/8设置关键词.txt"
                         startExecuteBtn['text'] = execWhichStep
@@ -315,7 +310,7 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                         t31.start()
                         t31.join()
-                        time.sleep(22)
+                        time.sleep(10)
 
 
 
@@ -339,7 +334,6 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         for oneqq in  prepare_list['qqcitypage' + str(i)]:
                             qqnum1 = oneqq["qq"]
                             citys = oneqq["city"]
-                            city = citys[random.randint(0, len(citys) - 1)]
                             qqAddGroup2(startExecuteBtn, qqnum1,whichQQGroupWantMenber)
 
 
@@ -348,18 +342,22 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         xiaoqudict["isRequestQQGroup"] = True
                         xiaoqudict["qqnum"] = qqnum
                         xiaoqudict["groupnum"] = groupnum
+                        xiaoqudict["city"]=city
+                        xiaoqudict["county"] = county
+                        xiaoqudict["area"] = area
+
                         print('qqnum:'+str(qqnum))
                         print('groupnum:' + str(groupnum))
                         #
-                        qqnum_xiaoqufile = open(qqnum + "_creategroup.json", 'r+', encoding='utf-8')
-                        filecontent = qqnum_xiaoqufile.read()
-                        qqnum_xiaoqufile.close()
-                        qqnumgroups=[]
-                        if filecontent!=None and filecontent!="":
+                        qqnumgroups = []
+                        if os.path.isfile(qqnum + "_creategroup.json")==True:
+                         qqnum_xiaoqufile = open(qqnum + "_creategroup.json", 'r+', encoding='utf-8')
+                         filecontent = qqnum_xiaoqufile.read()
+                         qqnum_xiaoqufile.close()
+                         if filecontent!=None and filecontent!="":
                            qqnumgroups = json.loads(filecontent)
-                           qqnumgroups.append(xiaoqudict)
-                        else:
-                            qqnumgroups.append(xiaoqudict)
+
+                        qqnumgroups.append(xiaoqudict)
                         qqnum_xiaoqufile_up = open(qqnum + "_creategroup.json", 'w+', encoding='utf-8')
                         qqnum_xiaoqufile_up.write(json.dumps(qqnumgroups) + "\n")
                         qqnum_xiaoqufile_up.flush()
@@ -377,14 +375,90 @@ def qqAddGroup(startExecuteBtn,whichpagep,citysp,qqnum):
                         totalcount += 1
                         print(" create group sucess: " + str(count) + " total:" + str(count + countquery))
 
+                        time.sleep(10)
 
-                        time.sleep(120)
+                        # login
+                        execWhichStep = "切换Q/0恢复列表.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(6, custom_thread_list).start()
+                        t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t2.start()
+                        t2.join()
+                        time.sleep(2)
+
+                        execWhichStep = "切换Q/1切换帐号.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(6, custom_thread_list).start()
+                        t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t2.start()
+                        t2.join()
+
+                        time.sleep(10)
+                        setClipboardText(qqnum)
+                        execWhichStep = "切换Q/2粘贴号码.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(6, custom_thread_list).start()
+                        t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t2.start()
+                        t2.join()
+
+                        time.sleep(2)
+                        execWhichStep = "切换Q/4登陆.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(6, custom_thread_list).start()
+                        t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t2.start()
+                        t2.join()
+
+                        time.sleep(15)
+
+                        execWhichStep = "建立群脚本/4恢复列表.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(1, custom_thread_list).start()
+                        t31 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t31.start()
+                        t31.join()
+                        time.sleep(2)
+
+                        execWhichStep = "建立群脚本/1.1隐藏列表.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(6, custom_thread_list).start()
+                        t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t2.start()
+                        t2.join()
+                        time.sleep(5)
+
+
+
+                        execWhichStep = "建立群脚本/点击同意入群.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(6, custom_thread_list).start()
+                        t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t2.start()
+                        t2.join()
+                        time.sleep(2)
+
+                        execWhichStep = "建立群脚本/点击同意入群2.txt"
+                        startExecuteBtn['text'] = execWhichStep
+                        # UIUpdateCutDownExecute(6, custom_thread_list).start()
+                        t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
+                        t2.start()
+                        t2.join()
+                        time.sleep(2)
+
+                        time.sleep(180)
+
+
     print(city+"城市完成")
 
 
 
 
-def getCountyxiaoquname(county,xiaoquname):
+
+def getCountyxiaoquname(county,city,xiaoquname):
+    if xiaoquname.find(city) != -1:
+        xiaoquname=xiaoquname.replace(city, "")
+
     countystr = county
     if county.find("市") != -1:
         countystr = county.replace("市", "")
