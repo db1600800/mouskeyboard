@@ -2,12 +2,17 @@ import scrapy
 import re
 import time
 import json
+from scrapy.cmdline import execute
+import sys
+import os
 
 class FangTianXiaSpider(scrapy.Spider):
     name = "FangTianXia"
 
     global allxiaoqu
     allxiaoqu={}
+
+
 
 
     def start_requests(self):
@@ -40,6 +45,11 @@ class FangTianXiaSpider(scrapy.Spider):
         names=response.css('.nlcd_name a::text').extract()
         hrefs=response.css('.nlcd_name a::attr(href)').extract()
         addrs=response.css('.address a::text').extract()
+        house_price = response.css('.nhouse_price span::text').extract()#价格待定
+
+
+
+
 
         iii=0
         for namee in names:
@@ -52,6 +62,11 @@ class FangTianXiaSpider(scrapy.Spider):
                 allxiaoqu[pcity][pquyu][pquyuchirld][name]["xiaoquname"]=name.strip()
                 allxiaoqu[pcity][pquyu][pquyuchirld][name]["href"] = "https:" + hrefs[iii]
                 allxiaoqu[pcity][pquyu][pquyuchirld][name]["address"] = addrs[iii].strip()
+                try:
+                 allxiaoqu[pcity][pquyu][pquyuchirld][name]["house_price"] = house_price[iii].strip()
+                except:
+                  allxiaoqu[pcity][pquyu][pquyuchirld][name]["house_price"]="0"
+
             else:
               if allxiaoqu[pcity][pquyu].get(name) == None :
                 allxiaoqu[pcity][pquyu][name] ={}
@@ -60,6 +75,11 @@ class FangTianXiaSpider(scrapy.Spider):
               allxiaoqu[pcity][pquyu][name]["xiaoquname"] = name.strip()
               allxiaoqu[pcity][pquyu][name]["href"] = "https:" + hrefs[iii]
               allxiaoqu[pcity][pquyu][name]["address"] = addrs[iii].strip()
+              try:
+               allxiaoqu[pcity][pquyu][name]["house_price"] = house_price[iii].strip()
+              except:
+               allxiaoqu[pcity][pquyu][name]["house_price"] = "0"
+
 
             yield scrapy.Request(url="https:" + hrefs[iii], callback=lambda response, xcity=pcity, xquyu=pquyu,
                                                                       xquyuchirld=pquyuchirld,
@@ -186,3 +206,8 @@ class FangTianXiaSpider(scrapy.Spider):
                 yield scrapy.Request(url=quyuchirldurl, callback=lambda response, city=pcity,quyu=pquyuname,quyuchirld=quyuchirldname:self.parse(response,city,quyu,quyuchirld))
                 time.sleep(1)
              ii+=1
+
+if __name__ == '__main__':
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+    execute(['scrapy', 'crawl', 'FangTianXia'])
