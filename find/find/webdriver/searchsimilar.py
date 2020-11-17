@@ -10,11 +10,12 @@ import time
 import urllib.request
 from qqkeyboard_addgroup import *
 
+#第一步用这个tao1688.py  第二步用searchsimilar.py
 
 def getsimilar():
     goods = []
     global execWhichStep
-    filename="家居百货"
+    filename="数码"
     counti=0
     area1_xiaoqufile = open("1688产品/1688"+filename+".txt", 'r', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
@@ -105,6 +106,10 @@ def getsimilar():
                           comparehtml(goods, filename)
                       except Exception as e:
                           continue
+    file2 = open("1688产品/1688" + filename + ".json", "w+")
+    file2.write(json.dumps(goods))
+    file2.write('\n')
+    file2.close()
     comparehtml(goods,filename)
 
 
