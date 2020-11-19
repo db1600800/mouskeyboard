@@ -1,0 +1,26 @@
+<html>
+<script type="text/javascript">
+	window.onload=function(){
+	var tfrow = document.getElementById('tfhover').rows.length;
+	var tbRow=[];
+	for (var i=1;i<tfrow;i++) {
+		tbRow[i]=document.getElementById('tfhover').rows[i];
+		tbRow[i].onmouseover = function(){
+		  this.style.backgroundColor = '#ffffff';
+		};
+		tbRow[i].onmouseout = function() {
+		  this.style.backgroundColor = '#d4e3e5';
+		};
+	}
+};
+</script>
+<style type="text/css">
+table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse:collapse;}
+table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style:solid;border-color: #729ea5;text-align:left;}
+table.tftable tr {background-color:#d4e3e5;}
+table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+</style>
+<table id="tfhover" class="tftable" border="1">
+<tr><th><a href="//detail.tmall.com/item.htm?id=534807540470&ns=1"><img src="https://cbu01.alicdn.com/img/ibank/2020/108/816/14869618801_415021548.310x310.jpg"></img></a></th><th><a href="https://detail.1688.com/offer/616705437592.html?scm=1007.30832.181565.0&pvid=c58a76b0-dff6-4400-9185-fed09f7123e8&scm2=1007.30657.177495.0&pvid2=735b7ef9-27f0-45c9-997b-bcc788d70e28&trackInfo=5_616705437592_0.0858598_0.0_0.0_0.0__1343323">20N03现货TO-252原装护电源贴片mos管原装15天包换交期保障￥0.3230天成交0件</a></th><th>0.3--0</th><th>2.1--0</th><th>0.2--0</th><th>2.4--0</th></tr>
+</table>
+</html>
