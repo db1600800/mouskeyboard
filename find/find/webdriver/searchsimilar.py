@@ -13,6 +13,7 @@ from qqkeyboard_addgroup import *
 #第一步用这个tao1688.py  第二步用searchsimilar.py
 
 def getsimilar():
+
     goods = []
     global execWhichStep
     filename="玩具"
