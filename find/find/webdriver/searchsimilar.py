@@ -15,7 +15,7 @@ from qqkeyboard_addgroup import *
 def getsimilar():
     goods = []
     global execWhichStep
-    filename="数码"
+    filename="玩具"
     counti=0
     area1_xiaoqufile = open("1688产品/1688"+filename+".txt", 'r', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
