@@ -15,7 +15,7 @@ from qqkeyboard_addgroup import *
 def getsimilar():
     goods = []
     global execWhichStep
-    filename="玩具"
+    filename="化工"
     counti=0
     area1_xiaoqufile = open("1688产品/1688"+filename+".txt", 'r', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
@@ -107,6 +107,11 @@ def getsimilar():
 
                           counti+=1
                           comparehtml(goods, filename)
+
+                          file2 = open("1688产品/1688" + filename + ".json", "w+")
+                          file2.write(json.dumps(goods))
+                          file2.write('\n')
+                          file2.close()
                       except Exception as e:
                           continue
     file2 = open("1688产品/1688" + filename + ".json", "w+")
