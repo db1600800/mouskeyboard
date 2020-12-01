@@ -54,6 +54,8 @@ def getsimilar():
                           print(url)
                           time.sleep(5)
 
+
+
                           execWhichStep = "淘宝search/searchv1.txt"
                           t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                           t2.start()
@@ -65,6 +67,7 @@ def getsimilar():
                           t2 = MouseActionExecute(execute_count=1, file_name=execWhichStep)
                           t2.start()
                           t2.join()
+
 
                           time.sleep(5)
                           # 获得网页内容
@@ -110,8 +113,24 @@ def getsimilar():
     file2.write(json.dumps(goods))
     file2.write('\n')
     file2.close()
-    comparehtml(goods,filename)
 
+
+
+def orderComparehtml(afilename):
+    filename=afilename
+    filename="玩具"
+    area1_xiaoqufile = open("1688产品/1688" + filename + ".json", 'r', encoding='utf-8')
+    filecontent = area1_xiaoqufile.read()
+    goods = json.loads(filecontent)
+    for good in goods:
+        count0=int(good["sellcount0"])
+        count1 = int(good["sellcount1"])
+        count2 = int(good["sellcount2"])
+        count3 = int(good["sellcount3"])
+        taobaosellcount=count0+count1+count2+count3
+        good["taobaosellcount"]=taobaosellcount
+    goods = sorted(goods, key=lambda x:(-x["taobaosellcount"]))
+    comparehtml(goods, filename)
 
 
 def comparehtml(pgoods,pfilename):
@@ -168,3 +187,4 @@ def comparehtml(pgoods,pfilename):
 
 if __name__ == '__main__':
     getsimilar()
+    #orderComparehtml("")
