@@ -123,15 +123,27 @@ def getsimilar():
 
 def orderComparehtml(afilename):
     filename=afilename
-    filename="玩具"
+    filename="个护家清"
     area1_xiaoqufile = open("1688产品/1688" + filename + ".json", 'r', encoding='utf-8')
     filecontent = area1_xiaoqufile.read()
     goods = json.loads(filecontent)
     for good in goods:
-        count0=int(good["sellcount0"])
-        count1 = int(good["sellcount1"])
-        count2 = int(good["sellcount2"])
-        count3 = int(good["sellcount3"])
+        sellcount0=good["sellcount0"]
+        if sellcount0=='':
+            sellcount0='0'
+        count0=int(sellcount0)
+        sellcount1=good["sellcount1"]
+        if sellcount1=='':
+            sellcount1='0'
+        count1 = int(sellcount1)
+        sellcount2=good["sellcount2"]
+        if sellcount2=='':
+            sellcount2='0'
+        count2 = int(sellcount2)
+        sellcount3=good["sellcount3"]
+        if sellcount3=='':
+            sellcount3='0'
+        count3 = int(sellcount3)
         taobaosellcount=count0+count1+count2+count3
         good["taobaosellcount"]=taobaosellcount
     goods = sorted(goods, key=lambda x:(-x["taobaosellcount"]))
