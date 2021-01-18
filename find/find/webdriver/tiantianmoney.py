@@ -24,9 +24,6 @@ def goods():
 
     driver.delete_all_cookies()
 
-
-
-
     url='http://fund.eastmoney.com/002190.html?spm=001.1.swh'
     buyvaluenum="2.71"
     buydate="2021-01-07"
