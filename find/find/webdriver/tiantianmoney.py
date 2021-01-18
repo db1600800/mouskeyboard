@@ -13,7 +13,13 @@ from dateutil import rrule
 
 
 
-def goods():
+def goods(aurl,
+    abuyvaluenum,
+    abuydate,
+    abuymoney,
+    asellperdown7,
+    asellperup7):
+
     cwd = getcwd()
     # 设置chrome驱动器
     driver = webdriver.Chrome(f'{cwd}{sep}chromedriver')
@@ -24,14 +30,14 @@ def goods():
 
     driver.delete_all_cookies()
 
-    url='http://fund.eastmoney.com/002190.html?spm=001.1.swh'
-    buyvaluenum="2.71"
-    buydate="2021-01-07"
-    buymoney="40000"
+    url=aurl
+    buyvaluenum=abuyvaluenum
+    buydate=abuydate
+    buymoney=abuymoney
     #赎回费率小于7天 1.5%
-    sellperdown7="0.015"
+    sellperdown7=asellperdown7
     #赎回费率大于等于7天 0.5%
-    sellperup7="0.005"
+    sellperup7=asellperup7
 
 
     driver.get(url)
@@ -63,7 +69,6 @@ def goods():
     jijingobj["time"]=timevalue
 
     valuenum = bs.find(attrs={'id': 'gz_gsz'}).get_text()
-    print(valuenum)
     jijingobj["valuenum"]=valuenum
     updownvalue=float(valuenum)-float(buyvaluenum)
     updownnoper=updownvalue/float(buyvaluenum)
@@ -121,15 +126,9 @@ def goods():
 
 
 
-
-
-
-
-
-
-            #file2 = open("1688产品/智能锁工厂_产品.txt", "w+")
-            #w = file2.write(json.dumps(companys))
-            #file2.close()
+    file2 = open("基金产品/"+idvalue+".html", "w+")
+    w = file2.write(json.dumps(jijingobj))
+    file2.close()
 
 
 
@@ -137,4 +136,45 @@ def goods():
 
 
 if __name__ == '__main__':
-    goods()
+    id="217017"
+    name="招商消费80ETF联接"
+    aurl = 'http://fund.eastmoney.com/217017.html'
+    abuyvaluenum = "2.71"
+    abuydate = "2021-01-07"
+    abuymoney = "40000"
+    # 赎回费率小于7天 1.5%
+    asellperdown7 = "0.015"
+    # 赎回费率大于等于7天 0.5%
+    asellperup7 = "0.005"
+
+
+
+    goods(aurl,
+    abuyvaluenum,
+    abuydate,
+    abuymoney,
+    asellperdown7,
+    asellperup7)
+
+
+
+
+
+
+    id = "001245"
+    name = "工银瑞信生态环境股票"
+    aurl = 'http://fund.eastmoney.com/001245.html'
+    abuyvaluenum = "2.71"
+    abuydate = "2021-01-07"
+    abuymoney = "40000"
+    # 赎回费率小于7天 1.5%
+    asellperdown7 = "0.015"
+    # 赎回费率大于等于7天 0.5%
+    asellperup7 = "0.005"
+
+    goods(aurl,
+          abuyvaluenum,
+          abuydate,
+          abuymoney,
+          asellperdown7,
+          asellperup7)
