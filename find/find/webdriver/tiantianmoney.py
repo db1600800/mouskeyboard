@@ -71,11 +71,11 @@ def goods(aurl,
     valuenum = bs.find(attrs={'id': 'gz_gsz'}).get_text()
     jijingobj["valuenum"]=valuenum
     updownvalue=float(valuenum)-float(buyvaluenum)
-    updownnoper=updownvalue/float(buyvaluenum)
-    updownper="%.2f%%" % (updownvalue/float(buyvaluenum) * 100)
+    updownnoperforbuy=updownvalue/float(buyvaluenum)
+    updownperforbuy="%.2f%%" % (updownvalue/float(buyvaluenum) * 100)
 
-    #涨了百分几
-    jijingobj["updownperforbuy"]=updownper
+    #离买的时候涨了百分几
+    jijingobj["updownperforbuy"]=updownperforbuy
     #买的时候多少钱
     jijingobj["buyvaluenum"]=buyvaluenum
     #买的时候日期
@@ -97,15 +97,22 @@ def goods(aurl,
 
     #赚了亏了多少
     if diff_business_days<7:
-       winmoney=float(buymoney)*updownnoper-float(buymoney)*0.0015-(float(buymoney)+float(buymoney)*updownnoper)*float(sellperdown7)
-       jijingobj["buyservicemoney"]=float(buymoney)*0.0015
-       jijingobj["sellservicemoney"] = (float(buymoney)+float(buymoney)*updownnoper)*float(sellperdown7)
-       jijingobj["winmoney"]=winmoney
+       buyservicemoney=float(buymoney)*0.0015
+       jijingobj["buyservicemoney"]=buyservicemoney
+
+       sellservicemoney=(float(buymoney)+float(buymoney)*updownnoperforbuy)*float(sellperdown7)
+       jijingobj["sellservicemoney"] = sellservicemoney
+
+       jijingobj["winmoney"]=float(buymoney)*updownnoperforbuy-buyservicemoney-sellservicemoney
     elif diff_business_days>=7:
-         winmoney = float(buymoney) * updownnoper - float(buymoney) * 0.0015 - (float(buymoney)+float(buymoney)*updownnoper) * float(sellperup7)
-         jijingobj["buyservicemoney"] = float(buymoney) * 0.0015
-         jijingobj["sellservicemoney"] = (float(buymoney) + float(buymoney) * updownnoper) * float(sellperup7)
-         jijingobj["winmoney"] = winmoney
+        buyservicemoney = float(buymoney) * 0.0015
+        jijingobj["buyservicemoney"] = buyservicemoney
+
+        sellservicemoney = (float(buymoney) + float(buymoney) * updownnoperforbuy) * float(sellperup7)
+        jijingobj["sellservicemoney"] = sellservicemoney
+
+        jijingobj["winmoney"] = float(buymoney) * updownnoperforbuy - buyservicemoney - sellservicemoney
+
 
 
     id = bs.find(attrs={'class': 'ui-num'})
@@ -139,8 +146,8 @@ if __name__ == '__main__':
     id="217017"
     name="招商消费80ETF联接"
     aurl = 'http://fund.eastmoney.com/217017.html'
-    abuyvaluenum = "2.71"
-    abuydate = "2021-01-07"
+    abuyvaluenum = "3.0785"
+    abuydate = "2021-01-20"
     abuymoney = "40000"
     # 赎回费率小于7天 1.5%
     asellperdown7 = "0.015"
@@ -164,13 +171,13 @@ if __name__ == '__main__':
     id = "001245"
     name = "工银瑞信生态环境股票"
     aurl = 'http://fund.eastmoney.com/001245.html'
-    abuyvaluenum = "2.71"
-    abuydate = "2021-01-07"
-    abuymoney = "40000"
+    abuyvaluenum = "1.913"
+    abuydate = "2021-01-20"
+    abuymoney = "39000"
     # 赎回费率小于7天 1.5%
     asellperdown7 = "0.015"
     # 赎回费率大于等于7天 0.5%
-    asellperup7 = "0.005"
+    asellperup7 = "0.0075"
 
     goods(aurl,
           abuyvaluenum,
