@@ -57,6 +57,7 @@ def goods(aurl,
 
     summaryPage = driver.page_source
     bs = BeautifulSoup(summaryPage, 'html.parser')
+    driver.close()
 
     valueper = bs.find(attrs={'id': 'gz_gszzl'})
     updown=valueper.get_text()
@@ -130,58 +131,123 @@ def goods(aurl,
     for key, value in jijingobj.items():
        print('{key}:{value}'.format(key=key, value=value))
 
+    comparehtml(jijingobj, idvalue,aurl)
 
 
+
+
+def comparehtml(jijingobj,idvalue,aurl):
+
+    html=''
+    html += '<html>\n'
+    html += '<script type="text/javascript">\n'
+    html += '	window.onload=function(){\n'
+    html += '	var tfrow = document.getElementById(\'tfhover\').rows.length;\n'
+    html += '	var tbRow=[];\n'
+    html += '	for (var i=1;i<tfrow;i++) {\n'
+    html += '		tbRow[i]=document.getElementById(\'tfhover\').rows[i];\n'
+    html += '		tbRow[i].onmouseover = function(){\n'
+    html += '		  this.style.backgroundColor = \'#ffffff\';\n'
+    html += '		};\n'
+    html += '		tbRow[i].onmouseout = function() {\n'
+    html += '		  this.style.backgroundColor = \'#d4e3e5\';\n'
+    html += '		};\n'
+    html += '	}\n'
+    html += '};\n'
+    html += '</script>\n'
+
+    html += '<style type="text/css">\n'
+    html += 'table.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse:'
+    html += 'collapse;}\n'
+    html += 'table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style:solid;border-'
+    html += 'color: #729ea5;text-align:left;}\n'
+    html += 'table.tftable tr {background-color:#d4e3e5;}\n'
+    html += 'table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}\n'
+    html += '</style>\n'
+
+    html += '<table id="tfhover" class="tftable" border="1">\n'
+    for key, value in jijingobj.items():
+     keycn=''
+     if str(key)=='updownperforyesterdate':
+         keycn='距离昨天上升多少'
+     elif str(key) == 'time':
+         keycn = '当前时间'
+     elif str(key) == 'valuenum':
+         keycn = '当前价格'
+     elif str(key) == 'updownperforbuy':
+         keycn = '距离买时上升多少'
+     elif str(key) == 'buyvaluenum':
+         keycn = '购买时价格'
+     elif str(key) == 'buydate':
+         keycn = '购买日期'
+     elif str(key) == 'buydatenum':
+         keycn = '购买了几天'
+     elif str(key) == 'buyservicemoney':
+         keycn = '购买服务费'
+     elif str(key) == 'sellservicemoney':
+         keycn = '卖掉服务费'
+     elif str(key) == 'winmoney':
+         keycn = '赚了多少'
+     elif str(key) == 'id':
+         keycn = '基金代码'
+     elif str(key) == 'title':
+         keycn = '基金名称'
+
+     if str(key)=='title':
+        html += '<tr><th>'+str(keycn)+'</th><th><a href="'+aurl+'">'+str(value)+'</a></th></tr>\n'
+     else:
+         html += '<tr><th>' + str(keycn) + '</th><th>' + str(value) + '</th></tr>\n'
+
+    html += '</table>\n'
+    html += '</html>\n'
 
     file2 = open("基金产品/"+idvalue+".html", "w+")
-    w = file2.write(json.dumps(jijingobj))
+    w = file2.write(html)
     file2.close()
 
 
 
-
-
-
 if __name__ == '__main__':
-    id="217017"
-    name="招商消费80ETF联接"
-    aurl = 'http://fund.eastmoney.com/217017.html'
-    abuyvaluenum = "3.0785"
-    abuydate = "2021-01-20"
-    abuymoney = "40000"
-    # 赎回费率小于7天 1.5%
-    asellperdown7 = "0.015"
-    # 赎回费率大于等于7天 0.5%
-    asellperup7 = "0.005"
+    while True:
+        id="217017"
+        name="招商消费80ETF联接"
+        aurl = 'http://fund.eastmoney.com/217017.html'
+        abuyvaluenum = "3.0785"
+        abuydate = "2021-01-20"
+        abuymoney = "40000"
+        # 赎回费率小于7天 1.5%
+        asellperdown7 = "0.015"
+        # 赎回费率大于等于7天 0.5%
+        asellperup7 = "0.005"
+
+        goods(aurl,
+        abuyvaluenum,
+        abuydate,
+        abuymoney,
+        asellperdown7,
+        asellperup7)
 
 
 
-    goods(aurl,
-    abuyvaluenum,
-    abuydate,
-    abuymoney,
-    asellperdown7,
-    asellperup7)
 
 
 
+        id = "001245"
+        name = "工银瑞信生态环境股票"
+        aurl = 'http://fund.eastmoney.com/001245.html'
+        abuyvaluenum = "1.913"
+        abuydate = "2021-01-20"
+        abuymoney = "39000"
+        # 赎回费率小于7天 1.5%
+        asellperdown7 = "0.015"
+        # 赎回费率大于等于7天 0.5%
+        asellperup7 = "0.0075"
 
+        goods(aurl,
+              abuyvaluenum,
+              abuydate,
+              abuymoney,
+              asellperdown7,
+              asellperup7)
 
-
-    id = "001245"
-    name = "工银瑞信生态环境股票"
-    aurl = 'http://fund.eastmoney.com/001245.html'
-    abuyvaluenum = "1.913"
-    abuydate = "2021-01-20"
-    abuymoney = "39000"
-    # 赎回费率小于7天 1.5%
-    asellperdown7 = "0.015"
-    # 赎回费率大于等于7天 0.5%
-    asellperup7 = "0.0075"
-
-    goods(aurl,
-          abuyvaluenum,
-          abuydate,
-          abuymoney,
-          asellperdown7,
-          asellperup7)
+        time.sleep(60)
