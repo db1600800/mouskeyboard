@@ -70,6 +70,8 @@ def goods(aurl,
     jijingobj["time"]=timevalue
 
     valuenum = bs.find(attrs={'id': 'gz_gsz'}).get_text()
+    if valuenum=='--':
+        valuenum='0'
     jijingobj["valuenum"]=valuenum
     updownvalue=float(valuenum)-float(buyvaluenum)
     updownnoperforbuy=updownvalue/float(buyvaluenum)
@@ -131,12 +133,12 @@ def goods(aurl,
     for key, value in jijingobj.items():
        print('{key}:{value}'.format(key=key, value=value))
 
-    comparehtml(jijingobj, idvalue,aurl)
+    comparehtml(jijingobj, idvalue,aurl,abuymoney)
 
 
 
 
-def comparehtml(jijingobj,idvalue,aurl):
+def comparehtml(jijingobj,idvalue,aurl,abuymoney):
 
     html=''
     html += '<html>\n'
@@ -198,10 +200,12 @@ def comparehtml(jijingobj,idvalue,aurl):
      else:
          html += '<tr><th>' + str(keycn) + '</th><th>' + str(value) + '</th></tr>\n'
 
+    html += '<tr><th>' + '共买了多少钱' + '</th><th>' + abuymoney + '</th></tr>\n'
+
     html += '</table>\n'
     html += '</html>\n'
 
-    file2 = open("基金产品/"+idvalue+".html", "w+")
+    file2 = open("C:\Program Files\Apache Software Foundation\Tomcat 8.5\webapps\ROOT/"+idvalue+".html", "w+")
     w = file2.write(html)
     file2.close()
 
