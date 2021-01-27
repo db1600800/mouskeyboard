@@ -57,11 +57,11 @@ def goods(aurl,
 
     summaryPage = driver.page_source
     bs = BeautifulSoup(summaryPage, 'html.parser')
-    driver.close()
+
 
     valueper = bs.find(attrs={'id': 'gz_gszzl'})
     updown=valueper.get_text()
-    #比上一交易日涨了多少
+    #当前估值 比上一交易日涨了多少
     jijingobj["updownperforyesterdate"]=updown
 
     timenow = bs.find(attrs={'id': 'gz_gztime'})
@@ -69,9 +69,11 @@ def goods(aurl,
     #当前日期
     jijingobj["time"]=timevalue
 
+
     valuenum = bs.find(attrs={'id': 'gz_gsz'}).get_text()
     if valuenum=='--':
         valuenum='0'
+    #当前估值
     jijingobj["valuenum"]=valuenum
     updownvalue=float(valuenum)-float(buyvaluenum)
     updownnoperforbuy=updownvalue/float(buyvaluenum)
@@ -123,6 +125,43 @@ def goods(aurl,
     #基金代号
     jijingobj["id"]=idvalue
 
+    #15:00时估值 涨跌百分比
+    if timevalue.find("15:00")!=-1:
+          endguestvalue={}
+          endguestvalue["todayendguestvalue"] = valuenum
+          endguestvalue["todayendguestpercent"] = updown
+          file2 = open("基金产品/" + idvalue + "todayendguestvalue.txt", "w+")
+          w = file2.write(json.dumps(endguestvalue))
+          file2.close()
+
+    timepart=timevalue.split(" ", -1)
+    guestdate=timepart[0]
+
+
+    #净值
+    yesterdate_true_valueobj = driver.find_element_by_xpath('//*[@id="body"]/div[11]/div/div/div[3]/div[1]/div[1]/dl[2]/dd[1]/span[1]')
+    yesterdate_true_valuestr = yesterdate_true_valueobj.text
+
+    yesterdate_true_per=driver.find_element_by_xpath('//*[@id="body"]/div[11]/div/div/div[3]/div[1]/div[1]/dl[2]/dd[1]/span[2]')
+    yesterdate_true_perstr = yesterdate_true_per.text
+    yesterdate_true_perstr=yesterdate_true_perstr.replace("%","")
+
+    yesterdate_date = driver.find_element_by_xpath('//*[@id="body"]/div[11]/div/div/div[3]/div[1]/div[1]/dl[2]/dt/p')
+    yesterdate_datestr = yesterdate_date.text
+
+    file2 = open("基金产品/" + idvalue + "todayendguestvalue.txt", "r+")
+    filecontent = file2.read()
+    aleavevalue=0
+    aleaveper=0
+    if filecontent!="" and yesterdate_datestr.find(guestdate)!=-1:
+        endguestvalue = json.loads(filecontent)
+        file2.close()
+        todayendguestvalue=endguestvalue["todayendguestvalue"]
+        todayendguestpercent=endguestvalue["todayendguestpercent"]
+        todayendguestpercent=todayendguestpercent.replace("%","")
+
+        aleavevalue=float(todayendguestvalue)-float(yesterdate_true_valuestr)
+        aleaveper=float(todayendguestpercent)-float(yesterdate_true_perstr)
 
 
     title = bs.find(attrs={'class': 'fundDetail-tit'})
@@ -133,12 +172,13 @@ def goods(aurl,
     for key, value in jijingobj.items():
        print('{key}:{value}'.format(key=key, value=value))
 
-    comparehtml(jijingobj, idvalue,aurl,abuymoney)
+    comparehtml(jijingobj, idvalue,aurl,abuymoney,aleavevalue,aleaveper)
+
+    driver.close()
 
 
 
-
-def comparehtml(jijingobj,idvalue,aurl,abuymoney):
+def comparehtml(jijingobj,idvalue,aurl,abuymoney,aleavevalue,aleaveper):
 
     html=''
     html += '<html>\n'
@@ -201,6 +241,8 @@ def comparehtml(jijingobj,idvalue,aurl,abuymoney):
          html += '<tr><th>' + str(keycn) + '</th><th>' + str(value) + '</th></tr>\n'
 
     html += '<tr><th>' + '共买了多少钱' + '</th><th>' + abuymoney + '</th></tr>\n'
+    html += '<tr><th>' + '偏差值' + '</th><th>' + str("%.2f" % (aleavevalue)) + '</th></tr>\n'
+    html += '<tr><th>' + '偏差比率' + '</th><th>' + str("%.2f%%" % (aleaveper )) + '</th></tr>\n'
 
     html += '</table>\n'
     html += '</html>\n'
